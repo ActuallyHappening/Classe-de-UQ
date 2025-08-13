@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:141.0) Gecko/20100101 Firefox/141.0" version="28.1.0">
   <diagram name="Page-1" id="zZrn1sfatI9cFAU5W_Cx">
-    <mxGraphModel dx="1215" dy="623" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1291" dy="662" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -105,20 +105,20 @@
         <mxCell id="AFpNuyvy839d78JZ_Jgt-27" value="ROOM" style="shape=ext;margin=3;double=1;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="425" y="700" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="AFpNuyvy839d78JZ_Jgt-29" value="&lt;div&gt;RoomNumber&lt;/div&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
-          <mxGeometry x="280" y="700" width="100" height="40" as="geometry" />
-        </mxCell>
-        <mxCell id="AFpNuyvy839d78JZ_Jgt-30" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="AFpNuyvy839d78JZ_Jgt-27" target="AFpNuyvy839d78JZ_Jgt-29">
+        <mxCell id="AFpNuyvy839d78JZ_Jgt-30" value="" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="AFpNuyvy839d78JZ_Jgt-27" target="AFpNuyvy839d78JZ_Jgt-70">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="234" y="583" as="sourcePoint" />
-            <mxPoint x="170" y="540" as="targetPoint" />
+            <mxPoint x="380" y="720" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AFpNuyvy839d78JZ_Jgt-32" value="N" style="endArrow=none;html=1;rounded=0;" edge="1" parent="1" source="AFpNuyvy839d78JZ_Jgt-27" target="AFpNuyvy839d78JZ_Jgt-33">
+        <mxCell id="AFpNuyvy839d78JZ_Jgt-32" value="N" style="endArrow=none;html=1;rounded=0;strokeWidth=0;" edge="1" parent="1" source="AFpNuyvy839d78JZ_Jgt-27" target="AFpNuyvy839d78JZ_Jgt-33">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="610" y="550" as="sourcePoint" />
             <mxPoint x="475" y="640" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="AFpNuyvy839d78JZ_Jgt-71" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=link;" edge="1" parent="1" source="AFpNuyvy839d78JZ_Jgt-33" target="AFpNuyvy839d78JZ_Jgt-27">
+          <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="AFpNuyvy839d78JZ_Jgt-33" value="On" style="shape=rhombus;double=1;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
           <mxGeometry x="415" y="580" width="120" height="60" as="geometry" />
@@ -256,8 +256,11 @@
             <mxPoint x="650" y="600" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="AFpNuyvy839d78JZ_Jgt-69" value="Assumes a cleaner can only be assigned to one room" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
-          <mxGeometry x="55" y="630" width="310" height="30" as="geometry" />
+        <mxCell id="AFpNuyvy839d78JZ_Jgt-69" value="Assumes a cleaner can only be assigned to one floor" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="1">
+          <mxGeometry x="60" y="630" width="300" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="AFpNuyvy839d78JZ_Jgt-70" value="&lt;span style=&quot;border-bottom: 1px dotted;&quot;&gt;RoomNumber&lt;/span&gt;" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="290" y="700" width="100" height="40" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
