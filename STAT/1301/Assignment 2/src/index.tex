@@ -12,28 +12,45 @@
 
 \end{center}
 
-The due date/time is given on Blackboard.
-Please submit your assignment on Blackboard.
+If $\X$ is a random variable of the sample space $\Omega$, an abbreviation of set notation is as follows:
+\begin{align}
+\text{Abbreviate	} & \{ d : \forall d \in \Omega \text{ and } \X(d) = x \} \\
+\text{As	} & \{ \X = x \}
+\end{align}
 
+Additionally, when thinking in terms of sets becomes obselete,
+\begin{align}
+\text{Abbreviate	} & \p (\{ d : \forall d \in \Omega \text{ and } \X(d) = x \}) \\
+\text{As	} & \p (\X = x)
+\end{align}
+This abbriviation will be used with inequalities as well
 
 \begin{enumerate}
 %---------------------------------------------------------------------
 %Q1
-\item In a game of dice, two fair dice are rolled and the payout $X$ is the product of the two dice outcomes.
 
-\begin{enumerate}
-\item What is the probability mass function (pmf) of $X$?
-\hfill [3 marks]
+\item Question 1
 
-%
-\item What is the expected value of $X$?
-\hfill [3 marks]
+To begin, lets define the sample space
 
-%
-\item What is the standard deviation of the payout?
-\hfill [4 marks]
+\[
+\Omega = \{ (a, b) \in \{ 1, 2, 3, 4, 5, 6 \} \}
+\]
+\[
+|\Omega| = 36
+\]
+Notice this is uniform, and hence that $a$ and $b$ are independant
+% equation labelled eq:q1-uniform
+\begin{equation}
+\label{eq:q1-uniform-p}
+\p (A) = \frac{|A|}{|\Omega|} = \frac{|A|}{36}
+\end{equation}
 
-\end{enumerate}
+Let $X$ be a random variable representing the payout of a given dice roll $(a,b)\in \Omega$:
+\[
+\X ((a,b) \in \Omega) = a \cdot b
+\]
+
 
 \vspace{0.5cm}
 
