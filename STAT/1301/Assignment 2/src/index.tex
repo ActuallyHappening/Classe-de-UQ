@@ -12,6 +12,10 @@
 
 \end{center}
 
+\section{Introduction}
+
+Throughout the report, the following syntactical shortcuts and notation will be used.
+
 If $\X$ is a random variable of the sample space $\Omega$, an abbreviation of set notation is as follows:
 \begin{align}
 \text{Abbreviate	} & \{ d : \forall d \in \Omega \text{ and } \X(d) = x \} \\
@@ -23,7 +27,11 @@ Additionally, when thinking in terms of sets becomes obselete,
 \text{Abbreviate	} & \p (\{ d : \forall d \in \Omega \text{ and } \X(d) = x \}) \\
 \text{As	} & \p (\X = x)
 \end{align}
-This abbriviation will be used with inequalities as well
+The abbriviation will be used with inequalities as well.
+
+Given some random variable $\X$, there must exist a function mapping from the sample space $\Omega$ to the domain of $\X$,
+which can be at most $\mathbb{R}$. This function is (intuitively) named $\X$.
+This function incidentally defines the random variable, which is the motivating reason for using its letter to represent its mapping.
 
 %---------------------------------------------------------------------
 %Q1
@@ -44,7 +52,6 @@ Notice this is uniform, and hence that $a$ and $b$ are independant
 \p (A) = \frac{|A|}{|\Omega|} = \frac{|A|}{36}
 \end{equation}
 
-\begin{enumerate}
 
 % a)
 \subsection{Part a)}
@@ -113,5 +120,15 @@ Evaluating $\Var(\X)$ is similarly trivial
 \implies \sigma _{\X} &= \sqrt{\Var(\X)} = \sqrt{\frac{11515}{144}} \approx 8.942
 \end{align}
 
-\end{enumerate}
 \vspace{0.5cm}
+
+\section{Question 2}
+
+Understanding this question in terms of a sample space isn't very fruitful.
+$\Omega$ is completely unspecified, we can only deduce that $|\Omega| \geq (0, 20)$, which implies it is continuous.
+$\p (A) : \exists A \in \Omega$ is also completely unknown.
+
+\subsection{Part a)}
+
+Let $\X$ be the continuous random variable of algae growth as measured in grams of biomass produced.
+Note $\mathrm{Domain}[\X] = (0, 20)$.
