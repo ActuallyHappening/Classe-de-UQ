@@ -25,11 +25,9 @@ Additionally, when thinking in terms of sets becomes obselete,
 \end{align}
 This abbriviation will be used with inequalities as well
 
-\begin{enumerate}
 %---------------------------------------------------------------------
 %Q1
-
-\item Question 1
+\section{Question 1}
 
 To begin, lets define the sample space
 
@@ -46,7 +44,10 @@ Notice this is uniform, and hence that $a$ and $b$ are independant
 \p (A) = \frac{|A|}{|\Omega|} = \frac{|A|}{36}
 \end{equation}
 
-a)
+\begin{enumerate}
+
+% a)
+\subsection{Part a)}
 
 Let $X$ be a random variable representing the payout of a given dice roll $(a,b)\in \Omega$:
 \[
@@ -55,7 +56,7 @@ Let $X$ be a random variable representing the payout of a given dice roll $(a,b)
 
 % By thinking through the cases, we know $|\{ \X = x_i \}|$ for all $i \in \mathrm{Z}^+$. Let the PMF of $\X$ be $f_x$, hence:
 
-Let $f_{\X}$ be the PMF of $\X$. By cases, the probability distribution of $\X$ can be deduced:
+Let $f_{\X}$ be the PMF of $\X$. Note $f_{\X}(x \in \Omega) = \p (\{ \X = x \})$. By cases, the probability distribution of $\X$ can be deduced:
 \newcommand{\pq}[2]{
 	\[f_{\X}(#1) = \frac{#2}{36}\]
 }
@@ -68,14 +69,12 @@ Let $f_{\X}$ be the PMF of $\X$. By cases, the probability distribution of $\X$ 
 \pq{4}{3}
 \pq{5}{2}
 \pq{6}{4}
-
 \pq{8}{2}
 \pq{9}{1}
 \pq{10}{2}
 \pq{12}{4}
 \pq{15}{2}
 \pq{16}{1}
-
 \pq{18}{2}
 \pq{20}{2}
 \pq{24}{2}
@@ -87,97 +86,32 @@ Let $f_{\X}$ be the PMF of $\X$. By cases, the probability distribution of $\X$ 
 
 For all other values $x$, $f_{\X}(x) = 0$
 
-b)
+% b)
+\subsection{Part b)}
+
+This makes determining the expected value of $\X$ trivial:
 \begin{align}
-\E (\X) &= \sum _{d \in \Omega} \X (d) \p (d) \\
+\E (\X) &= \sum _{c \in \Omega} \X (c) \p (c) \\
 &= \sum _{x \in \mathrm{Domain}[\X]} x \p (\{ \X = x\}) \\
 &= 1 \cdot f_{\X} (1) + 2 \cdot f_{\X}(2) + \cdots 30 \cdot f_{\X}(30) + 36 \cdot f_{\X}(36) \\
 &= \frac{1}{36} + \frac{4}{36} + \cdots \frac{60}{36} + \frac{36}{36} \\
 &= \frac{441}{36} = \frac{49}{4} = 12.25
 \end{align}
 
-\vspace{0.5cm}
+% c)
+\subsection{Part c)}
 
-%---------------------------------------------------------------------
-%Q2
-\item A laboratory is studying the growth of algae in a controlled environment. The growth of algae is measured by the amount of biomass produced (in grams), which can be modelled by a random variable $X$ with probability density function (pdf)
-\[
-		f_X(x) = c \left(x^2 - 60x + 800\right)
-		\quad \text{for } 0<x<20,
-\]
-where $c$ is a constant.
+Evaluating $\Var(\X)$ is similarly trivial
 
-
-\begin{enumerate}
-\item Find the value of $c$.
-\hfill [2 marks]
-
-%
-\item Find the cumulative distribution function (cdf) of $X$.
-\hfill [3 marks]
-
-%
-\item Find the expected value of $(X)$.
-\hfill [2 marks]
-
-%
-\item The laboratory equipment can only detect biomass that exceeds 2 grams (the minimum detectable amount). What is the probability that the biomass exceeds 10 grams, given that it is detectable?
-\hfill [3 marks]
-
-\end{enumerate}
-
-\vspace{0.5cm}
-
-%---------------------------------------------------------------------
-%Q3
-\item Each day, a quality control officer inspects a random sample of 25 products from the production line of a factory. The probability of a product passing inspection (being defect-free) is 0.25. If the product passes, the factory saves \$3 in repair costs. If the product fails, the factory incurs an additional \$1 cost for re-inspection after repair.
-Let $X$ be the number of products that passes inspection on a given day, and $Y$ be the net savings for the factory on that day.
-
-\[
-\sigma
-\]
-
-\begin{enumerate}
-\item State the distribution of $X$, including all its parameters.
-	\hfill [2 marks]
-
-%
-\item What is the minimum sample size needed so that the probability of finding at least one defect-free product exceeds 99\%?
-	\hfill [3~marks]
-
-%
-\item Calculate the expected value and variance of the factory's net savings.
-	\hfill [3 marks]
-
-	%
-\item What is the probability that the factory will save at least \$27 on a given day?
-	\hfill [2~marks]
-
-\end{enumerate}
-
-\vspace{0.5cm}
-
-%---------------------------------------------------------------------
-%Q4
-\item A storeroom in a warehouse maintains strict temperature control to ensure that sensitive materials are stored at optimal conditions. The temperature of the storeroom follows a normal distribution with mean $\mu$ and standard deviation $\sigma$ degrees Celsius ($^{\circ}$C). The storeroom has a temperature threshold of $8^\circ$C to avoid damaging the materials.
-
-You may use statistical tables to answer this question, then use \textsf{R} to verify your results.
-
-\begin{enumerate}
-\item Suppose the storeroom temperature is adjusted so that $\mu = 7.5^\circ$C and $\sigma = 0.3^\circ$C. What is the probability that the temperature of the storeroom will be between $7.2^\circ$C and $8^\circ$C?
-	\\\phantom{1} \hfill [3 marks]
-
-%
-\item Assume that $\sigma=0.3^\circ$C. What should $\mu$ be set to so that the storeroom temperature exceeds $8^\circ$C only 1\% of the time?
-	\hfill [3 marks]
-
-	%
-\item What is the largest standard deviation $\sigma$ that will keep the temperature within $1^\circ$C of the mean with 95\% probability?
-	\hfill [4 marks]
+\begin{align}
+\Var (\X) &= \E [(\X - \E (X))^2] \\
+&= \sum _{c \in \Omega} (\X(c) - \frac{49}{4})^2 \p (\{ c \}) \\
+&= \sum _{x \in \mathrm{Domain}[\X]} (x - \frac{49}{4})^2 \p (\{ \X = x \}) \\
+&= (1 - \frac{49}{4})^2 \cdot \frac{1}{36} + (2 - \frac{49}{4})^2 \cdot \frac{2}{36} + \cdots
+	(30 - \frac{49}{4})^2 \cdot \frac{2}{36} + (36 - \frac{49}{4})^2 \cdot \frac{1}{36} \\
+&= \frac{11515}{144} \approx 79.97 \\
+\implies \sigma _{\X} &= \sqrt{\Var(\X)} = \sqrt{\frac{11515}{144}} \approx 8.942
+\end{align}
 
 \end{enumerate}
 \vspace{0.5cm}
-
-%---------------------------------------------------------------------
-
-\end{enumerate}
