@@ -136,6 +136,7 @@ Let $\X$ be the continuous random variable of algae growth as measured in grams 
 Note $\mathrm{Domain}[\X] = (0, 20)$.
 
 Since $\X$ is a random variable, its PDF $f_{\X}$ must sum to $1$:
+
 \begin{align}
 1 &= \int _{c \in \Omega} \p (\{ c \}) \\
 &= \int _{x \in \mathrm{Domain}[X]} \p(\{ \X = x \}) \\
@@ -145,3 +146,18 @@ Since $\X$ is a random variable, its PDF $f_{\X}$ must sum to $1$:
 1/c &= \frac{20000}{3} \\
 c &= \frac{3}{20000}
 \end{align}
+
+\subsection{Part b)}
+
+Let $F_{\X}$ be the CDF of $\X$:
+
+\begin{align}
+F_{\X} &= \int _{-\infinity} ^{x} f_{\X}(x) \mathrm{d}x \\
+&= \int _{-\infinity} ^{x} c(x^2 - 60x + 800) \mathrm{d}x \\
+&= c [\frac{1}{3}x^3 - 30x^2 + 800x]_{x \to -\infinity}^{x = x} \\
+\frac{F_{\X}}{c} &= [\frac{1}{3} x^3 - 30x^2 + 800x] - \lim_{x \to -\infinity} [\frac{1}{3} x^3 - 30x^2 + 800x] \\
+\implies F_{\X} &= c(\frac{1}{3} x^3 - 30x^2 + 800x) \text{ for } 0 \leq x \leq 20 \\
+&= \frac{1}{20000}x^3 - \frac{9}{2000}x^2 + \frac{3}{25}x
+\end{align}
+
+\vspace{0.5cm}
