@@ -374,7 +374,8 @@ Using R running pnorm($\frac{5}{3}$) - pnorm($-\frac{2}{3}$) = 0.6997.
 \begin{align*}
 \p(\{ \X > 8\dC \}) &= 1\% \\
 0.01 &= \p(\{ \X > 8 \}) \\
-&= 1 - \p(\{ \X < 8 \}) \\
+&= 1 - \p(\{ \X < 8 \})
+\text{	from (\ref{th:pr-inverse})} \\
 0.99 &= \p(\{ \X < 8 \}) \\
 &= \p(\{ \frac{\X - \mu}{\sigma} = \frac{8 - \mu}{\sigma}\}) \\
 0.99 &= \p(\{ \Z = \frac{8 - \mu}{3}\}) \\
@@ -403,13 +404,27 @@ We are given no information about the parameters of $\X$
 \pr{\mu - 1\dC < \X < \mu + 1\dC} &= 95\% \\
 0.95 &= \pr{\frac{(\mu - 1) - \mu}{\sigma} < \frac{\X - \mu}{\sigma} < \frac{(\mu - 1) - \mu}{\sigma}} \\
 &= \pr{\frac{-1}{\sigma} < \Z < \frac{+1}{\sigma}} \\
+&= \p(\{ \frac{-1}{\sigma} < \Z \} \cap \{\Z < \frac{+1}{\sigma} \}) \\
+\end{align*}
+
+Note that the complement of $\{ \frac{-1}{\sigma} < \Z \} \cap \{\Z < \frac{+1}{\sigma} \}$ is
+$\{ \Z < \frac{-1}{\sigma} \} \cup \{ \Z > \frac{+1}{\sigma} \}$
+
+\begin{align*}
+0.95 &= 1 - (\pr{\Z < \frac{-1}{\sigma} \} \cup \{ \Z > \frac{+1}{\sigma}}) \\
 &= 1 - (\pr{\Z < \frac{-1}{\sigma}} + \pr{\Z > \frac{+1}{\sigma}}) \\
 &= 1 - 2\pr{\Z < \frac{-1}{\sigma}} \\
 0.05 &= 2\pr{\Z < \frac{-1}{\sigma}} \\
 0.025 &= \pr{\Z < \frac{-1}{\sigma}} \\
 1 - 0.025 &= 1- \pr{\Z < \frac{-1}{\sigma}} \\
-0.975 &= \pr{\Z < \frac{+1}{\sigma}} \\
-\text{Let $z$ be the solution to } 0.975 &= \pr{\Z < z} \\
+0.975 &= \pr{\Z < \frac{+1}{\sigma}}
+\text{	from (\ref{th:normal-dist-symmetry})}
+\\
+\end{align*}
+
+Let $z$ be the solution to $0.975 = \pr{\Z < z}$
+
+\begin{align*}
 \implies z &= \frac{+1}{\sigma} \\
 \implies \sigma &= \frac{1}{z}
 \end{align*}
