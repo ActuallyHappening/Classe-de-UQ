@@ -17,16 +17,16 @@
 Throughout the report, the following syntactical shortcuts and notation will be used.
 
 If $\X$ is a random variable of the sample space $\Omega$, an abbreviation of set notation is as follows:
-\begin{align}
+\begin{align*}
 \text{Abbreviate	} & \{ d : \forall d \in \Omega \text{ and } \X(d) = x \} \\
 \text{As	} & \{ \X = x \}
-\end{align}
+\end{align*}
 
 Additionally, when thinking in terms of sets becomes obselete,
-\begin{align}
+\begin{align*}
 \text{Abbreviate	} & \p (\{ d : \forall d \in \Omega \text{ and } \X(d) = x \}) \\
 \text{As	} & \p (\X = x)
-\end{align}
+\end{align*}
 The abbriviation will be used with inequalities as well.
 
 Given some random variable $\X$, there must exist a function mapping from the sample space $\Omega$ to the domain of $\X$,
@@ -42,14 +42,20 @@ Various probability (and set) theorems are used throughout this report. For clar
 \begin{equation} \label{th:pr-opposites}
 \pr{\X < x} = \pr{x > \X} \forall x
 \end{equation}
-Above (\ref{th:pr-opposites}) is true for any random variable $\X$.
+\begin{equation} \label{th:pr-inverse}
+\pr{\X < x} = 1 - \pr{\X > x} \forall x
+\end{equation}
+Above (\ref{th:pr-opposites}) and (\ref{th:pr-inverse}) are true for any random variable $\X$.
 
-\begin{align} \label{th:normal-dist-symmetry}
-\X \sim &\NormalDist (\mu = 0, \sigma) \\
-\implies &\pr{\X < x} = 1 - \pr{\X > -x} \\
-\iff &\pr{\X < -x} = 1 - \pr{\X > x}
-\end{align}
-When $\X$ is a symmetrical distribution around 0, for example a standard normal distribution $\Z$, above (\ref{th:normal-dist-symmetry}) is true.
+\begin{equation}
+\label{th:normal-dist-symmetry}
+\begin{aligned}
+	\X \sim &\NormalDist (\mu = 0, \sigma) \\
+	\implies &\pr{\X < x} = \pr{\X > -x} \\
+	\iff &\pr{\X < -x} = \pr{\X > x}
+\end{aligned}
+\end{equation}
+When $\X$ is a symmetrical distribution around 0, for example the standard normal distribution $\Z$, above (\ref{th:normal-dist-symmetry}) is true.
 
 \newpage
 
@@ -67,10 +73,10 @@ To begin, lets define the sample space
 \]
 Notice this is uniform, and hence that $a$ and $b$ are independant
 % equation labelled eq:q1-uniform
-\begin{equation}
+\begin{equation*}
 \label{eq:q1-uniform-p}
 \p (A) = \frac{|A|}{|\Omega|} = \frac{|A|}{36}
-\end{equation}
+\end{equation*}
 
 
 % a)
@@ -117,20 +123,20 @@ For all other values $x$, $f_{\X}(x) = 0$
 \subsection{Part b)}
 
 This makes determining the expected value of $\X$ trivial:
-\begin{align}
+\begin{align*}
 \E (\X) &= \sum _{c \in \Omega} \X (c) \p (c) \\
 &= \sum _{x \in \mathrm{Domain}[\X]} x \p (\{ \X = x\}) \\
 &= 1 \cdot f_{\X} (1) + 2 \cdot f_{\X}(2) + \cdots 30 \cdot f_{\X}(30) + 36 \cdot f_{\X}(36) \\
 &= \frac{1}{36} + \frac{4}{36} + \cdots \frac{60}{36} + \frac{36}{36} \\
 &= \frac{441}{36} = \frac{49}{4} = 12.25
-\end{align}
+\end{align*}
 
 % c)
 \subsection{Part c)}
 
 Evaluating $\Var(\X)$ is similarly trivial
 
-\begin{align}
+\begin{align*}
 \Var (\X) &= \E [(\X - \E (X))^2] \\
 &= \sum _{c \in \Omega} (\X(c) - \frac{49}{4})^2 \p (\{ c \}) \\
 &= \sum _{x \in \mathrm{Domain}[\X]} (x - \frac{49}{4})^2 \p (\{ \X = x \}) \\
@@ -138,7 +144,7 @@ Evaluating $\Var(\X)$ is similarly trivial
 	(30 - \frac{49}{4})^2 \cdot \frac{2}{36} + (36 - \frac{49}{4})^2 \cdot \frac{1}{36} \\
 &= \frac{11515}{144} \approx 79.97 \\
 \implies \sigma _{\X} &= \sqrt{\Var(\X)} = \sqrt{\frac{11515}{144}} \approx 8.942
-\end{align}
+\end{align*}
 
 \newpage
 
@@ -155,7 +161,7 @@ Note $\mathrm{Domain}[\X] = (0, 20)$.
 
 Since $\X$ is a random variable, its PDF $f_{\X}$ must sum to $1$:
 
-\begin{align}
+\begin{align*}
 1 &= \int _{c \in \Omega} \p (\{ c \}) \\
 &= \int _{x \in \mathrm{Domain}[X]} \p(\{ \X = x \}) \\
 &= \int _0 ^{20} c(x^2 - 60x + 800) \mathrm{d}x \\
@@ -163,24 +169,24 @@ Since $\X$ is a random variable, its PDF $f_{\X}$ must sum to $1$:
 1/c &= [\frac{1}{3}(20)^3 - 30(20)^2 + 800(20)] - [0 - 0 + 0] \\
 1/c &= \frac{20000}{3} \\
 c &= \frac{3}{20000}
-\end{align}
+\end{align*}
 
 \subsection{Part b)}
 
 Let $F_{\X}$ be the CDF of $\X$:
 
-\begin{align}
+\begin{align*}
 F_{\X} &= \int _{-\infinity} ^{x} f_{\X}(x) \mathrm{d}x \\
 &= \int _0 ^{x} c(x^2 - 60x + 800) \mathrm{d}x \\
 &= c [\frac{1}{3}x^3 - 30x^2 + 800x]_{x =0}^{x = x} \\
 \frac{F_{\X}}{c} &= [\frac{1}{3} x^3 - 30x^2 + 800x] - [\frac{1}{3} 0^3 - 30\cdot0^2 + 800\cdot0] \\
 \implies F_{\X} &= c(\frac{1}{3} x^3 - 30x^2 + 800x) \text{ for } 0 \leq x \leq 20 \\
 &= \frac{1}{20000}x^3 - \frac{9}{2000}x^2 + \frac{3}{25}x
-\end{align}
+\end{align*}
 
 \subsection{Part c)}
 
-\begin{align}
+\begin{align*}
 \E(\X) &= \int _{x \in \mathrm{Domain}[\X]} xf_{\X}\mathrm{d}x \\
 &= \int _0 ^{20} x \cdot c(x^2 - 60x + 800)\mathrm{d}x \\
 \frac{\E(\X)}{c} &= \int _0 ^{20} x^3 - 60x^2 + 800x \mathrm{d}x \\
@@ -189,33 +195,33 @@ F_{\X} &= \int _{-\infinity} ^{x} f_{\X}(x) \mathrm{d}x \\
  &= 40000 - 160000 + 160000 \\
 \E(\X) &= c \cdot 40000 \\
 \E(\X) &= 6 \text{ grams}
-\end{align}
+\end{align*}
 
 \subsection{Part d)}
 
-\begin{align}
+\begin{align*}
 % \[
 & \p (\{ \X > 10 \} | \{ \X > 2 \}) \\
 &= \frac{\p(\{ \X > 10 \} \cap  \{ \X > 2 \})}{\{ \X > 2 \}} \\
 &= \frac{\p(\{ \X > 10 \})}{\p (\{ \X > 2 \})}
 % \]
-\end{align}
+\end{align*}
 
 From the CDF definition of $\X$, $\p (\{ \X < x \}) = f_{\X}(x)$
 
-\begin{align}
+\begin{align*}
 \implies \p(\{ \X > 10 \}) &= 1 - \p (\{ \X < 10 \}) \\
 &= 1 - F_{\X}(10) \\
 &= 1 - \frac{4}{5} \\
 &= \frac{1}{5}
-\end{align}
+\end{align*}
 
-\begin{align}
+\begin{align*}
 \implies \p(\{ \X > 2 \}) &= 1 - \p (\{ \X < 2 \}) \\
 &= 1 - F_{\X}(2) \\
 &= 1 - \frac{139}{625} \\
 &= \frac{486}{625}
-\end{align}
+\end{align*}
 
 % \[
 \begin{equation}
@@ -280,7 +286,7 @@ such that the probability of finding a defect-free product eexceeds 99\%:
 \X_2 \sim \mathrm{Bin}(n, p = 0.25)
 \]
 
-\begin{align}
+\begin{align*}
 \p(\{\X_2 \geq 1\}) &> 0.99 \\
 0.99 &< \p(\{ \X_2 \geq 1 \}) \\
 0.99 &< 1 - \p(\{ \X_2 = 0 \}) \\
@@ -288,7 +294,7 @@ such that the probability of finding a defect-free product eexceeds 99\%:
 0.01 &> 1 \cdot 1 \cdot 0.75^n \\
 \log _{0.75} 0.01 &> n \\
 \implies n &< \log _{0.75} 0.01 \approx 16.008
-\end{align}
+\end{align*}
 
 Therefore the minimum (integer) sample size is $n = 16$.
 
@@ -297,37 +303,37 @@ Therefore the minimum (integer) sample size is $n = 16$.
 The random variable $\Y$ is dependant on $\X$.
 Given a possibility $a \in \Omega$ from the sample space, $\Y(a)$ explicitely depends upon $\X(a)$ such that it exactly equals:
 
-\begin{align}
+\begin{align*}
 \Y(a \in \Omega) &= 3\X(a) - (25 - \X(a)) \\
 &= 4\X(a) - 25
-\end{align}
+\end{align*}
 
 This allows us to calculate $\E(\X)$ and $\Var(\X)$ relatively easily using probability theorems:
 
-\begin{align}
+\begin{align*}
 \E(\Y) &= \E(4\X - 25) \\
 &= 4\E(\X) - 25 \\
 &= 4 \cdot \frac{25}{4} - 25 \\
 &= 0
-\end{align}
+\end{align*}
 
-\begin{align}
+\begin{align*}
 \Var(\Y) &= \Var(4\X - 25) \\
 &= 4^2 \Var(\X) \\
 &= 16 \cdot \frac{75}{16} \\
 &= 75
-\end{align}
+\end{align*}
 
 \subsection{Part d)}
 
 Since $\Y$ is defined in terms of $\X$, this isn't too difficult to evaluate:
 
-\begin{align}
+\begin{align*}
 \p(\{ \Y \geq 27 \}) &= \p(\{ 4\X - 25 \geq 27 \}) \\
 &= \p(\{ 4\X \geq 52\}) \\
 &= \p(\{ \X \geq 13 \}) \\
 &\approx 0.00337
-\end{align}
+\end{align*}
 
 This can be calculated by running 1 - pbinom(12, 25, 0.25) in R
 
@@ -346,15 +352,16 @@ Let $\X$ be a random variable for the temperature inside the storeroom.
 \X \sim \NormalDist (\mu = 7.5\dC, \sigma = 0.3\dC)
 \]
 
-\begin{align}
+\begin{align*}
 \pr{7.2 < \X < 8} &= \pr{\frac{7.2 - 7.5}{0.3} < \frac{\X - \mu}{\sigma} < \frac{8 - 7.5}{0.3}} \\
 &= \pr{-\frac{2}{3} < \Z < \frac{5}{3}} \\
 &= \pr{\Z < \frac{5}{3}} - \pr{-\frac{2}{3} < \Z} \\
-% \text{Playing around with } \pr{-\frac{2}{3} < \Z} \\
-&= \pr{\Z < \frac{5}{3}} - \pr{\Z > -\frac{2}{3}} \\
-&= \pr{\Z < \frac{5}{3}} - (1 - \pr{\Z < \frac{2}{3}}) \\
+&= \pr{\Z < \frac{5}{3}} - \pr{\Z > -\frac{2}{3}}
+\text{	from (\ref{th:pr-opposites})} \\
+&= \pr{\Z < \frac{5}{3}} - (1 - \pr{\Z < \frac{2}{3}})
+\text{	from (\ref{th:normal-dist-symmetry})} \\
 &= \pr{\Z < \frac{5}{3}} + \pr{\Z < \frac{2}{3}} - 1
-\end{align}
+\end{align*}
 Using stats tables this equals $0.9515 + 0.7454 - 1 = 0.6969$.
 Using R running pnorm($\frac{5}{3}$) - pnorm($-\frac{2}{3}$) = 0.6997.
 
@@ -364,23 +371,23 @@ Using R running pnorm($\frac{5}{3}$) - pnorm($-\frac{2}{3}$) = 0.6997.
 \X \sim \mathit{N}(\mu, \sigma = 0.3 \dC)
 \]
 
-\begin{align}
+\begin{align*}
 \p(\{ \X > 8\dC \}) &= 1\% \\
 0.01 &= \p(\{ \X > 8 \}) \\
 &= 1 - \p(\{ \X < 8 \}) \\
 0.99 &= \p(\{ \X < 8 \}) \\
 &= \p(\{ \frac{\X - \mu}{\sigma} = \frac{8 - \mu}{\sigma}\}) \\
 0.99 &= \p(\{ \Z = \frac{8 - \mu}{3}\}) \\
-\end{align}
+\end{align*}
 
 Let $z$ be the value which satisfies $\p(\{ \Z < z \}) = 0.99$.
 
-\begin{align}
+\begin{align*}
 \implies \frac{8 - \mu}{3} &= z \\
 8 - \mu &= 3z \\
 -\mu &= 3x - 8 \\
 \mu &= 8 - 3z
-\end{align}
+\end{align*}
 
 Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 3 \cdot 2.33 = 1.01\dC$.
 Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 3 \cdot 2.326348 \approx 1.021\dC$.
@@ -392,7 +399,7 @@ We are given no information about the parameters of $\X$
 \X \sim \NormalDist (\mu, \sigma)
 \]
 
-\begin{align}
+\begin{align*}
 \pr{\mu - 1\dC < \X < \mu + 1\dC} &= 95\% \\
 0.95 &= \pr{\frac{(\mu - 1) - \mu}{\sigma} < \frac{\X - \mu}{\sigma} < \frac{(\mu - 1) - \mu}{\sigma}} \\
 &= \pr{\frac{-1}{\sigma} < \Z < \frac{+1}{\sigma}} \\
@@ -405,7 +412,7 @@ We are given no information about the parameters of $\X$
 \text{Let $z$ be the solution to } 0.975 &= \pr{\Z < z} \\
 \implies z &= \frac{+1}{\sigma} \\
 \implies \sigma &= \frac{1}{z}
-\end{align}
+\end{align*}
 
 Using the stats table, $z \approx 1.96$ which implies $\sigma \approx \frac{1}{1.96} \approx 0.510204 \approx 0.51$.
 Using R $z = \text{qnorm}(0.975) \approx 1.959964$ which implies $\sigma \approx \frac{1}{1.959964} \approx 0.5102135 \approx 0.51$.
