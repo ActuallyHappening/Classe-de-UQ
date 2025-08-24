@@ -22,12 +22,12 @@ If $\X$ is a random variable of the sample space $\Omega$, an abbreviation of se
 \text{As	} & \{ \X = x \}
 \end{align*}
 
-Additionally, when thinking in terms of sets becomes obselete,
-\begin{align*}
-\text{Abbreviate	} & \p (\{ d : \forall d \in \Omega \text{ and } \X(d) = x \}) \\
-\text{As	} & \p (\X = x)
-\end{align*}
-The abbriviation will be used with inequalities as well.
+% Additionally, when thinking in terms of sets becomes obselete,
+% \begin{align*}
+% \text{Abbreviate	} & \p (\{ d : \forall d \in \Omega \text{ and } \X(d) = x \}) \\
+% \text{As	} & \p (\X = x)
+% \end{align*}
+The above abbriviation will be used with inequalities as well, e.g. $\pr{\X < x}$ or $\pr{\X > x}$.
 
 Given some random variable $\X$, there must exist a function mapping from the sample space $\Omega$ to the domain of $\X$,
 which can be at most $\mathbb{R}$. This function is (intuitively) named $\X$.
@@ -57,6 +57,18 @@ Above (\ref{th:pr-opposites}) and (\ref{th:pr-inverse}) are true for any random 
 \end{equation}
 When $\X$ is a symmetrical distribution around 0, for example the standard normal distribution $\Z$, above (\ref{th:normal-dist-symmetry}) is true.
 
+Also, an equivalent formula for $\E (\X)$ was used:
+\begin{equation}
+\label{form:expected-value-general}
+\E (\X) = \sum _{c \in \Omega} \X(c) \cdot \pr{c}
+\end{equation}
+Recall that $\X(c)$ is the function mapping for the random variable $\X$.
+For simple cases of one random variable, this can be simplified to (\ref{form:expected-value-simple}) by noticing that the sample space can be partitioned into 
+\begin{equation}
+\label{form:expected-value-simple}
+\E(\X) = \sum _{x \in \Domain{\X}} x \cdot \pr{\X = x}
+\end{equation}
+
 \newpage
 
 %---------------------------------------------------------------------
@@ -71,7 +83,7 @@ To begin, lets define the sample space
 \[
 |\Omega| = 36
 \]
-Notice this is uniform, and hence that $a$ and $b$ are independant
+Notice this follows a uniform probability distribution:
 % equation labelled eq:q1-uniform
 \begin{equation*}
 \label{eq:q1-uniform-p}
@@ -124,12 +136,13 @@ For all other values $x$, $f_{\X}(x) = 0$
 
 This makes determining the expected value of $\X$ trivial:
 \begin{align*}
-\E (\X) &= \sum _{c \in \Omega} \X (c) \p (c) \\
+\E (\X) &= \sum _{c \in \Omega} \X (c) \pr{c} \\
 &= \sum _{x \in \mathrm{Domain}[\X]} x \p (\{ \X = x\}) \\
 &= 1 \cdot f_{\X} (1) + 2 \cdot f_{\X}(2) + \cdots 30 \cdot f_{\X}(30) + 36 \cdot f_{\X}(36) \\
 &= \frac{1}{36} + \frac{4}{36} + \cdots \frac{60}{36} + \frac{36}{36} \\
-&= \frac{441}{36} = \frac{49}{4} = 12.25
+&= \frac{441}{36} = \frac{49}{4} = \$12.25
 \end{align*}
+Therefore the expected of $\X$ is \$12.25
 
 % c)
 \subsection{Part c)}
@@ -402,7 +415,8 @@ We are given no information about the parameters of $\X$
 
 \begin{align*}
 \pr{\mu - 1\dC < \X < \mu + 1\dC} &= 95\% \\
-0.95 &= \pr{\frac{(\mu - 1) - \mu}{\sigma} < \frac{\X - \mu}{\sigma} < \frac{(\mu - 1) - \mu}{\sigma}} \\
+0.95 &= \pr{\mu - 1 < \X < \mu + 1} \\
+0.95 &= \pr{\frac{(\mu - 1) - \mu}{\sigma} < \frac{\X - \mu}{\sigma} < \frac{(\mu + 1) - \mu}{\sigma}} \\
 &= \pr{\frac{-1}{\sigma} < \Z < \frac{+1}{\sigma}} \\
 &= \p(\{ \frac{-1}{\sigma} < \Z \} \cap \{\Z < \frac{+1}{\sigma} \}) \\
 \end{align*}
@@ -429,5 +443,5 @@ Let $z$ be the solution to $0.975 = \pr{\Z < z}$
 \implies \sigma &= \frac{1}{z}
 \end{align*}
 
-Using the stats table, $z \approx 1.96$ which implies $\sigma \approx \frac{1}{1.96} \approx 0.510204 \approx 0.51$.
-Using R $z = \text{qnorm}(0.975) \approx 1.959964$ which implies $\sigma \approx \frac{1}{1.959964} \approx 0.5102135 \approx 0.51$.
+Using the stats table, $z \approx 1.96$ which implies $\sigma \approx \frac{1}{1.96} \approx 0.510204 \approx 0.51\dC$.
+Using R $z = \text{qnorm}(0.975) \approx 1.959964$ which implies $\sigma \approx \frac{1}{1.959964} \approx 0.5102135 \approx 0.51\dC$.
