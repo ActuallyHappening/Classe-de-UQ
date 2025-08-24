@@ -302,3 +302,18 @@ This allows us to calculate $\E(\X)$ and $\Var(\X)$ relatively easily using prob
 
 \subsection{Part d)}
 
+Since $\Y$ is defined in terms of $\X$, this isn't too difficult to evaluate:
+
+\begin{align}
+\p(\{ \Y \geq 27 \}) &= \p(\{ 4\X - 25 \geq 27 \}) \\
+&= \p(\{ 4\X \geq 52\}) \\
+&= \p(\{ \X \geq 13 \}) \\
+&\approx 0.00337
+\end{align}
+
+This can be calculated by running 1 - pbinom(12, 25, 0.25) in R
+
+\vspace{0.5cm}
+
+\section{Question 4}
+
