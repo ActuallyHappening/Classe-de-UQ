@@ -212,3 +212,64 @@ From the CDF definition of $\X$, $\p (\{ \X < x \}) = f_{\X}(x)$
 Therefore, the probability that the biomass exceeds 10 grams, given that it is detectable, is above in (\ref{eq:q2d-result}) $ = \frac{125}{486}$.
 
 \vspace{0.5cm}
+
+\section{Question 3}
+
+Assume that $p = 0.25$ for all the products, not just the 25 that were sampled.
+
+The sample space for this is again completely unspecified, and the $\p$ probability function is practically useless for this question.
+For convenience, the sample space $\Omega$ is therefore defined as the domain of $\X$, representing the number of products passing the specific inspection.
+
+\[
+\Omega = \{ 1, 2, 3 ... 24, 25 \}
+\]
+
+This makes the definition of $\X$ trivial, and its domain incidentally the entire sample space:
+
+\[
+\X(a \in \Omega) = a
+\]
+
+% It should be noted here that $\X'$ denotes the inverse function of $\X$, which is trivially $\X$, so $\X' = \X$.
+
+\subsection{Part a)}
+
+Since each product has a $p = 0.25$ probability of passing inspection, and there are 25 products, and it is assumed each inspection and product is independant of each other, $\X$ is a binomial distribution:
+
+\[
+\X \sim \mathrm{Bin}(n = 25, p = 0.25)
+\]
+
+Notes the following theorems about binomial distributions and $\X$:
+
+\[
+\p(\{ \X = x \}) = {n \choose x}p^x (1-p)^{n - x} = {25 \choose x}0.25^x \cdot 0.75^{25 - x}
+\]
+\[
+\E(\X) = np = \frac{25}{4}
+\]
+\[
+\Var(\X) = np(1-p) = \frac{75}{16}
+\]
+
+\subsection{Part b)}
+
+Let $\X_2$ be the random variable representing the probability distribution of $\X$ with an $n$ parameter
+such that the probability of finding a defect-free product eexceeds 99\%:
+
+
+\[
+\X_2 \sim \mathrm{Bin}(n, p = 0.25)
+\]
+
+\begin{align}
+\p(\{\X_2 \geq 1\}) &> 0.99 \\
+0.99 &< \p(\{ \X_2 \geq 1 \}) \\
+0.99 &< 1 - \p(\{ \X_2 = 0 \}) \\
+0.99 - 1 &< - {n \choose 0}(0.25)^0(0.75)^n \\
+0.01 &> 1 \cdot 1 \cdot 0.75^n \\
+\log _{0.75} 0.01 &> n \\
+\implies n &< \log _{0.75} 0.01 \approx 16.008
+\end{align}
+
+Therefore the minimum (integer) sample size is $n = 16$.
