@@ -3,11 +3,11 @@
 {\Large  {\bf STAT1301 Advanced Analysis of Scientific Data}}
 \medskip
 
-{\large {\bf Semester 2, 2025}}
+{\large {\bf Semester 2, 2025, Assignment 2}}
 
 \medskip
 
-{\large {\bf Assignment 2}}
+{\large {\bf Caleb Yates s49886350}}
 
 
 \end{center}
@@ -34,6 +34,8 @@ which can be at most $\mathbb{R}$. This function is (intuitively) named $\X$.
 This function incidentally defines the random variable, which is the motivating reason for using its letter to represent its mapping.
 The notation $\mathrm{Domain}[\X]$ will be used throughout this report to indicate the domain of the function mapping $\X$ and hence
 the random variable $\X$ itself by definition.
+
+Also, $\NormalDist(\mu, \sigma)$ indicates that $\sigma$ is $\sqrt{\Var}$, aka the standard deviation. This is opposed to the syntax of $\NormalDist(\mu, \sigma^2)$. For clarity, $\sigma = $ will be explicitely written to avoid ambiguity.
 
 %---------------------------------------------------------------------
 %Q1
@@ -366,3 +368,28 @@ Let $z$ be the value which satisfies $\p(\{ \Z < z \}) = 0.99$.
 
 Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 3 \cdot 2.33 = 1.01\dC$.
 Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 3 \cdot 2.326348 \approx 1.021\dC$.
+
+\subsection{Part c)}
+
+We are given no information about the parameters of $\X$
+\[
+\X \sim \NormalDist (\mu, \sigma)
+\]
+
+\begin{align}
+\pr{\mu - 1\dC < \X < \mu + 1\dC} &= 95\% \\
+0.95 &= \pr{\frac{(\mu - 1) - \mu}{\sigma} < \frac{\X - \mu}{\sigma} < \frac{(\mu - 1) - \mu}{\sigma}} \\
+&= \pr{\frac{-1}{\sigma} < \Z < \frac{+1}{\sigma}} \\
+&= 1 - (\pr{\Z < \frac{-1}{\sigma}} + \pr{\Z > \frac{+1}{\sigma}}) \\
+&= 1 - 2\pr{\Z < \frac{-1}{\sigma}} \\
+0.05 &= 2\pr{\Z < \frac{-1}{\sigma}} \\
+0.025 &= \pr{\Z < \frac{-1}{\sigma}} \\
+1 - 0.025 &= 1- \pr{\Z < \frac{-1}{\sigma}} \\
+0.975 &= \pr{\Z < \frac{+1}{\sigma}} \\
+\text{Let $z$ be the solution to } 0.975 &= \pr{\Z < z} \\
+\implies z &= \frac{+1}{\sigma} \\
+\implies \sigma &= \frac{1}{z}
+\end{align}
+
+Using the stats table, $z \approx 1.96$ which implies $\sigma \approx \frac{1}{1.96} \approx 0.510204 \approx 0.51$.
+Using R $z = \text{qnorm}(0.975) \approx 1.959964$ which implies $\sigma \approx \frac{1}{1.959964} \approx 0.5102135 \approx 0.51$.
