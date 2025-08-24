@@ -273,3 +273,32 @@ such that the probability of finding a defect-free product eexceeds 99\%:
 \end{align}
 
 Therefore the minimum (integer) sample size is $n = 16$.
+
+\subsection{Part c)}
+
+The random variable $\Y$ is dependant on $\X$.
+Given a possibility $a \in \Omega$ from the sample space, $\Y(a)$ explicitely depends upon $\X(a)$ such that it exactly equals:
+
+\begin{align}
+\Y(a \in \Omega) &= 3\X(a) - (25 - \X(a)) \\
+&= 4\X(a) - 25
+\end{align}
+
+This allows us to calculate $\E(\X)$ and $\Var(\X)$ relatively easily using probability theorems:
+
+\begin{align}
+\E(\Y) &= \E(4\X - 25) \\
+&= 4\E(\X) - 25 \\
+&= 4 \cdot \frac{25}{4} - 25 \\
+&= 0
+\end{align}
+
+\begin{align}
+\Var(\Y) &= \Var(4\X - 25) \\
+&= 4^2 \Var(\X) \\
+&= 16 \cdot \frac{75}{16} \\
+&= 75
+\end{align}
+
+\subsection{Part d)}
+
