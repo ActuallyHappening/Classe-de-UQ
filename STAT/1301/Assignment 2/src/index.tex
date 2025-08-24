@@ -153,11 +153,57 @@ Let $F_{\X}$ be the CDF of $\X$:
 
 \begin{align}
 F_{\X} &= \int _{-\infinity} ^{x} f_{\X}(x) \mathrm{d}x \\
-&= \int _{-\infinity} ^{x} c(x^2 - 60x + 800) \mathrm{d}x \\
-&= c [\frac{1}{3}x^3 - 30x^2 + 800x]_{x \to -\infinity}^{x = x} \\
-\frac{F_{\X}}{c} &= [\frac{1}{3} x^3 - 30x^2 + 800x] - \lim_{x \to -\infinity} [\frac{1}{3} x^3 - 30x^2 + 800x] \\
+&= \int _0 ^{x} c(x^2 - 60x + 800) \mathrm{d}x \\
+&= c [\frac{1}{3}x^3 - 30x^2 + 800x]_{x =0}^{x = x} \\
+\frac{F_{\X}}{c} &= [\frac{1}{3} x^3 - 30x^2 + 800x] - [\frac{1}{3} 0^3 - 30\cdot0^2 + 800\cdot0] \\
 \implies F_{\X} &= c(\frac{1}{3} x^3 - 30x^2 + 800x) \text{ for } 0 \leq x \leq 20 \\
 &= \frac{1}{20000}x^3 - \frac{9}{2000}x^2 + \frac{3}{25}x
 \end{align}
+
+\subsection{Part c)}
+
+\begin{align}
+\E(\X) &= \int _{x \in \mathrm{Domain}[\X]} xf_{\X}\mathrm{d}x \\
+&= \int _0 ^{20} x \cdot c(x^2 - 60x + 800)\mathrm{d}x \\
+\frac{\E(\X)}{c} &= \int _0 ^{20} x^3 - 60x^2 + 800x \mathrm{d}x \\
+ &= [\frac{1}{4} x^4 - 20x^3 + 400x^2]^{x=20}_{x=0} \\
+ &= [\frac{1}{4}(20)^4 - 20(20)^3 + 400 (20)^2] - [0 - 0 + 0] \\
+ &= 40000 - 160000 + 160000 \\
+\E(\X) &= c \cdot 40000 \\
+\E(\X) &= 6 \text{ grams}
+\end{align}
+
+\subsection{Part d)}
+
+\begin{align}
+% \[
+& \p (\{ \X > 10 \} | \{ \X > 2 \}) \\
+&= \frac{\p(\{ \X > 10 \} \cap  \{ \X > 2 \})}{\{ \X > 2 \}} \\
+&= \frac{\p(\{ \X > 10 \})}{\p (\{ \X > 2 \})}
+% \]
+\end{align}
+
+From the CDF definition of $\X$, $\p (\{ \X < x \}) = f_{\X}(x)$
+
+\begin{align}
+\implies \p(\{ \X > 10 \}) &= 1 - \p (\{ \X < 10 \}) \\
+&= 1 - F_{\X}(10) \\
+&= 1 - \frac{4}{5} \\
+&= \frac{1}{5}
+\end{align}
+
+\begin{align}
+\implies \p(\{ \X > 2 \}) &= 1 - \p (\{ \X < 2 \}) \\
+&= 1 - F_{\X}(2) \\
+&= 1 - \frac{139}{625} \\
+&= \frac{486}{625}
+\end{align}
+
+\[
+\implies \frac{\p(\{ \X > 10 \})}{\p (\{ \X > 2 \})}
+= \frac{\frac{1}{5}}{\frac{486}{625}}
+= \frac{125}{486}
+\approx 0.2572
+\]
 
 \vspace{0.5cm}
