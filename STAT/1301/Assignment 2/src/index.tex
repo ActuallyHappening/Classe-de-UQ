@@ -35,7 +35,21 @@ This function incidentally defines the random variable, which is the motivating 
 The notation $\mathrm{Domain}[\X]$ will be used throughout this report to indicate the domain of the function mapping $\X$ and hence
 the random variable $\X$ itself by definition.
 
-Also, $\NormalDist(\mu, \sigma)$ indicates that $\sigma$ is $\sqrt{\Var}$, aka the standard deviation. This is opposed to the syntax of $\NormalDist(\mu, \sigma^2)$. For clarity, $\sigma = $ will be explicitely written to avoid ambiguity.
+Also, $\NormalDist(\mu, \sigma)$ indicates that $\sigma$ is $\sqrt{\Var}$, aka the standard deviation. This is opposed to the syntax of $\NormalDist(\mu, \sigma^2)$. For clarity, $\sigma = $ will always be explicitely written to avoid ambiguity.
+
+Various probability (and set) theorems are used throughout this report. For clarity, the following are named:
+
+\begin{equation} \label{th:pr-opposites}
+\pr{\X < x} = \pr{x > \X} \forall x
+\end{equation}
+Above (\ref{th:pr-opposites}) is true for any random variable $\X$.
+
+\begin{align} \label{th:normal-dist-symmetry}
+\X \sim &\NormalDist (\mu = 0, \sigma) \\
+\implies &\pr{\X < x} = 1 - \pr{\X > -x} \\
+\iff &\pr{\X < -x} = 1 - \pr{\X > x}
+\end{align}
+When $\X$ is a symmetrical distribution around 0, for example a standard normal distribution $\Z$, above (\ref{th:normal-dist-symmetry}) is true.
 
 \newpage
 
