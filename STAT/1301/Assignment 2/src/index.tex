@@ -317,3 +317,48 @@ This can be calculated by running 1 - pbinom(12, 25, 0.25) in R
 
 \section{Question 4}
 
+Let $\Omega = (-\infinity, +\infinity)$ in units $\dC$, representing the continuous range of possible temperatures in the storeroom.
+An argument could be made to limit this to $(-\infinity, 8)$.
+
+Let $\X$ be a random variable for the temperature inside the storeroom.
+
+\subsection{Part a)}
+
+\[
+\X \sim \NormalDist (\mu = 7.5\dC, \sigma = 0.3\dC)
+\]
+
+\begin{align}
+\pr{7.2 < \X < 8} &= \pr{\frac{7.2 - 7.5}{0.3} < \frac{\X - \mu}{\sigma} < \frac{8 - 7.5}{0.3}} \\
+&= \pr{-\frac{2}{3} < \Z < \frac{5}{3}} \\
+&= \pr{\Z < \frac{5}{3}} - \pr{-\frac{2}{3} < \Z} \\
+\text{Playing around with } \pr{-\frac{2}{3} < \Z} \\
+\pr{-\frac{2}{3} < \Z} &= \pr{\Z > -\frac{2}{3}} \\
+\end{align}
+
+\subsection{Part b)}
+
+\[
+\X \sim \mathit{N}(\mu, \sigma = 0.3 \dC)
+\]
+
+\begin{align}
+\p(\{ \X > 8\dC \}) &= 1\% \\
+0.01 &= \p(\{ \X > 8 \}) \\
+&= 1 - \p(\{ \X < 8 \}) \\
+0.99 &= \p(\{ \X < 8 \}) \\
+&= \p(\{ \frac{\X - \mu}{\sigma} = \frac{8 - \mu}{\sigma}\}) \\
+0.99 &= \p(\{ \Z = \frac{8 - \mu}{3}\}) \\
+\end{align}
+
+Let $z$ be the value which satisfies $\p(\{ \Z < z \}) = 0.99$.
+
+\begin{align}
+\implies \frac{8 - \mu}{3} &= z \\
+8 - \mu &= 3z \\
+-\mu &= 3x - 8 \\
+\mu &= 8 - 3z
+\end{align}
+
+Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 3 \cdot 2.33 = 1.01\dC$.
+Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 3 \cdot 2.326348 \approx 1.021\dC$.
