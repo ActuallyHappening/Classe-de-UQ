@@ -292,7 +292,7 @@ Notes the following theorems about binomial distributions and $\X$:
 \subsection{Part b)}
 
 Let $\X_2$ be the random variable representing the probability distribution of $\X$ with an $n$ parameter
-such that the probability of finding a defect-free product eexceeds 99\%:
+such that the probability of finding a defect-free product exceeds 99\%:
 
 
 \[
@@ -367,16 +367,16 @@ Let $\X$ be a random variable for the temperature inside the storeroom.
 
 \begin{align*}
 \pr{7.2 < \X < 8} &= \pr{\frac{7.2 - 7.5}{0.3} < \frac{\X - \mu}{\sigma} < \frac{8 - 7.5}{0.3}} \\
-&= \pr{-\frac{2}{3} < \Z < \frac{5}{3}} \\
-&= \pr{\Z < \frac{5}{3}} - \pr{-\frac{2}{3} < \Z} \\
-&= \pr{\Z < \frac{5}{3}} - \pr{\Z > -\frac{2}{3}}
+&= \pr{-1 < \Z < \frac{5}{3}} \\
+&= \pr{\Z < \frac{5}{3}} - \pr{-1 < \Z} \\
+&= \pr{\Z < \frac{5}{3}} - \pr{\Z > -1}
 \text{	from (\ref{th:pr-opposites})} \\
-&= \pr{\Z < \frac{5}{3}} - (1 - \pr{\Z < \frac{2}{3}})
+&= \pr{\Z < \frac{5}{3}} - (1 - \pr{\Z < 1})
 \text{	from (\ref{th:normal-dist-symmetry})} \\
-&= \pr{\Z < \frac{5}{3}} + \pr{\Z < \frac{2}{3}} - 1
+&= \pr{\Z < \frac{5}{3}} + \pr{\Z < 1} - 1
 \end{align*}
-Using stats tables this equals $0.9515 + 0.7454 - 1 = 0.6969$.
-Using R running pnorm($\frac{5}{3}$) - pnorm($-\frac{2}{3}$) = 0.6997.
+Using stats tables this equals $0.9515 + 0.8413 - 1 = 0.7928$.
+Using R running pnorm($\frac{5}{3}$) - pnorm($-1$) = 0.7935544 $\approx$ 0.7926.
 
 \subsection{Part b)}
 
@@ -397,14 +397,14 @@ Using R running pnorm($\frac{5}{3}$) - pnorm($-\frac{2}{3}$) = 0.6997.
 Let $z$ be the value which satisfies $\p(\{ \Z < z \}) = 0.99$.
 
 \begin{align*}
-\implies \frac{8 - \mu}{0.33} &= z \\
-8 - \mu &= 0.33z \\
+\implies \frac{8 - \mu}{0.3} &= z \\
+8 - \mu &= 0.3z \\
 -\mu &= 0.3z - 8 \\
-\mu &= 8 - 0.33z
+\mu &= 8 - 0.3z
 \end{align*}
 
-Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 0.33 \cdot 2.33 = 1.01\dC$.
-Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 3 \cdot 2.326348 \approx 1.021\dC$.
+Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 0.3 \cdot 2.33 = 7.301\dC$.
+Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 0.3 \cdot 7.302096 \approx 7.3\dC$.
 
 \subsection{Part c)}
 
