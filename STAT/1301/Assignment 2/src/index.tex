@@ -12,7 +12,7 @@
 
 \end{center}
 
-\section{Introduction}
+\section*{Introduction}
 
 Throughout the report, the following syntactical shortcuts and notation will be used.
 
@@ -73,7 +73,7 @@ For simple cases of one random variable, this can be simplified to (\ref{form:ex
 
 %---------------------------------------------------------------------
 %Q1
-\section{Question 1}
+\section*{Question 1}
 
 To begin, lets define the sample space
 
@@ -92,7 +92,7 @@ Notice this follows a uniform probability distribution:
 
 
 % a)
-\subsection{Part a)}
+\subsection*{Part a)}
 
 Let $X$ be a random variable representing the payout of a given dice roll $(a,b)\in \Omega$:
 \[
@@ -132,7 +132,7 @@ Let $f_{\X}$ be the PMF of $\X$. Note $f_{\X}(x \in \Omega) = \p (\{ \X = x \})$
 For all other values $x$, $f_{\X}(x) = 0$
 
 % b)
-\subsection{Part b)}
+\subsection*{Part b)}
 
 This makes determining the expected value of $\X$ trivial:
 \begin{align*}
@@ -145,7 +145,7 @@ This makes determining the expected value of $\X$ trivial:
 Therefore the expected of $\X$ is \$12.25
 
 % c)
-\subsection{Part c)}
+\subsection*{Part c)}
 
 Evaluating $\Var(\X)$ is similarly trivial
 
@@ -161,13 +161,13 @@ Evaluating $\Var(\X)$ is similarly trivial
 
 \newpage
 
-\section{Question 2}
+\section*{Question 2}
 
 Understanding this question in terms of a sample space isn't very fruitful.
 $\Omega$ is completely unspecified, we can only deduce that $|\Omega| \geq (0, 20)$, which implies it is continuous.
 $\p (A) : \exists A \in \Omega$ is also completely unknown.
 
-\subsection{Part a)}
+\subsection*{Part a)}
 
 Let $\X$ be the continuous random variable of algae growth as measured in grams of biomass produced.
 Note $\mathrm{Domain}[\X] = (0, 20)$.
@@ -184,7 +184,7 @@ Since $\X$ is a random variable, its PDF $f_{\X}$ must sum to $1$:
 c &= \frac{3}{20000}
 \end{align*}
 
-\subsection{Part b)}
+\subsection*{Part b)}
 
 Let $F_{\X}$ be the CDF of $\X$:
 
@@ -197,7 +197,7 @@ F_{\X} &= \int _{-\infinity} ^{x} f_{\X}(x) \mathrm{d}x \\
 &= \frac{1}{20000}x^3 - \frac{9}{2000}x^2 + \frac{3}{25}x
 \end{align*}
 
-\subsection{Part c)}
+\subsection*{Part c)}
 
 \begin{align*}
 \E(\X) &= \int _{x \in \mathrm{Domain}[\X]} xf_{\X}\mathrm{d}x \\
@@ -210,7 +210,7 @@ F_{\X} &= \int _{-\infinity} ^{x} f_{\X}(x) \mathrm{d}x \\
 \E(\X) &= 6 \text{ grams}
 \end{align*}
 
-\subsection{Part d)}
+\subsection*{Part d)}
 
 \begin{align*}
 % \[
@@ -250,7 +250,7 @@ Therefore, the probability that the biomass exceeds 10 grams, given that it is d
 
 \newpage
 
-\section{Question 3}
+\section*{Question 3}
 
 Assume that $p = 0.25$ for all the products, not just the 25 that were sampled.
 
@@ -269,7 +269,7 @@ This makes the definition of $\X$ trivial, and its domain incidentally the entir
 
 % It should be noted here that $\X'$ denotes the inverse function of $\X$, which is trivially $\X$, so $\X' = \X$.
 
-\subsection{Part a)}
+\subsection*{Part a)}
 
 Since each product has a $p = 0.25$ probability of passing inspection, and there are 25 products, and it is assumed each inspection and product is independant of each other, $\X$ is a binomial distribution:
 
@@ -289,7 +289,7 @@ Notes the following theorems about binomial distributions and $\X$:
 \Var(\X) = np(1-p) = \frac{75}{16}
 \]
 
-\subsection{Part b)}
+\subsection*{Part b)}
 
 Let $\X_2$ be the random variable representing the probability distribution of $\X$ with an $n$ parameter
 such that the probability of finding a defect-free product exceeds 99\%:
@@ -311,7 +311,7 @@ such that the probability of finding a defect-free product exceeds 99\%:
 
 Therefore the minimum (integer) sample size is $n = 16$.
 
-\subsection{Part c)}
+\subsection*{Part c)}
 
 The random variable $\Y$ is dependant on $\X$.
 Given a possibility $a \in \Omega$ from the sample space, $\Y(a)$ explicitely depends upon $\X(a)$ such that it exactly equals:
@@ -337,7 +337,7 @@ This allows us to calculate $\E(\X)$ and $\Var(\X)$ relatively easily using prob
 &= 75
 \end{align*}
 
-\subsection{Part d)}
+\subsection*{Part d)}
 
 Since $\Y$ is defined in terms of $\X$, this isn't too difficult to evaluate:
 
@@ -352,14 +352,14 @@ This can be calculated by running 1 - pbinom(12, 25, 0.25) in R
 
 \newpage
 
-\section{Question 4}
+\section*{Question 4}
 
 Let $\Omega = (-\infinity, +\infinity)$ in units $\dC$, representing the continuous range of possible temperatures in the storeroom.
 An argument could be made to limit this to $(-\infinity, 8)$.
 
 Let $\X$ be a random variable for the temperature inside the storeroom.
 
-\subsection{Part a)}
+\subsection*{Part a)}
 
 \[
 \X \sim \NormalDist (\mu = 7.5\dC, \sigma = 0.3\dC)
@@ -378,7 +378,7 @@ Let $\X$ be a random variable for the temperature inside the storeroom.
 Using stats tables this equals $0.9525 + 0.8413 - 1 = 0.7938$.
 Using R running pnorm($\frac{5}{3}$) - pnorm($-1$) = 0.7935544 $\approx$ 0.7936.
 
-\subsection{Part b)}
+\subsection*{Part b)}
 
 \[
 \X \sim \mathit{N}(\mu, \sigma = 0.3 \dC)
@@ -406,7 +406,7 @@ Let $z$ be the value which satisfies $\p(\{ \Z < z \}) = 0.99$.
 Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 0.3 \cdot 2.33 = 7.301\dC$.
 Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 0.3 \cdot 2.36348 = 7.302096 \approx 7.302\dC$.
 
-\subsection{Part c)}
+\subsection*{Part c)}
 
 We are given no information about the parameters of $\X$
 \[
