@@ -35,8 +35,6 @@ This function incidentally defines the random variable, which is the motivating 
 The notation $\mathrm{Domain}[\X]$ will be used throughout this report to indicate the domain of the function mapping $\X$ and hence
 the random variable $\X$ itself by definition.
 
-Also, $\NormalDist(\mu, \sigma)$ indicates that $\sigma$ is $\sqrt{\Var}$, aka the standard deviation. This is opposed to the syntax of $\NormalDist(\mu, \sigma^2)$. For clarity, $\sigma = $ will always be explicitely written to avoid ambiguity.
-
 Various probability (and set) theorems are used throughout this report. For clarity, the following are named:
 
 \begin{equation} \label{th:pr-opposites}
@@ -273,7 +271,7 @@ These definition are not necessary to solve this question, however, and are incl
 
 \subsection*{Part a)}
 
-Since each product has a $p = 0.25$ probability of passing inspection, and there are 25 products, and it is assumed each inspection and product is independant of each other, $\X$ is a binomial distribution:
+Since each product has a $p = 0.25$ probability of passing inspection, and there are 25 products, and it is assumed each product inspection is independant of each other, $\X$ is a binomial distribution:
 
 \[
 \X \sim \mathrm{Bin}(n = 25, p = 0.25)
@@ -415,6 +413,8 @@ We are given no information about the parameters of $\X$
 \[
 \X \sim \NormalDist (\mu, \sigma)
 \]
+
+Note, $\NormalDist(\mu, \sigma)$ indicates that $\sigma$ is $\sqrt{\Var}$, aka the standard deviation. This is opposed to the syntax of $\X \sim \NormalDist(\mu, \sigma^2)$.
 
 \begin{align*}
 \pr{\mu - 1\dC < \X < \mu + 1\dC} &= 95\% \\
