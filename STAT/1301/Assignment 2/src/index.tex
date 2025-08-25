@@ -63,7 +63,7 @@ Also, an equivalent formula for $\E (\X)$ was used:
 \E (\X) = \sum _{c \in \Omega} \X(c) \cdot \pr{c}
 \end{equation}
 Recall that $\X(c)$ is the function mapping for the random variable $\X$.
-For simple cases of one random variable, this can be simplified to (\ref{form:expected-value-simple}) by noticing that the sample space can be partitioned into 
+For simple cases of one random variable, this can be simplified to (\ref{form:expected-value-simple}) by noticing that the sample space can be partitioned into
 \begin{equation}
 \label{form:expected-value-simple}
 \E(\X) = \sum _{x \in \Domain{\X}} x \cdot \pr{\X = x}
@@ -391,19 +391,19 @@ Using R running pnorm($\frac{5}{3}$) - pnorm($-\frac{2}{3}$) = 0.6997.
 \text{	from (\ref{th:pr-inverse})} \\
 0.99 &= \p(\{ \X < 8 \}) \\
 &= \p(\{ \frac{\X - \mu}{\sigma} = \frac{8 - \mu}{\sigma}\}) \\
-0.99 &= \p(\{ \Z = \frac{8 - \mu}{3}\}) \\
+0.99 &= \p(\{ \Z = \frac{8 - \mu}{0.3}\}) \\
 \end{align*}
 
 Let $z$ be the value which satisfies $\p(\{ \Z < z \}) = 0.99$.
 
 \begin{align*}
-\implies \frac{8 - \mu}{3} &= z \\
-8 - \mu &= 3z \\
--\mu &= 3x - 8 \\
-\mu &= 8 - 3z
+\implies \frac{8 - \mu}{0.33} &= z \\
+8 - \mu &= 0.33z \\
+-\mu &= 0.3z - 8 \\
+\mu &= 8 - 0.33z
 \end{align*}
 
-Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 3 \cdot 2.33 = 1.01\dC$.
+Using the stats table, $z \approx 2.33$ which implies $\mu \approx 8 - 0.33 \cdot 2.33 = 1.01\dC$.
 Using R, $z = \text{qnorm}(0.99) \approx 2.326348$, which implies $\mu \approx 8 - 3 \cdot 2.326348 \approx 1.021\dC$.
 
 \subsection{Part c)}
