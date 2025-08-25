@@ -156,7 +156,7 @@ Evaluating $\Var(\X)$ is similarly trivial
 &= (1 - \frac{49}{4})^2 \cdot \frac{1}{36} + (2 - \frac{49}{4})^2 \cdot \frac{2}{36} + \cdots
 	(30 - \frac{49}{4})^2 \cdot \frac{2}{36} + (36 - \frac{49}{4})^2 \cdot \frac{1}{36} \\
 &= \frac{11515}{144} \approx 79.97 \\
-\implies \sigma _{\X} &= \sqrt{\Var(\X)} = \sqrt{\frac{11515}{144}} \approx 8.942
+\implies \sigma _{\X} &= \sqrt{\Var(\X)} = \sqrt{\frac{11515}{144}} \approx \$8.942
 \end{align*}
 
 \newpage
@@ -267,6 +267,8 @@ This makes the definition of $\X$ trivial, and its domain incidentally the entir
 \X(a \in \Omega) = a
 \]
 
+These definition are not necessary to solve this question, however, and are included only for completeness.
+
 % It should be noted here that $\X'$ denotes the inverse function of $\X$, which is trivially $\X$, so $\X' = \X$.
 
 \subsection*{Part a)}
@@ -303,13 +305,14 @@ such that the probability of finding a defect-free product exceeds 99\%:
 \p(\{\X_2 \geq 1\}) &> 0.99 \\
 0.99 &< \p(\{ \X_2 \geq 1 \}) \\
 0.99 &< 1 - \p(\{ \X_2 = 0 \}) \\
+0.99 &< 1 - {n \choose 0}(0.25)^0(0.75)^n \\
 0.99 - 1 &< - {n \choose 0}(0.25)^0(0.75)^n \\
 0.01 &> 1 \cdot 1 \cdot 0.75^n \\
-\log _{0.75} 0.01 &> n \\
-\implies n &< \log _{0.75} 0.01 \approx 16.008
+\log _{0.75} 0.01 &< n \\
+\implies n &> \log _{0.75} 0.01 \approx 16.008
 \end{align*}
 
-Therefore the minimum (integer) sample size is $n = 16$.
+Therefore the minimum (integer) sample size is $n = 17$.
 
 \subsection*{Part c)}
 
