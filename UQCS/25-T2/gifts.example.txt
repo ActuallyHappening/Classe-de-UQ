@@ -1,0 +1,6 @@
+4
+dave laura owen amr
+dave 200 3 laura owen amr
+owen 500 1 dave
+amr 150 2 owen owen
+laura 0 2 amr dave
