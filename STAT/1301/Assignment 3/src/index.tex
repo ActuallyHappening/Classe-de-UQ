@@ -2,4 +2,17 @@
 
 \subsection{Part a)}
 
+Let $\Omega$ be the sample space. Therefore $\pr{\Omega} = 1$.
+Adding all the joint pmf values must sum to 1:
 
+\begin{align*}
+\{ \Omega \} &= \bigcup \limits _{x} \bigcup \limits _y \{ \X = x \} \cap \{ \Y = y \} \\
+\pr{\Omega} &= 1 \\
+\implies 1 &= \p((\{ \X = -1 \} \cap \{ \Y = -1 \}) \cup \ldots \cup (\{ \X = 1 \} \cap \{ \Y = 1 \})) \\
+&= \p(\{ \X = -1 \} \cap \{ \Y = -1 \}) + \ldots + \p(\{ \X = 1 \} \cap \{ \Y = 1 \})) \\
+&= (p - \frac{1}{16}) + (\frac{1}{4} - p) + (0) +
+(\frac{1}{8}) + (\frac{3}{16}) + (\frac{1}{8}) +
+(p + \frac{1}{16}) + (\frac{1}{16}) + (\frac{1}{4} - p) \\
+1 &= -\frac{1}{16} + \frac{4}{16} + \frac{7}{16} + \frac{1}{16} + \frac{1}{16} + \frac{4}{16}
+1 &= 1
+\end{align*}
