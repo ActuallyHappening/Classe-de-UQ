@@ -4,3 +4,7 @@ dave 200 3 laura owen amr
 owen 500 1 dave
 amr 150 2 owen owen
 laura 0 2 amr dave
+2
+liz steve
+liz 30 1 steve
+steve 55 1 liz

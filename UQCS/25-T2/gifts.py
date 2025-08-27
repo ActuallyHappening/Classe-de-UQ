@@ -12,8 +12,8 @@ if __name__ == "__main__":
 			name = line[0]
 			giving = int(line[1])
 			num = int(line[2])
-			names = line[3:]
-			people[name] = { "giving": giving, "num_names": num, "names": names, "receiving": 0, "leftover": 0 }
+			persons_names = line[3:]
+			people[name] = { "giving": giving, "num_names": num, "names": persons_names, "receiving": 0, "leftover": 0 }
 		for current_name, person in people.items():
 			each = person["giving"] // person["num_names"]
 			person["leftover"] = person["giving"] % person["num_names"]
@@ -22,4 +22,3 @@ if __name__ == "__main__":
 		for name in names:
 			net = people[name]["receiving"] - people[name]["giving"] + people[name]["leftover"]
 			print(f"{name} {net}")
-		print(people)
