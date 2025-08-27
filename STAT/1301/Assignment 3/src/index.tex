@@ -13,6 +13,25 @@ Adding all the joint pmf values must sum to 1:
 &= (p - \frac{1}{16}) + (\frac{1}{4} - p) + (0) +
 (\frac{1}{8}) + (\frac{3}{16}) + (\frac{1}{8}) +
 (p + \frac{1}{16}) + (\frac{1}{16}) + (\frac{1}{4} - p) \\
-1 &= -\frac{1}{16} + \frac{4}{16} + \frac{7}{16} + \frac{1}{16} + \frac{1}{16} + \frac{4}{16}
+1 &= -\frac{1}{16} + \frac{4}{16} + \frac{7}{16} + \frac{1}{16} + \frac{1}{16} + \frac{4}{16} \\
 1 &= 1
 \end{align*}
+
+Unfortunately, this tells us no information about $p$.
+From the definition of probability, $\pr{c}$ for $c \in \Omega$ must be greater or equal to 0, $\pr{c \in \Omega} \geq 0$.
+This can be used to restrict the possible values of $p$:
+
+\begin{align*}
+\p(A \subseteq \Omega) &\geq 0 \\
+\implies \p(\{ \X = -1 \} \cap \{ \Y = -1 \}) &\geq 0 \\
+p - \frac{1}{16} &\geq 0 \\
+p &\geq \frac{1}{16} \\
+\implies \p(\{ \X = 0 \} \cap \{ \Y = -1 \}) &\geq 0 \\
+\frac{1}{4} - p &\geq 0 \\
+p &\leq \frac{1}{4} \\
+\implies \p(\{ \X = -1 \} \cap \{ \Y = 1 \}) &\geq 0 \\
+p + \frac{1}{16} &\geq 0 \\
+p &\leq \frac{1}{16}
+\end{align*}
+
+Therefore, $\frac{1}{16} \leq p \leq \frac{1}{4}$, and can be any value within this range.
