@@ -1,14 +1,17 @@
-
 def sum_digits(num: int) -> int:
+	num = num
 	sum = 0
-	for char in str(num):
-		sum  = sum + int(char)
+	while num >= 10:
+		sum = sum + num % 10
+		num = num // 10
+	sum = sum + num
 	return sum
 
-while True:
-	num = int(input())
-	if num == 0:
-		break
-	while num >= 9:
-		num = sum_digits(num)
-	print(f"{num}")
+if __name__ == "__main__":
+	while True:
+		num = int(input())
+		if num == 0:
+			break
+		while num >= 9:
+			num = sum_digits(num)
+		print(f"{num}")
