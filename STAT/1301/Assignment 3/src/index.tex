@@ -33,6 +33,10 @@ p &\leq \frac{1}{4} \\
 p + \frac{1}{16} &\geq 0 \\
 p &\leq \frac{1}{16}
 \end{align*}
+\begin{equation}
+\label{th:q1a-p-domain}
+\implies p \in [\frac{1}{16}, \frac{1}{4}]
+\end{equation}
 
 Therefore, $\frac{1}{16} \leq p \leq \frac{1}{4}$, and can be any value within this range.
 
@@ -84,3 +88,34 @@ p + \frac{1}{8} & y = -1 \\
 0 & \text{otherwise}
 \end{cases}
 \end{align*}
+
+\subsection{Part d)}
+
+$\X$ and $\Y$ are independant if
+\begin{equation} \label{th:q1d-independence}
+\p(\{ \X = x \} \cap \{ \Y = y \}) = \pr{\X = x} \cdot \pr{\Y = y} = f_\X(x) \cdot f_\Y(y)
+\end{equation}
+for all possible values $x$ and $y$. Therefore, this must be true for $x = -1$ and $y = 1$:
+
+\begin{multicols}{2}
+\begin{align*}
+\mathrm{LHS} &= \p(\{ \X = -1 \} \cap \{ \Y = 1 \}) \\
+&= p - \frac{1}{16}
+\end{align*}
+\begin{align*}
+\mathrm{RHS} &= \pr{\X = -1}\pr{\Y = 1} \\
+&= (2p + \frac{1}{8})(\frac{3}{8}) \\
+&= \frac{3}{4}p + \frac{3}{64}
+\end{align*}
+\end{multicols}
+
+As shown above, LHS and RHS are only equal for zero or one values of $p$. Letting LHS = RHS, we can find this exact value (or lack thereof):
+
+\begin{align*}
+p - \frac{1}{16} &= \frac{3}{4}p + \frac{3}{64} \\
+\frac{1}{4}p &= \frac{3}{64} + \frac{1}{16} \\
+p &= \frac{7}{64} \cdot 4 = \frac{7}{16}
+\end{align*}
+
+Therefore LHS = RHS only when $p = \frac{7}{16}$, however from (\ref{th:q1a-p-domain}) this is not within the potential domain of $p$.
+Therefore LHS $\neq$ RHS, showing one counterexample to (\ref{th:q1d-independence}), hence $\X$ and $\Y$ are not independent.
