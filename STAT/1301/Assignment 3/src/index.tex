@@ -40,5 +40,47 @@ Therefore, $\frac{1}{16} \leq p \leq \frac{1}{4}$, and can be any value within t
 Aim is to find $\pr{\X = \Y}$:
 
 \begin{align*}
-\pr{\X = \Y} &= \sum _{a} \p(\{ \X = a \} \cap \{ \Y = a \}) \text{	where	}
+\pr{\X = \Y} &= \sum _{a} \p(\{ \X = a \} \cap \{ \Y = a \}) \\
+&= \p(\{ \X = -1 \} \cap \{ \Y = -1 \}) + \p(\{ \X = 0 \} \cap \{ \Y = 0 \}) + \p(\{ \X = 1 \} \cap \{ \Y = 1 \}) \\
+&= (p - \frac{1}{16}) + (\frac{3}{16}) + (\frac{1}{4} - p) \\
+&= \frac{6}{16} = \frac{3}{}
+\end{align*}
+
+\subsection{Part c)}
+The marginal pdf of $\X$ is $f_{\X}(x)$, which is equal to $\pr{\X = x}$ and can be manually evaluated:
+
+\begin{align*}
+\pr{\X = -1} &= \sum _y \p(\{ \X = -1 \} \cap \{ \Y = y \}) \\
+&= (p - \frac{1}{16}) + (\frac{1}{8}) + (p + \frac{1}{16}) \\
+&= 2p + \frac{1}{8} \\
+\pr{\X = 0} &= \sum _y \p(\{ \X = 0 \} \cap \{ \Y = y \}) \\
+&= (\frac{1}{4} - p) + (\frac{3}{16}) + (\frac{1}{16}) \\
+&= -p + \frac{1}{2} \\
+\pr{\X = 1} &= \sum _y \p(\{ \X = 1 \} \cap \{ \Y = y \}) \\
+&= (0) + (\frac{1}{8}) + (\frac{1}{4} - p) \\
+&= -p + \frac{3}{8} \\
+\implies f_{\X}(x) = \pr{\X = x} &= \begin{cases}
+2p + \frac{1}{8} & x = -1 \\
+-p + \frac{1}{2} & x = 0 \\
+-p + \frac{3}{8} & x = 1 \\
+0 & \text{otherwise}
+\end{cases}
+\end{align*}
+
+\begin{align*}
+\pr{\Y = -1} &= \sum _x \p(\{ \X = x \} \cap \{ \Y = -1 \}) \\
+&= (p - \frac{1}{16}) + (\frac{1}{8}) + (p + \frac{1}{16}) \\
+&= p + \frac{1}{8} \\
+\pr{\Y = 0} &= \sum _x \p(\{ \X = x \} \cap \{ \Y = 0 \}) \\
+&= (\frac{1}{8}) + (\frac{3}{16}) + (\frac{1}{8}) \\
+&= \frac{7}{16} \\
+\pr{\Y = 1} &= \sum _x \p(\{ \X = x \} \cap \{ \Y = 1 \}) \\
+&= (p + \frac{1}{16}) + (\frac{1}{16}) + (\frac{1}{4} - p) \\
+&= \frac{6}{18} = \frac{3}{8} \\
+\implies f_{\Y}(x) = \pr{\Y = y} &= \begin{cases}
+p + \frac{1}{8} & y = -1 \\
+\frac{7}{16} & y = 0 \\
+\frac{3}{8} & y = 1 \\
+0 & \text{otherwise}
+\end{cases}
 \end{align*}
