@@ -151,7 +151,7 @@
         <mxCell id="X_j-xWhzjBxdc1Z0yHY--45" value="TRAINS" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
           <mxGeometry x="340" y="760" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="X_j-xWhzjBxdc1Z0yHY--46" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="X_j-xWhzjBxdc1Z0yHY--45" target="X_j-xWhzjBxdc1Z0yHY--23" edge="1">
+        <mxCell id="X_j-xWhzjBxdc1Z0yHY--46" value="" style="endArrow=none;html=1;rounded=0;exitX=1;exitY=0.5;exitDx=0;exitDy=0;shape=link;" parent="1" source="X_j-xWhzjBxdc1Z0yHY--45" target="X_j-xWhzjBxdc1Z0yHY--23" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="330" y="694" as="sourcePoint" />
             <mxPoint x="373" y="670" as="targetPoint" />
