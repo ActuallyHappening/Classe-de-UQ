@@ -7,6 +7,9 @@
 \usepackage{mathtools}
 \usepackage{multicol}
 
+\usepackage{graphicx} % for images
+\graphicspath{ {../images/} }
+
 \usepackage{enumitem}
 \usepackage{blindtext}
 
@@ -26,6 +29,10 @@
 
 \newcommand{\infinity}{\infty}
 \newcommand{\dC}{\text{℃}}
+
+% from https://tex.stackexchange.com/questions/60545/should-i-mathrm-the-d-in-my-integrals
+% \newcommand{\d}{\mathrm{d}}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
 
 %===========================================================%
 \begin{document}

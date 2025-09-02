@@ -160,13 +160,69 @@ Let $D$ be the set of all $<x, y>$ that is inside (or on the boundary) of the tr
 \subsection{Part a)}
 
 We are told that the joint pdf of $\X$ and $\Y$ is uniform over $D$, and assume it is $0$ everywhere else.
-The area of the triangle $D$ is $A = \frac{1}{2}bh = 1$, and we know
+The area of the triangle $D$ on a cartisian plane is $A = \frac{1}{2}bh = 1$, and we know
 \[
 \int \limits _{d\in D} f_{\X,\Y}(d) \mathrm{d}d = 1
 \]
-Since $f_{\X, \Y}$ is uniform this integral can be interpreted as the geometric volume of a triangular prism extruded
-from $D$ by $f_{\X, \Y}$
+Since $f_{\X, \Y}$ is uniform, this integral can be interpreted as the geometric volume of a triangular prism,
+extruded from $D$ by $f_{\X, \Y}$
 \begin{align*}
 A \cdot f_{\X, \Y} = 1 \\
 f_{\X, \Y} = 1
+\end{align*}
+
+Therefore the joint pdf of $(\X, \Y)$ is $f_{\X, \Y} = 1$.
+
+\subsection{Part b)}
+
+The set of vectors $D_2$ containing all vectors $<x, y>$ satisfying $x > y$ in $D$ forms a triangle on a cartisian plane
+with verticies at $(0, 0)$ $(0.5, 0.5)$ and $(1, 0)$. The area of this triangle is exactly $\frac{1}{4}$ the
+total area of $D$, since $A = \frac{1}{2}bh = \frac{1}{2} \cdot 1 \cdot 0.5 = \frac{1}{4}$. Therefore:
+\begin{align*}
+\pr{\X \geq \Y} &= \int \limits _{d \in D_2} f_{\X, \Y}(d)\mathrm{d}d \\
+&= f_{\X, \Y} \cdot A \\
+&= \frac{1}{4} \\
+\therefore \pr{\X \geq \Y} &= \frac{1}{4}
+\end{align*}
+
+\subsection{Part c)}
+
+Since
+\[
+F_\X = \int _{-\infinity} ^{x} f_\X(x)\mathrm{d}x
+\]
+\[
+f_\X(x) = \frac{\diff}{\diff x}F_\X(x)
+\]
+
+
+Figure \ref{fig:q2c-x} illustrates the geometric cases involved with evaluating $f_{\X}$:
+
+\begin{figure}[th]
+	% \centering
+	\includegraphics[width=1 \textwidth]{Q2c X diagram.png}
+	\caption{Geometric rendering of $D$ showing the cases of $F_\X$}
+	\label{fig:q2c-x}
+\end{figure}
+
+\begin{multicols}{2}
+We know
+\begin{align*}
+F_\X(-1) &= 0 \\
+F_\X(1) &= 1
+\end{align*}
+
+\begin{align*}
+F_\X(x < -1) &= 0 \\
+F_\X(x > 1) &= 1
+\end{align*}
+\end{multicols}
+
+Case 1: $-1 \leq x \leq 0$.
+This implies $F_\X$ is the area of $\triangle\mathrm{A X_{1}^{\prime} X_1}$.
+Note $\mathrm{X_1 X'_1} = x_1 = \mathrm{AX_1}$, and $x_1 = x + 1$:
+
+\begin{align*}
+\mathrm{Area(AX_1'X_1)} &= \frac{1}{2}bh \\
+&= \frac{1}{2}x_1^2 \\
 \end{align*}
