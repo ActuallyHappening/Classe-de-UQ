@@ -220,9 +220,49 @@ F_\X(x > 1) &= 1
 
 Case 1: $-1 \leq x \leq 0$.
 This implies $F_\X$ is the area of $\triangle\mathrm{A X_{1}^{\prime} X_1}$.
-Note $\mathrm{X_1 X'_1} = x_1 = \mathrm{AX_1}$, and $x_1 = x + 1$:
+Let $\mathrm{AX_1} = x_1 = \mathrm{X_1 X'_1}$, which implies $x_1 = x + 1$:
 
 \begin{align*}
 \mathrm{Area(AX_1'X_1)} &= \frac{1}{2}bh \\
 &= \frac{1}{2}x_1^2 \\
+\end{align*}
+
+Therefore
+\[
+F_\X(-1 \leq x \leq 0) = \frac{1}{2}(x + 1)^2
+\]
+
+Case 2: $0 < x \leq 1$.
+This implies $F_\X(x)$ is the area of $\mathrm{ABX'_2X_2}$.
+Note $x = MX_2$, and that $X_2X'_2 = X_2C$
+
+\begin{align*}
+\Area{\mathrm{ABX'_2X_2}} &= \Area{\triangle\mathrm{ABM}} + \Area{\mathrm{MBX_2'X_2}} \\
+\Area{\triangle ABM} &= \frac{1}{2} \\
+\Area{MBX'_2X_2} &= \Area{MBC} - \Area{X_2X_2'C} \\
+\Area{MBC} &= \Area{ABM} = \frac{1}{2} \\
+\Area{X_2X_2'C} &= \frac{1}{2}bh \\
+&= \frac{1}{2} \cdot (1 - x) \cdot (1 - x) \\
+&= \frac{1}{2}(1-x)^2 \\
+\end{align*}
+
+This is enough information to express $F_\X$:
+
+\begin{align*}
+\implies F_\X(0 < x \leq 1) &= (\frac{1}{2}) + (\frac{1}{2} - \frac{1}{2}(1 - x)^2) \\
+&= 1 - \frac{1}{2}(1 - 2x + x^2) \\
+&= 1 - \frac{1}{2} + x - \frac{1}{2}x^2 \\
+&= -\frac{1}{2}x^2 + x + \frac{1}{2}
+\end{align*}
+
+Combining cases:
+
+\begin{align*}
+\therefore F_\X =
+\begin{cases}
+0 &: x < -1 \\
+\frac{1}{2}(1 + x)^2 &: -1 \leq x \leq 0 \\
+-\frac{1}{2}x^2 + x + \frac{1}{2} &: 0 < x \leq 1 \\
+1 &: x > 1
+\end{cases}
 \end{align*}
