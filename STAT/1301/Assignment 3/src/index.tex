@@ -258,11 +258,63 @@ This is enough information to express $F_\X$:
 Combining cases:
 
 \begin{align*}
-\therefore F_\X =
+\implies F_\X =
 \begin{cases}
 0 &: x < -1 \\
 \frac{1}{2}(1 + x)^2 &: -1 \leq x \leq 0 \\
 -\frac{1}{2}x^2 + x + \frac{1}{2} &: 0 < x \leq 1 \\
 1 &: x > 1
+\end{cases}\\
+\therefore f_\X(x) = \begin{cases}
+x + 1 &: -1 \leq x \leq 0 \\
+-x + 1 &: 0 < x \leq 1 \\
+0 &: \text{otherwise}
 \end{cases}
 \end{align*}
+This so happens to be the geometric shape of $D$ on a cartesian plane, ABC.
+
+\begin{figure}[ht]
+	% \centering
+	\includegraphics[width=1 \textwidth]{Q2c Y diagram.png}
+	\caption{Geometric rendering of $D$ showing the cases of $F_\Y$}
+	\label{fig:q2c-y}
+\end{figure}
+
+\[
+F_\Y(y \leq 0) = 0
+\]
+\[
+F_\Y(y \geq 1) = 1
+\]
+
+Case $0 < y < 1$
+
+\begin{align*}
+F_\Y(y) &= \Area{AX'XC} \\
+&= \Area{\triangle ABC} - \Area{\triangle XBX'} \\
+&= 1 - 2 \cdot \Area{\triangle XIB} \\
+\text{Note } \mathrm{IB} = 1 - y = \mathrm{IX} \\
+\Area{\triangle XIB} &= \frac{1}{2}bh \\
+&= \frac{1}{2}(1 - y)^2 \\
+&= \frac{1}{2}(y^2 - 2y + 1)
+\implies F_\Y &= 1 - (y^2 - 2y + 1) \\
+&= -y^2 + 2y
+\end{align*}
+
+Combining cases
+
+\begin{align*}
+F_\Y(y) &= \begin{cases}
+1 &: y \geq 1 \\
+-y^2 +2y &: 0 < y < 1 \\
+0 &: y < 0 \\
+\end{cases} \\
+f_\Y(y) &= \begin{cases}
+-2y + 2 &: 0 < y < 1 \\
+0 &: \text{otherwise}
+\end{cases}
+\end{align*}
+
+The geometric interpretation of this is not as intuitive ro realise.
+(Morph A to (0, 2), B to (0, 1) and C to (0, 0), and the initial
+value of $f_\X(0) = AC$ is now placed on the y-axis.
