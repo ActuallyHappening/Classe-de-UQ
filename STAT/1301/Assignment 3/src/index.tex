@@ -316,7 +316,35 @@ f_\Y(y) &= \begin{cases}
 \end{align*}
 
 The geometric interpretation of this is not as intuitive ro realise.
-(Morph A to (0, 2), B to (0, 1) and C to (0, 0), and the initial
+Morph A to (0, 2), B to (0, 1) and C to (0, 0), and the initial
 value of $f_\X(0) = AC$ is now placed on the y-axis.
 
 \subsection{Part d)}
+
+The continuous independance rule can be stated like so:
+
+\begin{equation*}
+f_{\X, \Y}(<x, y>) = f_\X(x) \cdot f_\Y(y) \quad \forall x,y\in \mathbb{R}
+\end{equation*}
+
+Suppose $<x, y> \in D$.
+
+\begin{align*}
+\text{LHS} &= f_{\X, \Y}(<x, y>) \\
+&= 1
+\text{RHS} &= f_\Y(y) \cdot f_\X(x) \\
+&= (-2y + 2) \cdot \begin{cases}
+x + 1 &: -1 \leq x \leq 0 \\
+-x + 1 &; 0 < x \leq 1 \\
+\end{cases}
+\end{align*}
+
+Suppose further $<x, y> = <0, 0>$
+
+\begin{align*}
+\text{RHS} &= (-2 \cdot 0 + 2)(0 + 1) \\
+&= 2
+\end{align*}
+
+Therefore there exists an $<x, y> \in D$ such that the independance rule fails, LHS $\neq$ RHS.
+Therefore $\X$ dn $\Y$ are not independant.
