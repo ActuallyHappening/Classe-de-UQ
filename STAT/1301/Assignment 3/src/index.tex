@@ -351,7 +351,7 @@ Therefore $\X$ dn $\Y$ are not independant.
 
 \subsection{Part e)}
 
-It can be immediately noted that, due to the symmetry across the $x=0$ "line" and the fact that $\Cov(\X, \Y) = \int \limits {x,y}xy\p(\{ \X = x\} \cap \{ \Y = y \})$
+It can be immediately noted that, due to the symmetry across the $x=0$ "line" and the fact that $\Cov(\X, \Y) = \int \limits _{x,y} xy\p(\{ \X = x\} \cap \{ \Y = y \})$
 is negative (or zero) for $x < 0$ and positive (or zero) for $x > 0$ demonstrates intuitively that $\Cov(\X, \Y) = 0$.
 
 Somehow this seems dissatisfying to me.
@@ -363,7 +363,7 @@ This method requires evaluating a double integral or equivalent.
 &= \int _{-1} ^0 x(x+1)\diff x + \int _0 ^1 x(-x + 1) \diff x \\
 &= \int _{-1} ^0 x^2+x \diff x + \int _0 ^{1} -x^2 + x \diff x \\
 &= \left. \frac{1}{3}x^3 + \frac{1}{2}x^2 \right|^{x=0}_{x=-1} +
-\left. -\frac{1}{3}x^3 + \frac{1}{2}x^2 \right|^{x=1}_{x=0}
+\left. -\frac{1}{3}x^3 + \frac{1}{2}x^2 \right|^{x=1}_{x=0} \\
 &= (0 + 0) - (\frac{1}{3}(-1)^3 + \frac{1}{2}(-1)^2) +
 (-\frac{1}{3}(1)^3 + \frac{1}{2}(1)^2) - (0 + 0) \\
 &= +\frac{1}{3} + \frac{1}{2} - \frac{1}{3} + \frac{1}{2} \\
@@ -382,7 +382,7 @@ This method requires evaluating a double integral or equivalent.
 
 \begin{align*}
 \E(\X\Y) &= \int _{-\infinity} ^{+\infinity} \int _{-\infinity} ^{+\infinity} xy f_\X(x)f_\Y(y) \diff x \diff y \\
-&= \int _{-\infinity} ^{+\infinity} x(\int _0 ^1 y f_\Y(y)\diff y)f_\X(x) \diff x \\
+&= \int _{-\infinity} ^{+\infinity} x\left(\int _0 ^1 y f_\Y(y)\diff y\right)f_\X(x) \diff x \\
 &= \E(\Y) \int _{-1} ^{+1} x f_\X(x) \diff x \\
 &= \E(\Y) \cdot \E(\X) \\
 &= 1
