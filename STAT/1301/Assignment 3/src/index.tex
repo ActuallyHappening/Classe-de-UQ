@@ -91,7 +91,7 @@ The marginal pdf of $\X$ is $f_{\X}(x)$, which is equal to $\pr{\X = x}$ and can
 
 \subsection{Part d)}
 
-$\X$ and $\Y$ are independant if
+$\X$ and $\Y$ are independent if
 \begin{equation} \label{th:q1d-independence}
 \p(\{ \X = x \} \cap \{ \Y = y \}) = \pr{\X = x} \cdot \pr{\Y = y} = f_\X(x) \cdot f_\Y(y)
 \end{equation}
@@ -296,7 +296,7 @@ F_\Y(y) &= \Area{AX'XC} \\
 \text{Note } \mathrm{IB} = 1 - y = \mathrm{IX} \\
 \Area{\triangle XIB} &= \frac{1}{2}bh \\
 &= \frac{1}{2}(1 - y)^2 \\
-&= \frac{1}{2}(y^2 - 2y + 1)
+&= \frac{1}{2}(y^2 - 2y + 1) \\
 \implies F_\Y &= 1 - (y^2 - 2y + 1) \\
 &= -y^2 + 2y
 \end{align*}
@@ -315,7 +315,7 @@ f_\Y(y) &= \begin{cases}
 \end{cases}
 \end{align*}
 
-The geometric interpretation of this is not as intuitive ro realise.
+The geometric interpretation of this is not as intuitive to realise.
 Morph A to (0, 2), B to (0, 1) and C to (0, 0), and the initial
 value of $f_\X(0) = AC$ is now placed on the y-axis.
 
@@ -331,7 +331,7 @@ Suppose $<x, y> \in D$.
 
 \begin{align*}
 \text{LHS} &= f_{\X, \Y}(<x, y>) \\
-&= 1
+&= 1 \\
 \text{RHS} &= f_\Y(y) \cdot f_\X(x) \\
 &= (-2y + 2) \cdot \begin{cases}
 x + 1 &: -1 \leq x \leq 0 \\
@@ -347,12 +347,12 @@ Suppose further $<x, y> = <0, 0>$
 \end{align*}
 
 Therefore there exists an $<x, y> \in D$ such that the independance rule fails, LHS $\neq$ RHS.
-Therefore $\X$ dn $\Y$ are not independant.
+Therefore $\X$ and $\Y$ are not independent by counterexample.
 
 \subsection{Part e)}
 
-It can be immediately noted that, due to the symmetry across the $x=0$ "line" and the fact that $\Cov(\X, \Y) = \int \limits _{x,y} xy\p(\{ \X = x\} \cap \{ \Y = y \})$
-is negative (or zero) for $x < 0$ and positive (or zero) for $x > 0$ demonstrates intuitively that $\Cov(\X, \Y) = 0$.
+Due to the symmetry across the $x=0$ "line" and the fact that $\Cov(\X, \Y) = \int \limits _{x,y} xy\p(\{ \X = x\} \cap \{ \Y = y \})$
+is negative (or zero) for $x < 0$ and positive (or zero) for $x > 0$, this demonstrates intuitively that $\Cov(\X, \Y) = 0$.
 
 Somehow this seems dissatisfying to me.
 $\Cov(\X, \Y) = \E(\X\Y) - \E(\X)\E(\Y)$ is another way to evaluate $\Cov(\X, \Y)$.
@@ -399,7 +399,7 @@ The sample space $\Omega$ is parameterized by the number of orders in the month.
 \]
 
 Let $\X_i$ be the random variable for the number of items in the i'th order.
-Notice $\X_i$ are all independant and identically distributed (iid).
+Notice $\X_i$ are all independent and identically distributed (iid).
 
 \[
 \X_i((x_1, \ldots x_i, \ldots x_n) \in \Omega_n) = x_i
@@ -442,20 +442,18 @@ Note $n = 500$. The question is asking to evaluate $\pr{\T < 900} \geq 0.95$, eq
 \implies \sigma_\T = \sqrt{502.95} \approx 22.4265
 \end{align*}
 
-From the Central Limit Theorem (CLT), we can assume $\T$ follow a normal distribution.
-$n = 500$ is a reasonable large $n$ for this to be a good approximation.
+From the Central Limit Theorem (CLT), we can assume $\T$ follows a normal distribution.
+$n = 500$ is a reasonably large $n$ for this to be a good approximation.
 
 \[
 \T \sim \mathcal{N}(\mu = 895, \sigma = 502.95)
 \]
 
-We will ignore the inequality until the end:
-
 \begin{align*}
 \pr{\T > 900} &= \pr{\frac{\T - \mu}{\sigma} > \frac{900 - 895}{22.4265}} \\
 &= \pr{\Z > 0.2230} \\
 &= 1 - \pr{\Z < 0.2230}
-\text{Using stats table}
+\text{Using stats table} \\
 &= 1 - 0.5871 \\
 &= 0.4129
 \end{align*}
