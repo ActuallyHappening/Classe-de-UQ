@@ -399,6 +399,7 @@ The sample space $\Omega$ is parameterized by the number of orders in the month.
 \]
 
 Let $\X_i$ be the random variable for the number of items in the i'th order.
+Notice $\X_i$ are all independant and identically distributed (iid).
 
 \[
 \X_i((x_1, \ldots x_i, \ldots x_n) \in \Omega_n) = x_i
@@ -420,4 +421,45 @@ Let $\T$ be the random variable for the total number of items:
 
 \subsection{Part a)}
 
-Note $n = 500$. The question is asking to evaluate $\pr{\T > 900}$ $\pr{\T > 900} < 0.05$
+Note $n = 500$. The question is asking to evaluate $\pr{\T < 900} \geq 0.95$, equivalently $\pr{\T > 900} < 0.05$.
+
+\begin{align*}
+\E(\X_i) &= \sum _x x \pr{\X_i = x} \\
+&= 1 \cdot 0.54 + 2 \cdot 0.22 + 3 \cdot 0.15 + 4 \cdot 0.09 \\
+&= 1.79 \\
+\Var(\X_i) &= \E[(\X_i - \E(\X_i)^2] \\
+&= \sum _{c\in \Omega} (\X_i(c) - 1.79)^2 \p(\{ c \}) \\
+&= \sum _x (x - 1.79)^2 \pr{\X_i = x} \\
+&= (1 - 1.79)^2\cdot 0.55 + (2 - 1.79)^2\cdot0.22  + (3 - 1.79)^2 \cdot 0.15 + (4 - 1.79)^2 \cdot 0.09 \\
+&= 1.0059 \\
+\E(\T) &= \sum _{i = 1} ^{500} \E(\X_i) \\
+&= 500 \cdot 1.79 \\
+&= 895 \\
+\implies \mu_\T = 895 \\
+\Var(\T) &= \sum_{i=1}^{500} \Var(\X_i) \\
+&= 500 \cdot 1.0059 \\
+&= 502.95 \\
+\implies \sigma_\T = \sqrt{502.95} \approx 22.4265
+\end{align*}
+
+From the Central Limit Theorem (CLT), we can assume $\T$ follow a normal distribution.
+$n = 500$ is a reasonable large $n$ for this to be a good approximation.
+
+\[
+\T \sim \mathcal{N}(\mu = 895, \sigma = 502.95)
+\]
+
+We will ignore the inequality until the end:
+
+\begin{align*}
+\pr{\T > 900} &= \pr{\frac{\T - \mu}{\sigma} > \frac{900 - 895}{22.4265}} \\
+&= \pr{\Z > 0.2230} \\
+&= 1 - \pr{\Z < 0.2230}
+\text{Using stats table}
+&= 1 - 0.5871 \\
+&= 0.4129
+\end{align*}
+
+$\therefore$ No, there is approximatelly a 41\% change of exceeding the 900-item limit,
+which is significantly higher than the threshold 5\%, therefore the company cannot process
+$n = 500$ orders.
