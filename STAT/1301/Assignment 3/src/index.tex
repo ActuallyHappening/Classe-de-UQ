@@ -465,7 +465,7 @@ $n = 500$ orders.
 
 \subsection{Part b)}
 
-With an unknown $n$, the contraint is to find the greatest $n$ with the contraint that
+With an unknown $n$, the aim is to find the greatest $n$ with the constraint that
 $\pr{\T < 900} \geq 0.95$.
 Note $\T \sim \mathcal{N}(\mu_\T, \sigma_\T)$
 
@@ -478,8 +478,8 @@ Note $\T \sim \mathcal{N}(\mu_\T, \sigma_\T)$
 \text{let } z = \frac{900 - \mu}{\sigma} \\
 \implies \pr{\Z < z} \geq 0.95 \\
 \end{align*}
-From stats table $z \geq 1.65$
-ignoring the inequality until the end, and skipping algebra steps
+From stats table $z \geq 1.65$.
+Ignoring the inequality until the end, and skipping algebra steps:
 \begin{align*}
 z = 1.65 &= \frac{900 - \mu}{\sigma} \\
 1.65 \sqrt{1.0059n} &= 900 - 1.79n \\
@@ -506,4 +506,4 @@ And $n = 482.5$ is reasonable, considering rounding imprecision.
 $\therefore n \approx 482.5$, which erring on the side of $\pr{\T < 900} > 0.95$ requires
 us to round down to $n = 482$.
 Therefore the largest number of orders the company can process in the mont is 482,
-before it exceeds the limit with more than a 0.5\% probability.
+before it exceeds the limit with more than a 5\% probability.
