@@ -390,6 +390,7 @@ This method requires evaluating a double integral or equivalent.
 
 Therefore $\Cov(\X, \Y) = 1 - 1 \cdot 1 = 0$
 
+\newpage
 \section{Question 3}
 
 The sample space $\Omega$ is parameterized by the number of orders in the month.
@@ -461,3 +462,48 @@ $n = 500$ is a reasonably large $n$ for this to be a good approximation.
 $\therefore$ No, there is approximatelly a 41\% change of exceeding the 900-item limit,
 which is significantly higher than the threshold 5\%, therefore the company cannot process
 $n = 500$ orders.
+
+\subsection{Part b)}
+
+With an unknown $n$, the contraint is to find the greatest $n$ with the contraint that
+$\pr{\T < 900} \geq 0.95$.
+Note $\T \sim \mathcal{N}(\mu_\T, \sigma_\T)$
+
+\begin{align*}
+\E(\T) &= 1.79n = \mu_\T \\
+\Var(\T) &= 1.0059n \\
+\implies \sigma _\T &= \sqrt{1.0059n} \\
+\pr{\T < 900} &= \pr{\frac{\T - \mu}{\sigma} < \frac{900 - \mu}{\sigma}} \\
+&= \pr{\Z < \frac{900 - \mu}{\sigma}} \\
+\text{let } z = \frac{900 - \mu}{\sigma} \\
+\implies \pr{\Z < z} \geq 0.95 \\
+\end{align*}
+From stats table $z \geq 1.65$
+ignoring the inequality until the end, and skipping algebra steps
+\begin{align*}
+z = 1.65 &= \frac{900 - \mu}{\sigma} \\
+1.65 \sqrt{1.0059n} &= 900 - 1.79n \\
+0 &= 1.79^2n^2 + (-1.65^2 \cdot 1.0059 - 2\cdot 900)n + 900^2 \\
+\end{align*}
+Using the quadratic equation
+\[
+\implies n = 482.5 \text{ and } n = 523.96
+\]
+Since we know $z = \frac{900 - \mu}{\sigma} \geq 1.65$, we can reject $n = 523.96$:
+
+\begin{align*}
+1.65 &\leq \frac{900  1.79 \cdot 523.96}{\sqrt{1.0059\cdot523.96}} \\
+1.65 &\leq \approx 1.577
+\end{align*}
+
+And $n = 482.5$ is reasonable, considering rounding imprecision.
+
+\begin{align*}
+1.65 &\leq \frac{900  1.79 \cdot 482.5}{\sqrt{1.0059\cdot482.5}} \\
+1.65 &\leq \approx 1.649
+\end{align*}
+
+$\therefore n \approx 482.5$, which erring on the side of $\pr{\T < 900} > 0.95$ requires
+us to round down to $n = 482$.
+Therefore the largest number of orders the company can process in the mont is 482,
+before it exceeds the limit with more than a 0.5\% probability.
