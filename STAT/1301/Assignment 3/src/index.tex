@@ -31,7 +31,7 @@ p &\geq \frac{1}{16} \\
 p &\leq \frac{1}{4} \\
 \implies \p(\{ \X = -1 \} \cap \{ \Y = 1 \}) &\geq 0 \\
 p + \frac{1}{16} &\geq 0 \\
-p &\leq \frac{1}{16}
+p &\geq -\frac{1}{16}
 \end{align*}
 \begin{equation}
 \label{th:q1a-p-domain}
@@ -40,6 +40,7 @@ p &\leq \frac{1}{16}
 
 Therefore, $\frac{1}{16} \leq p \leq \frac{1}{4}$, and can be any value within this range.
 
+\newpage
 \subsection{Part b)}
 Aim is to find $\pr{\X = \Y}$:
 
@@ -50,6 +51,7 @@ Aim is to find $\pr{\X = \Y}$:
 &= \frac{6}{16} = \frac{3}{8}
 \end{align*}
 
+\newpage
 \subsection{Part c)}
 The marginal pdf of $\X$ is $f_{\X}(x)$, which is equal to $\pr{\X = x}$ and can be manually evaluated:
 
@@ -89,6 +91,7 @@ The marginal pdf of $\X$ is $f_{\X}(x)$, which is equal to $\pr{\X = x}$ and can
 \end{cases}
 \end{align*}
 
+\newpage
 \subsection{Part d)}
 
 $\X$ and $\Y$ are independent if
@@ -185,6 +188,7 @@ total area of $D$, since $A = \frac{1}{2}bh = \frac{1}{2} \cdot 1 \cdot 0.5 = \f
 \therefore \pr{\X \geq \Y} &= \frac{1}{4}
 \end{align*}
 
+\newpage
 \subsection{Part c)}
 
 Since
@@ -195,6 +199,7 @@ F_\X = \int _{-\infinity} ^{x} f_\X(x)\mathrm{d}x
 f_\X(x) = \frac{\diff}{\diff x}F_\X(x)
 \]
 
+\subsubsection{PDF of X}
 
 Figure \ref{fig:q2c-x} illustrates the geometric cases involved with evaluating $f_{\X}$:
 
@@ -273,6 +278,7 @@ x + 1 &: -1 \leq x \leq 0 \\
 \end{align*}
 This so happens to be the geometric shape of $D$ on a cartesian plane, ABC.
 
+\subsubsection{PDF Y}
 \begin{figure}[ht]
 	% \centering
 	\includegraphics[width=1 \textwidth]{Q2c Y diagram.png}
@@ -493,7 +499,7 @@ Since we know $z = \frac{900 - \mu}{\sigma} \geq 1.65$, we can reject $n = 523.9
 
 \begin{align*}
 1.65 &\leq \frac{900  1.79 \cdot 523.96}{\sqrt{1.0059\cdot523.96}} \\
-1.65 &\leq \approx 1.577
+1.65 &\leq \approx -1.577
 \end{align*}
 
 And $n = 482.5$ is reasonable, considering rounding imprecision.

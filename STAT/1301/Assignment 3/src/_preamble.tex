@@ -1,6 +1,15 @@
 \documentclass[12pt]{article}
 
 \usepackage[margin=2cm]{geometry}
+% \usepackage[
+% % paperheight=16cm, paperwidth=12cm,% Set the height and width of the paper
+% includehead,
+% nomarginpar,% We don't want any margin paragraphs
+% textwidth=10cm,% Set \textwidth to 10cm
+% headheight=10mm,% Set \headheight to 10mm
+% ]{geometry}
+\usepackage{fancyhdr}
+
 \usepackage{amstext}
 \usepackage{amsfonts} % for \mathbb{R}
 \usepackage{amssymb} % for \therefore
@@ -39,4 +48,17 @@
 \newcommand{\Area}[1]{\text{Area}(#1)}
 
 %===========================================================%
+
+\title{STAT1301 Assignment 3}
+\author{Caleb Yates s49886351}
+
 \begin{document}
+
+\pagestyle{fancy}
+
+\fancyfoot[LO,CE]{Semester 2 2025 University of Queensland}
+\fancyfoot[CO,RE]{\thepage}
+\fancyfoot[LE,RO]{calebyates42@gmail.com}
+
+\maketitle
+\newpage
