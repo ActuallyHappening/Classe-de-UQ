@@ -81,7 +81,7 @@ INSERT INTO UserFollows (UserBeingFollowed, UserFollowing) VALUES
 
 INSERT INTO Post (Id, Caption, CreationDateTime, Username) VALUES
 (1, 'Hey guys, please heart my awesome post', '2025-07-01 15:31:16', 'Allan'),
-(2, 'Ian\'s amazing friend at the beach.', '2025-05-15 15:37:55', 'Ian'),
+(2, "Ian's amazing friend at the beach.", '2025-05-15 15:37:55', 'Ian'),
 (3, 'Hey guys, currently tutoring infs1200 this semester.', '2025-05-19 15:37:55', 'Allan');
 
 INSERT INTO PostReaction (Username, PostId, ReactionType) VALUES
@@ -95,4 +95,4 @@ INSERT INTO PostImage (PostId, ImageURL) VALUES
 INSERT INTO Comment (Id, Text, Username, PostId) VALUES
 (1, 'This is quite fascinating. A really beautiful story.', 'Ian', 2),
 (2, 'Legendary!!', 'Allan', 2),
-(3, 'That\'s awsesome', 'Daniel', 1);
+(3, "That's awsesome", 'Daniel', 1);
