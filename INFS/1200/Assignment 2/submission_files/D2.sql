@@ -1,3 +1,4 @@
+-- Number of followers by username
 CREATE OR REPLACE VIEW NumFollowers AS
 	SELECT User.Username, COUNT(UserFollows.UserBeingFollowed) as FollowerCount FROM User
 		LEFT JOIN UserFollows ON UserBeingFollowed = User.Username
@@ -15,6 +16,8 @@ CREATE OR REPLACE VIEW MutualsWithAllan AS
 		GROUP BY User.Username;
 
 SELECT * FROM MutualsWithAllan;
+
+-- The people who Allan follows
 SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan";
 
 -- Rank every user except Allan himself
@@ -25,10 +28,11 @@ SELECT User.Username, User.Bio,
 MutualsCount, FollowerCount FROM User
 	LEFT JOIN MutualsWithAllan ON MutualsWithAllan.Username = User.Username
 	LEFT JOIN NumFollowers ON NumFollowers.Username = User.Username
-	WHERE User.Username != "Allan" -- Don't suggest Allan himself
+	WHERE User.Username != "Allan" -- Don't ever suggest Allan himself
 	ORDER BY
 		User.Username IN -- prioritise if user follows Allan
 		(SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan") DESC,
 		MutualsWithAllan.MutualsCount DESC, -- Mutuals first
-		NumFollowers.FollowerCount DESC -- tiebreaker who follows the most people
+		NumFollowers.FollowerCount DESC, -- tiebreaker who follows the most people
+		User.Username
 	LIMIT 5;
