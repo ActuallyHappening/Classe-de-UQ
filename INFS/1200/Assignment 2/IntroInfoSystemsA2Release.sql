@@ -68,7 +68,9 @@ INSERT INTO User (Username, Bio) VALUES
 ('Ian', 'An computer science GOAT who teaches INFS1200 course'),
 ('Ahuman', 'Ahuman'),
 ('TotallyNotABot', 'Not A Bot.'),
-('EmptyUser', 'nothing really');
+('EmptyUser', 'nothing really'),
+('AllanOneMutual', '123'),
+('AllanTwoMutual', 'abc');
 
 INSERT INTO UserFollows (UserBeingFollowed, UserFollowing) VALUES
 ( 'Ian', 'Allan'),
@@ -78,7 +80,10 @@ INSERT INTO UserFollows (UserBeingFollowed, UserFollowing) VALUES
 ( 'Daniel', 'TotallyNotABot'),
 ( 'Allan', 'TotallyNotABot'),
 ( 'Allan', 'Daniel'),
-( 'Allan', 'Ian');
+( 'Allan', 'Ian'),
+('Ian', 'AllanOneMutual'),
+('Ian', 'AllanTwoMutual'),
+('Daniel', 'AllanTwoMutual');
 
 INSERT INTO Post (Id, Caption, CreationDateTime, Username) VALUES
 (1, 'Hey guys, please heart my awesome post', '2025-07-01 15:31:16', 'Allan'),
