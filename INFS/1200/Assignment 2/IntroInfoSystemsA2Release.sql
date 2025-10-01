@@ -67,7 +67,8 @@ INSERT INTO User (Username, Bio) VALUES
 ('Daniel', 'A UQ tutor.'),
 ('Ian', 'An computer science GOAT who teaches INFS1200 course'),
 ('Ahuman', 'Ahuman'),
-('TotallyNotABot', 'Not A Bot.');
+('TotallyNotABot', 'Not A Bot.'),
+('EmptyUser', 'nothing really');
 
 INSERT INTO UserFollows (UserBeingFollowed, UserFollowing) VALUES
 ( 'Ian', 'Allan'),
@@ -95,4 +96,5 @@ INSERT INTO PostImage (PostId, ImageURL) VALUES
 INSERT INTO Comment (Id, Text, Username, PostId) VALUES
 (1, 'This is quite fascinating. A really beautiful story.', 'Ian', 2),
 (2, 'Legendary!!', 'Allan', 2),
-(3, "That's awsesome", 'Daniel', 1);
+(3, "That's awsesome", 'Daniel', 1),
+(4, "This is a clanker speaking", 'TotallyNotABot', 1);
