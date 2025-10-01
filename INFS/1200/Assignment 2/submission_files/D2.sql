@@ -11,14 +11,16 @@ CREATE OR REPLACE VIEW MutualsWithAllan AS
 	SELECT User.Username, Count(UserFollows.UserFollowing) as MutualsCount FROM User
 		LEFT JOIN UserFollows ON UserFollows.UserFollowing = User.Username
 			AND UserFollows.UserBeingFollowed IN
-				-- All people following Allan
-				(SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan")
+				-- All people who Allan follows
+				(SELECT UserBeingFollowed FROM UserFollows WHERE UserFollowing = "Allan")
 		GROUP BY User.Username;
 
 SELECT * FROM MutualsWithAllan;
 
--- The people who Allan follows
+-- The people who follow Allan
 SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan";
+-- The people who Allan follows
+SELECT UserBeingFollowed FROM UserFollows WHERE UserFollowing = "Allan";
 
 -- Rank every user except Allan himself
 SELECT User.Username, User.Bio,
