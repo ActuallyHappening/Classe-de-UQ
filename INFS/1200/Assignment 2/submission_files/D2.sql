@@ -15,14 +15,20 @@ CREATE OR REPLACE VIEW MutualsWithAllan AS
 		GROUP BY User.Username;
 
 SELECT * FROM MutualsWithAllan;
+SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan";
 
 -- Rank every user except Allan himself
-SELECT * FROM User
+SELECT User.Username, User.Bio,
+	User.Username IN
+		(SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan")
+	as AllanFollows,
+MutualsCount, FollowerCount FROM User
 	LEFT JOIN MutualsWithAllan ON MutualsWithAllan.Username = User.Username
-	LEFT JOIN UserFollows ON UserFollows.UserBeingFollowed = "Allan" AND UserFollowing = User.Username
 	LEFT JOIN NumFollowers ON NumFollowers.Username = User.Username
 	WHERE User.Username != "Allan" -- Don't suggest Allan himself
-	ORDER BY MutualsWithAllan.MutualsCount DESC, -- Mutuals first
-	User.Username IN -- then people Allan already follows
-	(SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan") DESC,
-	NumFollowers.FollowerCount DESC; -- tiebreaker who follows the most people
+	ORDER BY
+		User.Username IN -- prioritise if user follows Allan
+		(SELECT UserFollowing FROM UserFollows WHERE UserBeingFollowed = "Allan") DESC,
+		MutualsWithAllan.MutualsCount DESC, -- Mutuals first
+		NumFollowers.FollowerCount DESC -- tiebreaker who follows the most people
+	LIMIT 5;
