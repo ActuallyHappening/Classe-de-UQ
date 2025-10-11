@@ -1,0 +1,64 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=2cm]{geometry}
+% \usepackage[
+% % paperheight=16cm, paperwidth=12cm,% Set the height and width of the paper
+% includehead,
+% nomarginpar,% We don't want any margin paragraphs
+% textwidth=10cm,% Set \textwidth to 10cm
+% headheight=10mm,% Set \headheight to 10mm
+% ]{geometry}
+\usepackage{fancyhdr}
+
+\usepackage{amstext}
+\usepackage{amsfonts} % for \mathbb{R}
+\usepackage{amssymb} % for \therefore
+\usepackage{mathtools}
+\usepackage{multicol}
+
+\usepackage{graphicx} % for images
+\graphicspath{ {../images/} }
+
+\usepackage{enumitem}
+\usepackage{blindtext}
+
+\newcommand{\p}{\mathrm{P}}
+\newcommand{\pr}[1]{\p(\{ #1 \})}
+
+% Stats random variables
+\newcommand{\X}{\mathrm{X}}
+\newcommand{\Y}{\mathrm{Y}}
+\newcommand{\Z}{\mathrm{Z}}
+\newcommand{\T}{\mathrm{T}}
+
+\newcommand{\E}{\mathrm{E}}
+\newcommand{\Var}{\mathrm{Var}}
+\newcommand{\Cov}{\mathrm{Cov}}
+\newcommand{\Domain}[1]{\mathrm{Domain}[#1]}
+
+\newcommand{\NormalDist}{\mathit{N}}
+
+\newcommand{\infinity}{\infty}
+\newcommand{\dC}{\text{℃}}
+
+% from https://tex.stackexchange.com/questions/60545/should-i-mathrm-the-d-in-my-integrals
+% \newcommand{\d}{\mathrm{d}}
+\newcommand*\diff{\mathop{}\!\mathrm{d}}
+
+\newcommand{\Area}[1]{\text{Area}(#1)}
+
+%===========================================================%
+
+\title{STAT1301 Assignment 4}
+\author{Caleb Yates s49886351}
+
+\begin{document}
+
+\pagestyle{fancy}
+
+\fancyfoot[LO,CE]{Semester 2 2025 University of Queensland}
+\fancyfoot[CO,RE]{\thepage}
+\fancyfoot[LE,RO]{calebyates42@gmail.com}
+
+\maketitle
+\newpage
