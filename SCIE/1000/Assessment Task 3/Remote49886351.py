@@ -1,6 +1,6 @@
 import numpy as np
 from tabulate import tabulate
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
 # gNDVI and LAI data
 gNDVIa = np.array(
@@ -71,6 +71,10 @@ LAI = np.array(
         9.213,
     ]
 )
+
+plt.plot(LAI, gNDVIa, "ko", markersize=5)
+plt.grid()
+plt.show()
 
 
 # gNDVI over time data
