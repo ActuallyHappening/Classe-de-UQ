@@ -133,3 +133,43 @@ From the stats table, $z_{\frac{\alpha}{2}} = 2.17$. Plugging in our specific sa
 
 Evaluating yields the CI $(0.1337, 0.2051)$ for $p_\X - p_\Y$.
 This confidence interval does not contain 0, therefore this is evidence that the proportions $p_\X$ and $p_\Y$ are not equal.
+
+\subsection{Part e)}
+\[
+\X \sim \BinDist (n_\X, p_\X)
+\]
+\[
+\Y \sim \BinDist (n_\Y, p_\Y)
+\]
+
+Under $\text{H}_0$ $p_\X = p_\Y = p$
+
+\[
+\Var(\X) = n_\X p (1 - p)
+\]
+\[
+\Var(\Y) = n_\Y p (1 - p)
+\]
+
+\[
+\hat{P}^w = w \frac{\X}{n_\X} + (1 - w)\frac{\Y}{n_\Y}
+\]
+
+To show $\Expected(\hat{P}^w) = p$ under $\text{H}_0$:
+
+\begin{align*}
+\Expected(\hat{P}^w) &= \Expected(w\frac{\X}{n_\X}) + \Expected((1-w)\frac{\Y}{n_\X}) \\
+&= w \E(\frac{\X}{n_\X}) + (1-w)\E(\frac{\Y}{n_\Y}) \\
+&= wp + (1-w)p \\
+&= (w + 1 - w)p \\
+&= p
+\end{align*}
+
+To show the variance, we must additionally assume that $\X$ and $\Y$ are independant:
+
+\begin{align*}
+\Var(\hat{P}^w) &= \Var(w \frac{\Y}{n_\X} + (1-w)\frac{\Y}{n_\Y}) \\
+&= w^2 \Var(\frac{\X}{n_\X}) + (1-w)^2 \Var(\frac{\Y}{n_\Y}) \\
+&= w^2 \frac{p(1-p)}{n_\X} + (1-w)^2 \frac{p(1-p)}{n_\Y} \\
+&= p(1-p)\left( \frac{w^2}{n_\X} + \frac{(1-w)^2}{n_\Y} \right)
+\end{align*}
