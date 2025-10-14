@@ -111,3 +111,25 @@ Looking at the stats table, this is way off the charts! $\Phi(3.69) = 0.9999$, s
 This is very strong evidence to reject the null hypothesis $\text{H}_0$.
 Therefore we can conclude we have very strong evidence that direct-mail self-sampling kits have a higher screening population proportion than
 education only outreach.
+
+\subsection{Part d)}
+
+A 97\% confidence interval means $\alpha = 3\% = 0.03$. The formula for a 2-sample binomial confidence interval is as follows:
+\[
+\hat{P}_\X - \hat{P}_\Y \pm z_{\frac{\alpha}{2}} \sqrt{\frac{\hat{P}_\X(1 - \hat{P}_\X)}{n_\X} + \frac{\hat{P}_\Y(1 - \hat{P}_\Y)}{n_\Y}}
+\]
+$z_{\frac{\alpha}{2}}$ is the the solution to:
+\[
+\pr{\Z > z_{\frac{\alpha}{2}}} = \frac{\alpha}{2} = 0.015
+\]
+\[
+\pr{\Z < z_{\frac{\alpha}{2}}} = 0.985
+\]
+From the stats table, $z_{\frac{\alpha}{2}} = 2.17$. Plugging in our specific sample notation:
+
+\[
+\hat{p}_\X - \hat{p}_\Y \pm 2.17 \sqrt{\frac{\hat{p}_\X(1 - \hat{p}_\X)}{n_\X} + \frac{\hat{p}_\Y(1 - \hat{p}_\Y)}{n_\Y}}
+\]
+
+Evaluating yields the CI $(0.1337, 0.2051)$ for $p_\X - p_\Y$.
+This confidence interval does not contain 0, therefore this is evidence that the proportions $p_\X$ and $p_\Y$ are not equal.
