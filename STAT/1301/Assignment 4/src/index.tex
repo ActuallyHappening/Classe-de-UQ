@@ -1,8 +1,32 @@
 \section{Question 4}
 
 \subsection{Part a)}
+Let $X$ be the random variable for the number of people received the direct mail strategy and compelted screening.
+Let $Y$ be the random variable for the number of people who received the education only outreach and completed screening.
 
-Let $X$ be the random variable for the number of people who completed the self-sampling for cervical cnacer screening from the direct mail outreach.
-Let $Y$ be the random variable for the number of people who compelted screening after the education only outreach.
+The notation $p_\X$ and $p_\Y$ represent the population proportion for $\X$ and $\Y$ respectively.
 
-Therefore $\hat{x} = \frac{505}{1415} \approx 0.3569$ and $\hat{y} = \frac{264}{1408} \approx 0.1875$ which are the sample proportions for $X$ and $Y$ respectively.
+The null hypothesis is that both population proportions are equal: $\text{H}_0: \p_\X - \p_\Y = 0$. The alternative hypothesis is therefore: $\text{H}_1 : \mu_\X - \mu_\Y > 0$.
+
+\subsection{Part b)}
+
+$\X \sim \BinDist (n_\X, p_\X)$ where $n_\X = 1415$ so $\X \sim \BinDist (n_\X, p_\X)$.
+It is (implicitely) assumed that samples $\X_i$ from $\X$ follow the distribution of $\X$, hence:
+\[
+\X_i \sim \BinDist(n_\X, p_\X)
+\]
+Since $n_\X p_\X = 505 \gg 5$ and $n_\X(1-p_\X)=910 \gg 5$, the conditions for the Central Limit Theorem (CLT) to apply are met, as well as a suitably large $n_\X$.
+Therefore:
+\[
+\X_i \mathop \sim ^\text{approx} \NormalDist (n_\X p_\X, n_\X p_\X (1 - p_\X))
+\]
+\[
+\bar{\X} \mathop \sim ^\text{approx} \NormalDist (p_\X, \frac{p_\X (1 - p_\X)}{n_\X})
+\]
+
+
+\begin{align*}
+\Y \sim \BinDist (n_\Y, p_\Y)
+\end{align*}
+
+% Therefore $\hat{x} = \frac{505}{1415} \approx 0.3569$ and $\hat{y} = \frac{264}{1408} \approx 0.1875$ which are the sample proportions for $X$ and $Y$ respectively.
