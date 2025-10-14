@@ -53,7 +53,7 @@ Under $\text{H}_0$:
 It is additionally assumed that $\X$ and $\Y$ are independant from each other.
 
 We can now give notation for the specific sample information we are given:
-$\hat{x} = \hat{p}_\X = \frac{505}{1415} \approx 0.3568$ and $\hat{y} = \hat{p}_\Y = \frac{264}{1408} \approx 0.1875$
+$\bar{x} = \hat{p}_\X = \frac{505}{1415} \approx 0.3568$ and $\bar{y} = \hat{p}_\Y = \frac{264}{1408} \approx 0.1875$
 
 \subsection{Part c)}
 
@@ -68,8 +68,46 @@ Under $\text{H}_0$, or assuming $\text{H}_0$:
 \]
 
 To find a pivital variable that doesn't depend on the unknown $p$, a pooled unbiased estimator $\hat{P} = \frac{\X + \Y}{n_\X + n_\Y}$
-will be used in place of $p = \hat{P}$. Rearranging gives:
+will be used in place of $p = \hat{P}$. For our sample $\hat{P} = \frac{505 + 264}{1415 + 1408} \approx 2.724$. Rearranging gives:
 
 \[
 T = \frac{\hat{P}_\X - \hat{P}_\Y}{\hat{P}(1 - \hat{P})(\frac{1}{n_\X} + \frac{1}{n_\Y})} \sim \NormalDist(0, 1)
 \]
+
+The $\text{p-value}$ is therefore computable relative to our specific sample:
+\[
+\text{p-value} = \pr{\hat{P}_\X - \hat{p}_\X \geq \hat{P}_\Y - \hat{p}_\Y}
+\]
+In a slightly more useful arrangement:
+\[
+\text{p-value} = \pr{\hat{P}_\X - \hat{P}_\Y \geq \hat{p}_\X - \hat{p}_\Y}
+\]
+\[
+\text{p-value} = \pr{
+	\frac{\hat{P}_\X - \hat{P}_\Y}{\hat{P}(1 - \hat{P})(\frac{1}{n_\X} + \frac{1}{n_\Y})}
+	\geq
+	\frac{\hat{p}_\X - \hat{p}_\Y}{\hat{P}(1 - \hat{P})(\frac{1}{n_\X} + \frac{1}{n_\Y})}
+}
+\]
+
+Note $\hat{p}_\X - \hat{p}_\Y \approx 0.16939$ and $\hat{P}(1 - \hat{P})(\frac{1}{n_\X} + \frac{1}{n_\Y}) \approx 0.01676$, hence:
+\[
+\text{p-value} = \pr{ \Z \geq \frac{0.16939}{0.01676}}
+\]
+\[
+\text{p-value} = \pr{ \Z \geq 10.1079}
+\]
+\[
+\text{p-value} = 1 - \pr{ \Z < 10.1079}
+\]
+
+Looking at the stats table, this is way off the charts! $\Phi(3.69) = 0.9999$, so
+\[
+\text{p-value} < 1 - 0.9999
+\]
+\[
+\text{p-value} < 0.0001
+\]
+This is very strong evidence to reject the null hypothesis $\text{H}_0$.
+Therefore we can conclude we have very strong evidence that direct-mail self-sampling kits have a higher screening population proportion than
+education only outreach.
