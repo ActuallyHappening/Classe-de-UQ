@@ -173,3 +173,40 @@ To show the variance, we must additionally assume that $\X$ and $\Y$ are indepen
 &= w^2 \frac{p(1-p)}{n_\X} + (1-w)^2 \frac{p(1-p)}{n_\Y} \\
 &= p(1-p)\left( \frac{w^2}{n_\X} + \frac{(1-w)^2}{n_\Y} \right)
 \end{align*}
+
+\subsection{Part f)}
+To find if a certain $w$ value minimuzes $\hat{P}^w$, I will take the derivative to find if it is a stationary point and the double deriviative
+to confirm it is a minimum.
+
+\[
+\frac{\diff}{\diff w} \hat{P}^w = \frac{\diff}{\diff w} p(1-p)\left( \frac{w^2}{n_\X} + \frac{(1-w)^2}{n_\Y} \right)
+\]
+
+To solve this derivative sensibly, I will assume $0 = \frac{\diff p}{\diff w} = \frac{\diff n_\X}{\diff w} = \frac{\diff n_\Y}{\diff w}$,
+as in, our choice of $w$ is independant of $p$, $n_\X$ and $n_\Y$.
+
+\begin{align*}
+\frac{\diff}{\diff w} \hat{P}^w &= p(1-p)\left[ \frac{1}{n_\X} \frac{\diff}{\diff w}(w^2) + \frac{1}{n_\Y} \frac{\diff}{\diff w}((1-w)^2) \right] \\
+&= p(1-p) \left( \frac{2w}{n_\X} + \frac{-2(1-w)}{n_\Y} \right) \\
+&= 2p(1-p) \left( \frac{w}{n_\X} + \frac{w}{n_\Y} - \frac{1}{n_\Y} \right) \\
+\frac{\diff^2}{\diff w^2} \hat{P}^w &= 2p(1-p)\left( \frac{1}{n_\X} \frac{\diff}{\diff w}(w) + \frac{1}{n_\Y}\frac{\diff}{\diff w}(w) - \frac{1}{n_\Y} \right) \\
+&= \frac{2p(1 - p)}{n_\X}
+\end{align*}
+
+Substituting $w = \frac{n_\X}{n_\Y + n_\Y}$:
+
+\begin{align*}
+\left. \frac{\diff}{\diff w} \hat{P}^w \right| _{w = \frac{n_\X}{n_\Y + n_\Y}} &= 2p(1-p)\left(
+\frac{\frac{n_\X}{n_\Y + n_\Y}}{n_\X} + \frac{\frac{n_\X}{n_\Y + n_\Y}}{n_\Y} - \frac{1}{n_\Y} \right) \\
+&= 2p(1-p)\left( \frac{1}{n_\Y + n_\X} + \frac{n_\X}{n_\Y(n_\Y + n_\X)} - \frac{1}{n_\Y} \right) \\
+&= 2p(1-p)\left( \frac{n_\Y}{n_\Y(n_\Y + n_\X)} + \frac{n_\X}{n_\Y(n_\Y + n_\X)} - \frac{n_\X + n_\Y}{n_\Y(n_\Y + n_\X)} \right) \\
+&= 2p(1-p)(0) \\
+&= 0
+\end{align*}
+
+Therefore $w = \frac{n_\X}{n_\Y + n_\Y}$ is a stationary point of $\hat{P}^w$. To prove it is a minimum:
+
+\[
+\left. \frac{\diff^2}{\diff w^2} \right| _{w = \frac{n_\X}{n_\Y + n_\Y}} = \frac{2p(1 - p)}{n_\X}
+\]
+Since $p \geq 0$ and $n_\X > 0$, $\frac{\diff^2}{\diff w^2}(\hat{P}^w) > 0$, hence $w = \frac{n_\X}{n_\Y + n_\Y}$ is a minimum for $\hat{P}^w$.
