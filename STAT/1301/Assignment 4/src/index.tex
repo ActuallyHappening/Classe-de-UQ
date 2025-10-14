@@ -1,8 +1,9 @@
 \section{Question 4}
 
-\subsection{Part a)}
 Let $X$ be the random variable for the number of people received the direct mail strategy and compelted screening.
 Let $Y$ be the random variable for the number of people who received the education only outreach and completed screening.
+
+\subsection{Part a)}
 
 The notation $p_\X$ and $p_\Y$ represent the population proportion for $\X$ and $\Y$ respectively.
 
@@ -11,42 +12,64 @@ The null hypothesis is that both population proportions are equal: $\text{H}_0: 
 \subsection{Part b)}
 
 $\X \sim \BinDist (n_\X, p_\X)$ where $n_\X = 1415$ so $\X \sim \BinDist (1415, p_\X)$.
-It is (implicitely) assumed that samples $\X_i$ from $\X$ follow the distribution of $\X$, hence:
+It is (implicitely) assumed that samples $\X_i$ from $\X$ follow the distribution of $\X$ and are all independant, hence:
 \[
 \X_i \sim \BinDist(n_\X, p_\X)
 \]
-Since $n_\X p_\X = 505 \gg 5$ and $n_\X(1-p_\X)=910 \gg 5$, the conditions for the Central Limit Theorem (CLT) to apply are met, as well as a suitably large $n_\X$.
+Since $n_\X p_\X = 505 \gg 5$ and $n_\X(1-p_\X)=910 \gg 5$, the conditions for the Central Limit Theorem (CLT) to be a good approximation are met, as well as a suitably large $n_\X$. Hence the CLT is reasonable for the research problem.
 Therefore:
 \[
 \X_i \mathop \sim ^\text{approx} \NormalDist (n_\X p_\X, n_\X p_\X (1 - p_\X))
 \]
 \[
-\bar{\X} \mathop \sim ^\text{approx} \NormalDist (p_\X, \frac{p_\X (1 - p_\X)}{n_\X})
+\bar{\X} = \hat{P}_\X \mathop \sim ^\text{approx} \NormalDist (p_\X, \frac{p_\X (1 - p_\X)}{n_\X})
 \]
 
 Under $\text{H}_0$:
 \[
-\bar{\X} \sim \NormalDist (p, \frac{p (1 - p)}{n_\X})
+\hat{P}_\X \sim \NormalDist (p, \frac{p (1 - p)}{n_\X})
 \]
 
 
 $\Y \sim \BinDist (n_\Y, p_\Y)$ where $n_\Y = 1408$ so $\Y \sim \BinDist (1408, p_\Y)$.
-It is (implicitely) assumed that samples $\Y_i$ from $\Y$ follow the distribution of $\Y$, hence:
+It is (implicitely) assumed that samples $\Y_i$ from $\Y$ follow the distribution of $\Y$ and are all independant, hence:
 \[
 \Y_i \sim \BinDist(n_\Y, p_\Y)
 \]
-Since $n_\Y p_\Y = 264 \gg 5$ and $n_\Y(1-p_\Y)=1144 \gg 5$, the conditions for the Central Limit Theorem (CLT) to apply are met, as well as a suitably large $n_\Y$.
+Since $n_\Y p_\Y = 264 \gg 5$ and $n_\Y(1-p_\Y)=1144 \gg 5$, the conditions for the Central Limit Theorem (CLT) to be a good approximation are met, as well as a suitably large $n_\Y$. Hence the CLT is reasonable for the research problem.
 Therefore:
 \[
 \Y_i \mathop \sim ^\text{approx} \NormalDist (n_\Y p_\Y, n_\Y p_\Y (1 - p_\Y))
 \]
 \[
-\bar{\Y} \mathop \sim ^\text{approx} \NormalDist (p_\Y, \frac{p_\Y (1 - p_\Y)}{n_\Y})
+\bar{\Y} = \hat{P}_\Y \mathop \sim ^\text{approx} \NormalDist (p_\Y, \frac{p_\Y (1 - p_\Y)}{n_\Y})
 \]
 
 Under $\text{H}_0$:
 \[
-\bar{\Y} \sim \NormalDist (p, \frac{p (1 - p)}{n_\Y})
+\hat{P}_\Y \sim \NormalDist (p, \frac{p (1 - p)}{n_\Y})
 \]
 
-% Therefore $\hat{x} = \frac{505}{1415} \approx 0.3569$ and $\hat{y} = \frac{264}{1408} \approx 0.1875$ which are the sample proportions for $X$ and $Y$ respectively.
+It is additionally assumed that $\X$ and $\Y$ are independant from each other.
+
+We can now give notation for the specific sample information we are given:
+$\hat{x} = \hat{p}_\X = \frac{505}{1415} \approx 0.3568$ and $\hat{y} = \hat{p}_\Y = \frac{264}{1408} \approx 0.1875$
+
+\subsection{Part c)}
+
+\[
+\hat{P}_\X - \hat{P}_\Y \sim \NormalDist (p_\X - p_\Y, \frac{p_\X(1-p_\X)}{n_\X} + \frac{p_\Y(1-p_\Y)}{n_\Y})
+\]
+
+Under $\text{H}_0$, or assuming $\text{H}_0$:
+
+\[
+\hat{P}_\X - \hat{P}_\Y \sim \NormalDist (0, \frac{p(1-p)}{n_\X} + \frac{p(1-p)}{n_\Y})
+\]
+
+To find a pivital variable that doesn't depend on the unknown $p$, a pooled unbiased estimator $\hat{P} = \frac{\X + \Y}{n_\X + n_\Y}$
+will be used in place of $p = \hat{P}$. Rearranging gives:
+
+\[
+T = \frac{\hat{P}_\X - \hat{P}_\Y}{\hat{P}(1 - \hat{P})(\frac{1}{n_\X} + \frac{1}{n_\Y})} \sim \NormalDist(0, 1)
+\]
