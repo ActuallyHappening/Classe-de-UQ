@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 
 
 def main():
-    q4p1()
+    # q4p1()
+    q4p3()
 
 
 def q4p1():
@@ -23,6 +24,28 @@ def q4p1():
         area = area + width * leftHeight
         i = i + 1
     print(f"Area: {area}")
+
+    plt.show()
+
+
+def fahrenheit_to_celsius(fahrenheit):
+    """
+    Converts a temperature from Fahrenheit to Celsius.
+
+    Args:
+      fahrenheit: The temperature in Fahrenheit (float or int).
+
+    Returns:
+      The equivalent temperature in Celsius (float).
+    """
+    celsius = (fahrenheit - 32) * 5 / 9
+    return celsius
+
+
+def q4p3():
+    time = np.array([1260, 570, 270, 120, 60, 30, 15, 6, 3, 2, 1, 1])
+    temp = np.array([120, 122, 124, 126, 128, 130, 132, 134, 136, 138, 140, 142])
+    plt.plot(time, temp)
 
     plt.show()
 
