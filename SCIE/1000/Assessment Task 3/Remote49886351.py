@@ -122,6 +122,22 @@ def pltb():
 	plt.show()
 pltb()
 
+# trapezoidal rule approximation for AUC
+def trapezoid_area(y1, y2, width):
+	"""Area of a trapezoid"""
+	lower  = min(y1, y2)
+	higher = max(y1, y2)
+	return lower * width + 0.5 * (higher - lower) * width
+auc = 0
+i = 0
+while i < len(DOY)-1:
+	left  = gNDVIb[i]
+	right = gNDVIb[i+1]
+	width= DOY[i+1] - DOY[i]
+	auc = auc + trapezoid_area(left, right, width)
+	i = i + 1
+print(f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previous show is {auc} gNDVI days.")
+
 # table of VIs to display
 print(
     tabulate(
