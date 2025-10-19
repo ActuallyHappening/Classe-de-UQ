@@ -72,8 +72,32 @@ LAI = np.array(
     ]
 )
 
-# plt.plot(LAI, gNDVIa, "ko", markersize=5)
-plt.plot(np.log(LAI), gNDVIa, "ko", markersize=5)
+(p1x, p1y) = (-0.114, 2.027)
+(p2x, p2y) = (-1.071, -1.928)
+m = (p2y - p1y) / (p2x - p1x)
+# Sub (p1x, p1y)
+c = p1y - m * p1x
+# M: 4.1327 C: 2.4981
+def plt_linear_model():
+	"""Run this function to see the linearized model"""
+	plt.plot(np.log(gNDVIa), np.log(LAI), "ko", markersize=5)
+	plt.xlabel("ln gNDVI")
+	plt.ylabel("ln LAI")
+
+	print(f"M: {m}, C: {c}")
+
+	plt.plot(np.log(gNDVIa), m*np.log(gNDVIa) + c)
+
+	plt.grid()
+	plt.show()
+	return;
+# plt_linear_model()
+
+def gNDVI_LAI_model(gNDVI):
+	return gNDVI ** m * np.e ** c
+
+plt.plot(gNDVIa, LAI, "ko", markersize=5)
+plt.plot(np.sort(gNDVIa), gNDVI_LAI_model(np.sort(gNDVIa)))
 plt.grid()
 plt.show()
 
