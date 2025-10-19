@@ -72,7 +72,8 @@ LAI = np.array(
     ]
 )
 
-plt.plot(LAI, gNDVIa, "ko", markersize=5)
+# plt.plot(LAI, gNDVIa, "ko", markersize=5)
+plt.plot(np.log(LAI), gNDVIa, "ko", markersize=5)
 plt.grid()
 plt.show()
 
