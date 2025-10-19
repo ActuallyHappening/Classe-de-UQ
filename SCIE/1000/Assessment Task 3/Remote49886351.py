@@ -72,6 +72,8 @@ LAI = np.array(
     ]
 )
 
+# Given two points visually on the line of best fit,
+# calculate the gradient and y-intercept of the resulting line of best fit
 (p1x, p1y) = (-0.114, 2.027)
 (p2x, p2y) = (-1.071, -1.928)
 m = (p2y - p1y) / (p2x - p1x)
@@ -79,7 +81,7 @@ m = (p2y - p1y) / (p2x - p1x)
 c = p1y - m * p1x
 # M: 4.1327 C: 2.4981
 def plta_linear_model():
-	"""Run this function to see the linearized model"""
+	"""Run this function to see the linearized data plus model"""
 	plt.plot(np.log(gNDVIa), np.log(LAI), "ko", markersize=5)
 	plt.xlabel("ln gNDVI")
 	plt.ylabel("ln LAI")
@@ -94,14 +96,18 @@ def plta_linear_model():
 # plta_linear_model()
 
 def gNDVI_LAI_model(gNDVI):
+	"""This is the model of LAI given gNDVI"""
 	return gNDVI ** m * np.e ** c
 
 def plta():
+	"""This will display the plotted gNDVI versus LAI data with the model"""
 	plt.plot(gNDVIa, LAI, "ko", markersize=5)
 	plt.plot(np.sort(gNDVIa), gNDVI_LAI_model(np.sort(gNDVIa)))
+	plt.xlabel("gNDVI")
+	plt.ylabel("LAI")
 	plt.grid()
 	plt.show()
-plta()
+# plta()
 
 
 # gNDVI over time data
@@ -109,6 +115,12 @@ gNDVIb = np.array(
     [0.381, 0.348, 0.408, 0.542, 0.727, 0.801, 0.806, 0.760, 0.831, 0.748]
 )
 DOY = np.array([150, 169, 173, 180, 193, 200, 211, 217, 231, 235])
+
+def pltb():
+	plt.plot(DOY, gNDVIb)
+	plt.grid()
+	plt.show()
+pltb()
 
 # table of VIs to display
 print(
