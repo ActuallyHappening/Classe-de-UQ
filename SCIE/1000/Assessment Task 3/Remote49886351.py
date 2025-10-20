@@ -17,16 +17,12 @@ else:
     raise ValueError()
 
 
-def print_both(msg: str):
-    print(msg)
-
-
-def print_enthusiast(msg: str):
+def print_enthusiast(msg: str = ""):
     if enthusiast:
         print(msg)
 
 
-def print_rookie(msg: str):
+def print_rookie(msg: str = ""):
     if not enthusiast:
         print(msg)
 
@@ -46,6 +42,13 @@ print(
 The data collected in remote sensing still needs to be processed and interpreted, however, which is where \
 Vegetation Indexes (VIs) come in."
 )
+# https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices
+# print(
+#     "Vegetation indices are mathematical formulas that use specific image bands to assess plant health. \
+#     Image bands are specified wavelength ranges within the electromagnetic spectrum captured by the drone's camera. \
+#     Each band corresponds to a different part of the spectrum (e.g., visible, infrared) that allows us to detect \
+#     different characteristics about plant health. Images captured by drones predominantly contain information from visible to near-infrared spectrums. "
+# )
 print_enthusiast(
     '"The most commonly used vegetation indices utilize the information contained in the red and near-infrared (NIR)\
 canopy reflectances or radiances," (Fang and Liang)\
@@ -67,20 +70,67 @@ def learn_about_vis():
 
     if vi == "1":
         # NDVI
-        print()
+        print_rookie(
+            "NDVI is an industry standard vegetation index (VI) that assess plant health. Higher NDVI values indicate healthier, denser vegetation e.g. NDVI = 0.6, while lower values suggest stress, drought or spares plant cover e.g. NDVI = 0.1"
+        )
+        print_enthusiast(
+            "NDVI is an industry standard vegetation index that that assesses plant health by comparing the difference between near-infrared and red bands of the electromagnetic spectrum. NDVI measures the chlorophyll content and photosynthetic activity of plants. Higher NDVI values indicate healthier, denser vegetation, while lower values suggest stress, drought, or sparse plant cover."
+        )
+        print_enthusiast("")
+        print_enthusiast(
+            tabulate(
+                [
+                    ["-1 to 0", "Non-vegetated surfaces"],
+                    ["0 to 0.2", "Spare vegetation"],
+                    ["0.2 to 0.5", "Healthy vegetation"],
+                    ["0.5 to 0.9", "Dense, healthy vegetation"],
+                ],
+                headers=["NDVI Value Range", "Interpretation"],
+            )
+        )
+        print_enthusiast("")
+        print(
+            "(Understanding Vegetation Indices. (2024). DroneDeploy. https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices)"
+        )
     elif vi == "2":
         # gNDVI
-        print()
+        print_enthusiast(
+            "gNDVI stands for Green Normalized Difference Vegetation Index."
+        )
+        print(
+            "gNDVI is another variation of NDVI that uses green reflectance instead of red reflectance."
+        )
+        print_enthusiast(
+            "The green band improves the index's ability to detect healthy vegetation, as healthy plants reflect more green light."
+        )
+        print(
+            "gNDVI is useful for landscapes with dense canopies due to a high sensitivity to chlorophyll."
+        )
+        print(
+            "(Understanding Vegetation Indices. (2024). DroneDeploy. https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices)"
+        )
+
     elif vi == "3":
         # EVI
         print()
     elif vi == "4":
         # SAVI
-        print()
+        print_enthusiast("SAVI stands for Soil Adjusted Vegetation Index.")
+        print(
+            "SAVI is a vegetation index that minimizes the influence of soil brightness when assessing plant health."
+        )
+        print(
+            "Bright or reflective soils can lead to inaccurate readings of plant health by reflecting more light when the soil is exposed."
+        )
+        print_enthusiast(
+            "The SAVI equation includes a soil adjustment factor, which is effective for areas with spares vegetation or bare soil."
+        )
     elif vi == "5":
         # NDWI
         print()
-    if input("Would you like to learn about any other VI? (N/y): ").lower() == "y":
+
+    user_input = input("Would you like to learn about any other VI? (N/y): ")
+    if user_input.lower() == "y":
         learn_about_vis()
 
 
@@ -91,7 +141,7 @@ print("Related to VIs is the Leaf Area Index (abbreviated LAI).")
 print_rookie("LAI measures how much leaf surface there is compared to ground area.")
 print_enthusiast(
     "LAI is a measure of plant canopy density and can be used to estimate photosynthesis, transpiration and overall productivity.\
-    LAI measures how much leaf surface is available to intercept light."
+LAI measures how much leaf surface is available to intercept light."
 )
 print("For example, LAI=3 means there is three times as much leaf area as ground area.")
 
