@@ -89,9 +89,7 @@ def learn_about_vis():
             )
         )
         print_enthusiast("")
-        print(
-            "(Understanding Vegetation Indices. (2024). DroneDeploy. https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices)"
-        )
+        print("(“Understanding Vegetation Indices,” 2024)")
     elif vi == "2":
         # gNDVI
         print_enthusiast(
@@ -106,13 +104,24 @@ def learn_about_vis():
         print(
             "gNDVI is useful for landscapes with dense canopies due to a high sensitivity to chlorophyll."
         )
-        print(
-            "(Understanding Vegetation Indices. (2024). DroneDeploy. https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices)"
-        )
+        print("(“Understanding Vegetation Indices,” 2024)")
 
     elif vi == "3":
         # EVI
-        print()
+        print_enthusiast("EVI stands for Enhanced Vegetation Index.")
+        print(
+            "EVI is a vegetation index (VI) that quantifies vegetation greenness and vigor."
+        )
+        print_enthusiast(
+            "Like NDVI, EVI uses data from the visible and near-infrared (NIR) parts of the spectrum."
+        )
+        print(
+            "Unlike NDVI, EVI uses the blue band from light detected, which helps reduce atmostpheric interference and enhances sensitivity in densely vegetated areas."
+        )
+        print(
+            "EVI is therefore better in dense vegetation, tropical forests, and is less affected by cloud and shadow."
+        )
+        print("(L, 2024)")
     elif vi == "4":
         # SAVI
         print_enthusiast("SAVI stands for Soil Adjusted Vegetation Index.")
@@ -125,9 +134,37 @@ def learn_about_vis():
         print_enthusiast(
             "The SAVI equation includes a soil adjustment factor, which is effective for areas with spares vegetation or bare soil."
         )
+        print("(“Understanding Vegetation Indices,” 2024)")
     elif vi == "5":
         # NDWI
-        print()
+        print(
+            "The Normalized Difference Water Index (NDWI) is used to highlight open water features in a satellite image, allowing a water body to “stand out” against the soil and vegetation."
+        )
+        print_enthusiast("The NDWI index was proposed by McFeeters in 1996.")
+        print(
+            "Its primary use today is to detect and monitor slight changes in water content of the water bodies."
+        )
+        print_enthusiast(
+            "Taking advantage of the NIR (near-infrared) and GREEN (visible green) spectral bands, the NDWI is capable of enhancing the water bodies in a satellite image."
+        )
+        print(
+            "The downside of the index is that it is sensitive to built structures, which can lead to overestimation of water bodies."
+        )
+
+        print_enthusiast("")
+        print_enthusiast(
+            tabulate(
+                [
+                    ["-1 to -0.3", "Drought, non-aqueous surfaces"],
+                    ["-0.3 to 0", "Moderate drought, non-aqueous surfaces"],
+                    ["0 to 0.2", "Flooding, humidity"],
+                    ["0.2 to 1", "Water surface"],
+                ],
+                headers=["NDWI Value Range", "Interpretation"],
+            )
+        )
+        print_enthusiast("")
+        print("(EOS Data Analytics, 2017)")
 
     user_input = input("Would you like to learn about any other VI? (N/y): ")
     if user_input.lower() == "y":
