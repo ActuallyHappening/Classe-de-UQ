@@ -5,8 +5,6 @@ import matplotlib.pyplot as plt
 # Print a welcome message appropriate for all patrons
 print("Welcome to the St Lucia science museum interactive display!")
 
-debugging = True
-
 # Print a statement explaining the patron types and prompt the user to enter their patron type
 enthusiast = input("Are you: \n 1) A rookie? \n 2) An enthusiast? \n ")
 if enthusiast == "1":
@@ -34,7 +32,7 @@ farmland and soil, which saves farmers collecting this data on the ground themse
 )
 print_rookie(
     "Remote sensing in agriculture is the use of satellites or drones to collect information about a farmers crops, \
-    informing farmers and saving them time and money."
+informing farmers and saving them time and money."
 )
 # It works by capturing data from reflected or emitted energy - most often light from the sun - across
 # different parts of the electromagnetic spectrum (like visible, infrared, or thermal)
@@ -43,7 +41,7 @@ print_rookie(
 # Healthy plants strongly reflect NIR light (due to leaf structure)
 print_rookie(
     "This is usually achieved by pointing a camera down towards the Earth somewhere you are interested in and \
-	recording what you see."
+recording what you see."
 )
 print_enthusiast(
     "This works by capturing data from light reflected from the sun (usually) across \
@@ -51,16 +49,18 @@ different parts of the EM spectrum, usually red and near infrared (NIR) bands, a
 blue and green bands."
 )
 print_rookie(
-    "To interpret the many images taken, scientists have developed Vegetation Indexes (called VIs),\
+    "To interpret the many images taken, scientists have developed Vegetation Indexes (called VIs), \
 which provide a convenient summary of the data and produce useful visual images for people to analyse."
 )
-# https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices
 print_enthusiast(
-    "Vegetation indices are mathematical formulas that use specific image bands to assess plant health. \
-    Image bands are specified wavelength ranges within the electromagnetic spectrum captured by the drone's camera. \
-    Each band corresponds to a different part of the spectrum (e.g., visible, infrared) that allows us to detect \
-    different characteristics about plant health.\
-    (“Understanding Vegetation Indices,” 2024)"
+    "To interpret and summarise the data collected, the concept of a Vegetation Index was created."
+)
+print_enthusiast(
+    '"Vegetation indices are mathematical formulas that use specific image bands to assess plant health. \
+Image bands are specified wavelength ranges within the electromagnetic spectrum captured by the drone\'s camera. \
+Each band corresponds to a different part of the spectrum (e.g., visible, infrared) that allows us to detect \
+different characteristics about plant health." \
+(“Understanding Vegetation Indices,” 2024)'
 )
 
 
@@ -78,6 +78,7 @@ def learn_about_vis():
 
     if vi == "1":
         # NDVI
+        print("NDVI stands for Normalized Difference Vegetation Index")
         print_rookie(
             "NDVI is an industry standard vegetation index (VI) that assesses plant health. Higher NDVI values indicate healthier, denser vegetation (e.g. NDVI = 0.6), while lower values suggest stress, drought or spare plant cover (e.g. NDVI = 0.1)"
         )
@@ -100,23 +101,21 @@ def learn_about_vis():
         print("(“Understanding Vegetation Indices,” 2024)")
     elif vi == "2":
         # gNDVI
-        print(
-            "gNDVI stands for Green Normalized Difference Vegetation Index."
-        )
+        print("gNDVI stands for Green Normalized Difference Vegetation Index.")
         print(
             "gNDVI is a variation of NDVI that uses green reflectance instead of red reflectance."
         )
-        print_enthusiast(
+        print(
             "The green band improves the index's ability to detect healthy vegetation, as healthy plants reflect more green light."
         )
-        print(
+        print_enthusiast(
             "gNDVI is useful for landscapes with dense canopies due to a high sensitivity to chlorophyll."
         )
         print("(“Understanding Vegetation Indices,” 2024)")
 
     elif vi == "3":
         # EVI
-        print_enthusiast("EVI stands for Enhanced Vegetation Index.")
+        print("EVI stands for Enhanced Vegetation Index.")
         print(
             "EVI is a vegetation index (VI) that quantifies vegetation greenness and vigor."
         )
@@ -183,9 +182,12 @@ learn_about_vis()
 
 # Introduce LAI and the role that some VIs can play in predicting LAI
 print("Related to VIs is the Leaf Area Index (abbreviated LAI).")
-print_rookie("LAI measures how much leaf surface there is compared to ground area.")
+print_rookie(
+    "LAI measures how much leaf surface there is compared to ground area. \
+This is useful to know as it can be used to estimate overal productivity."
+)
 print_enthusiast(
-    "LAI is a measure of plant canopy density and can be used to estimate photosynthesis, transpiration and overall productivity.\
+    "LAI is a measure of plant canopy density and can be used to estimate photosynthesis, transpiration and overall productivity. \
 LAI measures how much leaf surface is available to intercept light."
 )
 print("For example, LAI=3 means there is three times as much leaf area as ground area.")
@@ -286,8 +288,7 @@ def plta_linear_model():
     return
 
 
-if debugging:
-    plta_linear_model()
+# plta_linear_model()
 
 
 def gNDVI_LAI_model(gNDVI):
@@ -309,10 +310,11 @@ if enthusiast:
     # Display a graph of the model you developed for LAI vs gNDVI.
     # Your graph should display your fitted model and the data. Describe
     # and explain the graph
-    print("Here is a graph for gNDVI versus LAI")
+    print("Here is a graph of gNDVI versus LAI.")
+    print("TODO: Read article and work out how they measured it")
     plta()
     # Identify one or two limitations of the model
-    print("TODO limitations of the model")
+    print("TODO: limitations of the model")
 
 # Print a statement about why LAI provides important information for agriculture
 print(
@@ -355,3 +357,9 @@ while i < len(DOY) - 1:
 # print(
 #     f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previous show is {auc} gNDVI days."
 # )
+
+# Print an appropriate farewell message.
+print("Thankyou for using St Lucia's science museum's interactive display!")
+print(
+    "We hope you now have an appreciation of the nuances and importance of Vegetation Indexes, LAI, and their benefits to global agriculture."
+)
