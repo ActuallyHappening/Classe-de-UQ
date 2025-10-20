@@ -28,31 +28,39 @@ def print_rookie(msg: str = ""):
 
 
 # Print an introduction about remote sensing in agriculture
-print(
+print_enthusiast(
     "Remote sensing in agriculture is the use of satellites, aircraft or drones to collect information about crops, \
-farmland and soil, which saves farmers collecting this data on the ground themselves."
+farmland and soil, which saves farmers collecting this data on the ground themselves and can inform environmental decisions."
+)
+print_rookie(
+    "Remote sensing in agriculture is the use of satellites or drones to collect information about a farmers crops, \
+    informing farmers and saving them time and money."
 )
 # It works by capturing data from reflected or emitted energy - most often light from the sun - across
 # different parts of the electromagnetic spectrum (like visible, infrared, or thermal)
 # most commonly the red and near-infrared (NIR) bands, because
 # Healthy plants absorb red light (for photosynthesis)
 # Healthy plants strongly reflect NIR light (due to leaf structure)
-print(
-    "This works by recording the reflected energy (usually from the sun). \
-The data collected in remote sensing still needs to be processed and interpreted, however, which is where \
-Vegetation Indexes (VIs) come in."
+print_rookie(
+    "This is usually achieved by pointing a camera down towards the Earth somewhere you are interested in and \
+	recording what you see."
+)
+print_enthusiast(
+    "This works by capturing data from light reflected from the sun (usually) across \
+different parts of the EM spectrum, usually red and near infrared (NIR) bands, and sometimes \
+blue and green bands."
+)
+print_rookie(
+    "To interpret the many images taken, scientists have developed Vegetation Indexes (called VIs),\
+which provide a convenient summary of the data and produce useful visual images for people to analyse."
 )
 # https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices
-# print(
-#     "Vegetation indices are mathematical formulas that use specific image bands to assess plant health. \
-#     Image bands are specified wavelength ranges within the electromagnetic spectrum captured by the drone's camera. \
-#     Each band corresponds to a different part of the spectrum (e.g., visible, infrared) that allows us to detect \
-#     different characteristics about plant health. Images captured by drones predominantly contain information from visible to near-infrared spectrums. "
-# )
 print_enthusiast(
-    '"The most commonly used vegetation indices utilize the information contained in the red and near-infrared (NIR)\
-canopy reflectances or radiances," (Fang and Liang)\
-because healthy plants absord red light (for photosynthesis) and strongly reflect NIR light (due to leaf structure).'
+    "Vegetation indices are mathematical formulas that use specific image bands to assess plant health. \
+    Image bands are specified wavelength ranges within the electromagnetic spectrum captured by the drone's camera. \
+    Each band corresponds to a different part of the spectrum (e.g., visible, infrared) that allows us to detect \
+    different characteristics about plant health.\
+    (“Understanding Vegetation Indices,” 2024)"
 )
 
 
@@ -71,7 +79,7 @@ def learn_about_vis():
     if vi == "1":
         # NDVI
         print_rookie(
-            "NDVI is an industry standard vegetation index (VI) that assess plant health. Higher NDVI values indicate healthier, denser vegetation e.g. NDVI = 0.6, while lower values suggest stress, drought or spares plant cover e.g. NDVI = 0.1"
+            "NDVI is an industry standard vegetation index (VI) that assesses plant health. Higher NDVI values indicate healthier, denser vegetation (e.g. NDVI = 0.6), while lower values suggest stress, drought or spare plant cover (e.g. NDVI = 0.1)"
         )
         print_enthusiast(
             "NDVI is an industry standard vegetation index that that assesses plant health by comparing the difference between near-infrared and red bands of the electromagnetic spectrum. NDVI measures the chlorophyll content and photosynthetic activity of plants. Higher NDVI values indicate healthier, denser vegetation, while lower values suggest stress, drought, or sparse plant cover."
@@ -92,11 +100,11 @@ def learn_about_vis():
         print("(“Understanding Vegetation Indices,” 2024)")
     elif vi == "2":
         # gNDVI
-        print_enthusiast(
+        print(
             "gNDVI stands for Green Normalized Difference Vegetation Index."
         )
         print(
-            "gNDVI is another variation of NDVI that uses green reflectance instead of red reflectance."
+            "gNDVI is a variation of NDVI that uses green reflectance instead of red reflectance."
         )
         print_enthusiast(
             "The green band improves the index's ability to detect healthy vegetation, as healthy plants reflect more green light."
@@ -124,7 +132,7 @@ def learn_about_vis():
         print("(L, 2024)")
     elif vi == "4":
         # SAVI
-        print_enthusiast("SAVI stands for Soil Adjusted Vegetation Index.")
+        print("SAVI stands for Soil Adjusted Vegetation Index.")
         print(
             "SAVI is a vegetation index that minimizes the influence of soil brightness when assessing plant health."
         )
