@@ -263,6 +263,7 @@ LAI = np.array(
     ]
 )
 
+<<<<<<< HEAD
 # Given two points visually on the line of best fit,
 # calculate the gradient and y-intercept of the resulting line of best fit
 (p1x, p1y) = (-0.114, 2.027)
@@ -270,6 +271,13 @@ LAI = np.array(
 m = (p2y - p1y) / (p2x - p1x)
 # Sub (p1x, p1y)
 c = p1y - m * p1x
+=======
+plt.plot(LAI, gNDVIa, "ko", markersize=5)
+plt.grid()
+plt.xlabel("LAI")
+plt.ylabel("gNDVI")
+plt.show()
+>>>>>>> 50c6489 (add: research assignment)
 
 
 # M: 4.1327 C: 2.4981
