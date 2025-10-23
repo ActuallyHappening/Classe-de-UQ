@@ -16,12 +16,6 @@ cups_choices = c(rep(c(rep(4, 6), rep(3, 6), rep(1, 6)), 2))
 
 stripplot(Percentage~Cups, pch=music_choices, cex=1.5, data=data, xlab="Cups", main="Plot of percentage recall versus cups")
 # stripplot(Percentage~Music, pch=cups_choices, cex=1.5, data=data, xlab="Music")
-boxplot(Percentage~Cups, pch=music_choices, cex=1.5, data=data, xlab="Cups", main="Plot of percentage recall versus cups")
-
-boxplot(Percentage~Cups, data=data, main="Plot of percentage recall versus cups")
-boxplot(Percentage~Music, data=data, main="Plot of percentage recall versus cups")
-
-stripplot(Percentage~Music*Cups, cex=1.5, data=data)
 
 Music = data$Music
 interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean Percentage", main="Interactions",)
@@ -30,8 +24,8 @@ interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean Perc
 # With interaction factor
 data.lm_int = lm(Percentage ~ Music * Cups, data=data)
 anova(data.lm_int)
-
 plot(data.lm_int)
+
 
 # Without interaction factor
 # anova(lm(Percentage ~ Music + Cups, data=data))
@@ -44,6 +38,7 @@ pairwise.t.test(data$Percentage, data$Cups, p.adjust.method = "bonferroni")
 null = data[data$Music == "Silent" & data$Cups == "None",]
 extreme = data[data$Music == "Classical" & data$Cups == "Many",]
 t.test(null$Percentage, extreme$Percentage)
+pairwise.t.test(null$Percentage, extreme$Percentage, p.adjust.method = "bonferroni")
 
 silent = data[data$Music == "Silent",]
 classical = data[data$Music == "Classical",]
@@ -51,7 +46,9 @@ t.test(silent$Percentage, classical$Percentage) # not significant
 
 none = data[data$Cups == "None",]
 many = data[data$Cups == "Many",]
-t.test(none$Percentage, many$Percentage) # not significant
+t.test(none$Percentage, many$Percentage)
 
-medium = data[data$Cups == "Medium",]
-t.test(silent$Percentage, medium$Percentage) # not significant
+# Only for silent
+anova(lm(Percentage~Cups, data=silent))
+# Only for classical
+anova(lm(Percentage~Cups, data=classical))
