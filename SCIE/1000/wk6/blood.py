@@ -11,17 +11,19 @@ concentration = np.zeros(len(schedule))
 
 # Fill in the rest of your program below
 
-for (i, remembered) in enumerate(schedule):
-	current = 0
-	if i > 0:
-		current = concentration[i - 1]
-	if bool(remembered):
-		concentration[i] = current + 5 - 2
-	else:
-		concentration[i] = current - 2
-	if concentration[i] > 10:
-		print(f"{i} days later, the concentration is effective at {concentration[i]}")
-	else:
-		print(f"{i} days later, the concentration is not effective at {concentration[i]}")
+for i, remembered in enumerate(schedule):
+    current = 0
+    if i > 0:
+        current = concentration[i - 1]
+    if bool(remembered):
+        concentration[i] = current + 5 - 2
+    else:
+        concentration[i] = current - 2
+    if concentration[i] > 10:
+        print(f"{i} days later, the concentration is effective at {concentration[i]}")
+    else:
+        print(
+            f"{i} days later, the concentration is not effective at {concentration[i]}"
+        )
 
 print(f"{concentration=}")

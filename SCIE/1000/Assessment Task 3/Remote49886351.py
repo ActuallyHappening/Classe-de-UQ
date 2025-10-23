@@ -263,7 +263,6 @@ LAI = np.array(
     ]
 )
 
-<<<<<<< HEAD
 # Given two points visually on the line of best fit,
 # calculate the gradient and y-intercept of the resulting line of best fit
 (p1x, p1y) = (-0.114, 2.027)
@@ -271,13 +270,6 @@ LAI = np.array(
 m = (p2y - p1y) / (p2x - p1x)
 # Sub (p1x, p1y)
 c = p1y - m * p1x
-=======
-plt.plot(LAI, gNDVIa, "ko", markersize=5)
-plt.grid()
-plt.xlabel("LAI")
-plt.ylabel("gNDVI")
-plt.show()
->>>>>>> 50c6489 (add: research assignment)
 
 
 # M: 4.1327 C: 2.4981
@@ -310,6 +302,7 @@ def plta():
     plt.plot(np.sort(gNDVIa), gNDVI_LAI_model(np.sort(gNDVIa)))
     plt.xlabel("gNDVI")
     plt.ylabel("LAI")
+    plt.title("gNDVI versus LAI")
     plt.grid()
     plt.show()
 
@@ -320,15 +313,26 @@ if enthusiast:
     # and explain the graph
     print("Here is a graph of gNDVI versus LAI.")
     print("TODO: Read article and work out how they measured it")
+    print(
+        "This graph shows the relationship between the VI gNDVI and LAI. It approximately follows a growing power law relationship as gNDVI increases."
+    )
+    print("A power law model for the data is plotted on top as a solid line.")
     plta()
     # Identify one or two limitations of the model
-    print("TODO: limitations of the model")
+    print(
+        "As this is a power function, the behaviour past gNDVI < 0 isn't very accurate to the data. If it is even defined, the LAI balloons positively, such that completely dead vegetation (e.g. gNDVI = -0.5) has a very positive LAI which isn't reasonable."
+    )
+    print("Therefore this model is only reasonable for gNDVI > 0.")
 
-# Print a statement about why LAI provides important information for agriculture
-print(
-    '"Leaf area index (LAI) and biomass are important indicators of crop development and the availability of this information \
-    during the growing season can support farmer decision making processes." (Kross et al., 2015)'
-)
+    # Print a statement about why LAI provides important information for agriculture
+    print(
+        "As gNDVI increases, the LAI increases which allows prediction of crop development based only on remote sensing data."
+    )
+    print(
+        '"Leaf area index (LAI) and biomass are important indicators of crop development and the availability of this information \
+during the growing season can support farmer decision making processes." (Kross et al., 2015)'
+    )
+
 
 # gNDVI over time data
 gNDVIb = np.array(
