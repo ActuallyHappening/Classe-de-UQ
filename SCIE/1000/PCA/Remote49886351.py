@@ -343,6 +343,9 @@ DOY = np.array([150, 169, 173, 180, 193, 200, 211, 217, 231, 235])
 
 def pltb():
     plt.plot(DOY, gNDVIb)
+    plt.xlabel("Day of Year")
+    plt.ylabel("gNDVI")
+    plt.title("gNDVI over Time")
     plt.grid()
     plt.show()
 
@@ -358,17 +361,27 @@ def trapezoid_area(y1, y2, width):
     return lower * width + 0.5 * (higher - lower) * width
 
 
-auc = 0
-i = 0
-while i < len(DOY) - 1:
-    left = gNDVIb[i]
-    right = gNDVIb[i + 1]
-    width = DOY[i + 1] - DOY[i]
-    auc = auc + trapezoid_area(left, right, width)
-    i = i + 1
-# print(
-#     f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previous show is {auc} gNDVI days."
-# )
+# Print a statement explaining how/why VIs change over time, and why cumulative VI can be important for
+# understanding certain aspects of crop health and yield.
+print_enthusiast()
+
+
+if enthusiast:
+    # Display a graph of gNDVI over time. Describe and explain your
+    # graph, including how cumulative gNDVI relates.
+    print("")
+    pltb()
+    auc = 0
+    i = 0
+    while i < len(DOY) - 1:
+        left = gNDVIb[i]
+        right = gNDVIb[i + 1]
+        width = DOY[i + 1] - DOY[i]
+        auc = auc + trapezoid_area(left, right, width)
+        i = i + 1
+    print(
+        f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previous show is {auc} gNDVI days."
+    )
 
 # Print an appropriate farewell message.
 print("Thankyou for using St Lucia's science museum's interactive display!")
