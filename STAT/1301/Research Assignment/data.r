@@ -28,7 +28,7 @@ data.lm_int = lm(Percentage ~ Music * Cups, data=data)
 anova(data.lm_int)
 
 # plot(data.int_lm.no_interaction, 1:2) # Doesn't work, idk?
-plot(fitted.values(data.lm_int))
+plot(data.lm_int)
 
 # Without interaction factor
 anova(lm(Percentage ~ Music + Cups, data=data))
