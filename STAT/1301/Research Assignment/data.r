@@ -15,7 +15,11 @@ music_choices = c(rep(4,18),rep(1,18)) # define two groups of plotting character
 cups_choices = c(rep(c(rep(4, 6), rep(3, 6), rep(1, 6)), 2))
 
 stripplot(Percentage~Cups, pch=music_choices, cex=1.5, data=data, xlab="Cups", main="Plot of percentage recall versus cups")
-stripplot(Percentage~Music, pch=cups_choices, cex=1.5, data=data, xlab="Music")
+# stripplot(Percentage~Music, pch=cups_choices, cex=1.5, data=data, xlab="Music")
+boxplot(Percentage~Cups, pch=music_choices, cex=1.5, data=data, xlab="Cups", main="Plot of percentage recall versus cups")
+
+boxplot(Percentage~Cups, data=data, main="Plot of percentage recall versus cups")
+boxplot(Percentage~Music, data=data, main="Plot of percentage recall versus cups")
 
 stripplot(Percentage~Music*Cups, cex=1.5, data=data)
 
@@ -27,13 +31,27 @@ interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean Perc
 data.lm_int = lm(Percentage ~ Music * Cups, data=data)
 anova(data.lm_int)
 
-# plot(data.int_lm.no_interaction, 1:2) # Doesn't work, idk?
 plot(data.lm_int)
 
 # Without interaction factor
-anova(lm(Percentage ~ Music + Cups, data=data))
+# anova(lm(Percentage ~ Music + Cups, data=data))
 
-# 6 chs = c(rep(4,9),rep(1,9)) # define two groups of plotting characters
-# 7 stripplot(Yield∼Fertilizer,pch=chs,cex=1.5,data=crop,xlab="Fertilizer")
-# 8 #stripplot(Yield∼Fertilizer,groups=Pesticide,cex=1.5,data=crop,
-# 9 # xlab="Fertilizer")
+pairwise.t.test(data$Percentage, data$Music, p.adjust.method = "bonferroni")
+pairwise.t.test(data$Percentage, data$Cups, p.adjust.method = "bonferroni")
+
+
+#** Testing most extreme cases **
+null = data[data$Music == "Silent" & data$Cups == "None",]
+extreme = data[data$Music == "Classical" & data$Cups == "Many",]
+t.test(null$Percentage, extreme$Percentage)
+
+silent = data[data$Music == "Silent",]
+classical = data[data$Music == "Classical",]
+t.test(silent$Percentage, classical$Percentage) # not significant
+
+none = data[data$Cups == "None",]
+many = data[data$Cups == "Many",]
+t.test(none$Percentage, many$Percentage) # not significant
+
+medium = data[data$Cups == "Medium",]
+t.test(silent$Percentage, medium$Percentage) # not significant
