@@ -363,14 +363,35 @@ def trapezoid_area(y1, y2, width):
 
 # Print a statement explaining how/why VIs change over time, and why cumulative VI can be important for
 # understanding certain aspects of crop health and yield.
-print_enthusiast()
+print_enthusiast(
+    "Cumulative VIs are VIs summed over time. \
+For example, the cumulative gNDVI could be the sum of gNDVI values every day over one harvest cycle. \
+Cumulative NDVI has been shown to corrolate with overall crop yield (Exploring NDVI as a Predictor of Corn Yield, 2022). \
+The previous graph of LAI versus gNDVI predicted increased LAI versus cumulative gNDVI, and as LAI is related to biomass, \
+this model also corroberates with cumulative NDVI being a predictor of crop yield."
+)
+print_rookie(
+    "Cumulative Vegetative Indexes (VIs) are a measure of how much VI there is in total over some time frame. \
+For example, over a season of 80 days, the cumulative gNDVI would be the sum of each gNDVI value every day. \
+Cumulative NDVI has been shown to be a predictor of crop yield, making it an important metric for \
+farmers to understand from remote sensing data (Exploring NDVI as a Predictor of Corn Yield, 2022)."
+)
+print_enthusiast(
+    '"By better understanding the relationship between NDVI metrics [e.g. cumulative gNDVI] and crop yield, \
+stakeholders in the agricultural industry can make more informed decisions and optimize resource use, \
+ultimately leading to increased productivity and sustainability." (Exploring NDVI as a Predictor of Corn Yield, 2022)'
+)
 
 
 if enthusiast:
     # Display a graph of gNDVI over time. Describe and explain your
     # graph, including how cumulative gNDVI relates.
-    print("")
+    print("This is a graph of gNDVI measured using remote sensing over a span 83 days.")
+    print(
+        "The area under the curve (AUC) is the cumulative gNDVI for the harvest season shown, which would have units 'gNDVI days'."
+    )
     pltb()
+
     auc = 0
     i = 0
     while i < len(DOY) - 1:
@@ -379,8 +400,11 @@ if enthusiast:
         width = DOY[i + 1] - DOY[i]
         auc = auc + trapezoid_area(left, right, width)
         i = i + 1
+
+    # Print a statement including the calculated cumulative gNDVI for a
+    # crop season.
     print(
-        f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previous show is {auc} gNDVI days."
+        f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previously shown was {auc} gNDVI days."
     )
 
 # Print an appropriate farewell message.
