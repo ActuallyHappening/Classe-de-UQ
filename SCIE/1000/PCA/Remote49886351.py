@@ -198,7 +198,7 @@ nl(2)
 print("Related to VIs is the Leaf Area Index (abbreviated LAI).")
 print_rookie(
     "LAI measures how much leaf surface there is compared to ground area. \
-This is useful to know as it can be used to estimate overal productivity."
+This is useful to know as it can be used to estimate overal crop productivity."
 )
 print_enthusiast(
     "LAI is a measure of plant canopy density and can be used to estimate photosynthesis, transpiration and overall productivity. \
@@ -342,16 +342,16 @@ if enthusiast:
     )
     print("Therefore this model is only reasonable for gNDVI > 0.")
 
-    # Print a statement about why LAI provides important information for agriculture
-    print(
-        "As gNDVI increases, the LAI increases which allows prediction of crop development based only on remote sensing data."
-    )
-    print(
-        '"Leaf area index (LAI) and biomass are important indicators of crop development and the availability of this information \
+# Print a statement about why LAI provides important information for agriculture
+print(
+    "As gNDVI increases, the LAI increases, which allows prediction of crop development based only on remote sensing data."
+)
+print(
+    '"Leaf area index (LAI) and biomass are important indicators of crop development and the availability of this information \
 during the growing season can support farmer decision making processes." (Kross et al., 2015)'
-    )
+)
 
-    nl(2)
+nl(2)
 
 
 # gNDVI over time data
@@ -385,15 +385,19 @@ def trapezoid_area(y1, y2, width):
 # understanding certain aspects of crop health and yield.
 print_enthusiast(
     "Cumulative VIs are VIs summed over time. \
-For example, the cumulative gNDVI could be the sum of gNDVI values every day over one harvest cycle. \
-Cumulative NDVI has been shown to corrolate with overall crop yield (Exploring NDVI as a Predictor of Corn Yield, 2022). \
+For example, the cumulative gNDVI could be the sum of gNDVI values every day over one harvest cycle."
+)
+print_enthusiast(
+    "Cumulative NDVI has been shown to corrolate with overall crop yield (Exploring NDVI as a Predictor of Corn Yield, 2022). \
 The previous graph of LAI versus gNDVI predicted increased LAI versus cumulative gNDVI, and as LAI is related to biomass, \
 this model also corroberates with cumulative NDVI being a predictor of crop yield."
 )
 print_rookie(
     "Cumulative Vegetative Indexes (VIs) are a measure of how much VI there is in total over some time frame. \
-For example, over a season of 80 days, the cumulative gNDVI would be the sum of each gNDVI value every day. \
-Cumulative NDVI has been shown to be a predictor of crop yield, making it an important metric for \
+For example, over a season of 80 days, the cumulative gNDVI would be the sum of each gNDVI value every day."
+)
+print_rookie(
+    "Cumulative NDVI has been shown to be a predictor of crop yield, making it an important metric for \
 farmers to understand from remote sensing data (Exploring NDVI as a Predictor of Corn Yield, 2022)."
 )
 print_enthusiast(
