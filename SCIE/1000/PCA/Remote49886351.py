@@ -28,8 +28,8 @@ def print_rookie(msg: str = ""):
 
 
 def nl(num: int):
-    """Prints a newline to the screen for legibility"""
-    print("\n" * num)
+    """Prints a number of newlines to the screen for legibility"""
+    print("\n" * (num - 1))
 
 
 nl(2)
