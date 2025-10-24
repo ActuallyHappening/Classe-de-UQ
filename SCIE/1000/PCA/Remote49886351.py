@@ -37,28 +37,24 @@ nl(2)
 # Print an introduction about remote sensing in agriculture
 print_enthusiast(
     "Remote sensing in agriculture is the use of satellites, aircraft or drones to collect information about crops, \
-farmland and soil, which saves farmers collecting this data on the ground themselves and can inform environmental decisions."
+farmland, soil, and more broadly the ground level environment, which saves farmers collecting this data on the ground themselves and informs evidence-based environmental and agriculture decision-making."
 )
 print_rookie(
     "Remote sensing in agriculture is the use of satellites or drones to collect information about a farmers crops, \
 informing farmers and saving them time and money."
-)
-print_rookie(
-    "This is usually achieved by pointing a camera down towards the Earth somewhere you are interested in and \
-recording what you see."
 )
 print_enthusiast(
     "This works by capturing data from light reflected from the sun (usually) across \
 different parts of the EM spectrum, usually red and near infrared (NIR) bands, and sometimes \
 blue and green bands."
 )
+print_rookie(
+    "This is usually achieved by pointing a camera down towards the Earth somewhere you are interested in and \
+recording what you see. Cameras can often spot things that the naked eye would miss, such as a slight lack of water."
+)
 
 nl(1)
 
-print_rookie(
-    "To interpret the many images taken, scientists have developed Vegetation Indexes (called VIs), \
-which provide a convenient summary of the data and produce useful visual images for people to analyse."
-)
 print_enthusiast(
     "To interpret and summarise the data collected, the concept of a Vegetation Index was created."
 )
@@ -69,6 +65,11 @@ Each band corresponds to a different part of the spectrum (e.g., visible, infrar
 different characteristics about plant health." \
 (“Understanding Vegetation Indices,” 2024)'
 )
+print_rookie(
+    "To interpret the many images taken, scientists have developed Vegetation Indexes (abbreviated as VIs), \
+which provide a convenient summary of the data and can produce visual images for people to analyse."
+)
+print("Vegatation Indexes (VIs) are usually defined between -1 and 1.")
 
 
 def learn_about_vis():
@@ -78,7 +79,7 @@ def learn_about_vis():
     print(
         tabulate(
             [[1, "NDVI"], [2, "gNDVI"], [3, "EVI"], [4, "SAVI"], [5, "NDWI"]],
-            headers=["Reference", "Vegetation Index"],
+            headers=["Reference", "Vegetation Index (VI)"],
         )
     )
     nl(1)
@@ -204,7 +205,10 @@ print_enthusiast(
     "LAI is a measure of plant canopy density and can be used to estimate photosynthesis, transpiration and overall productivity. \
 LAI measures how much leaf surface is available to intercept light."
 )
-print("For example, LAI=3 means there is three times as much leaf area as ground area.")
+print(
+    "For example, LAI=3 means that if you laid down all the leaves in a field flat, \
+there would be three times as much leaf area as ground area."
+)
 
 nl(2)
 
