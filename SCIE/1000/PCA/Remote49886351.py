@@ -446,9 +446,9 @@ nl(4)
 
 print_enthusiast("""
 References
-    EOS Data Analytics. (2017, October 17). NDWI: Normalized Difference Water Index In Agriculture. Eos.com. https://eos.com/make-an-analysis/ndwi/Exploring
-    NDVI as a Predictor of Corn Yield. (2022). Streambatch.io. https://www.streambatch.io/post/exploring-ndvi-as-a-predictor-of-crop-yield
-    Kross, A., McNairn, H., Lapen, D., Sunohara, M., & Champagne, C. (2015). Assessment of RapidEye vegetation indices for estimation of leaf area index and biomass in corn and soybean crops. International Journal of Applied Earth Observation and Geoinformation, 34, 235–248. https://doi.org/10.1016/j.jag.2014.08.002
-    L, J. (2024, November 17). Enhanced Vegetation Index (EVI): A Modern Approach to Vegetation Health Monitoring | GeoAI. Geospatial Artificial Intelligence | GeoAI. https://geoai.au/enhanced-vegetation-index-evi-a-modern-approach-to-vegetation-health-monitoring/
-    Understanding Vegetation Indices. (2024). DroneDeploy. https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices
+\tEOS Data Analytics. (2017, October 17). NDWI: Normalized Difference Water Index In Agriculture. Eos.com. https://eos.com/make-an-analysis/ndwi/Exploring
+\tNDVI as a Predictor of Corn Yield. (2022). Streambatch.io. https://www.streambatch.io/post/exploring-ndvi-as-a-predictor-of-crop-yield
+\tKross, A., McNairn, H., Lapen, D., Sunohara, M., & Champagne, C. (2015). Assessment of RapidEye vegetation indices for estimation of leaf area index and biomass in corn and soybean crops. International Journal of Applied Earth Observation and Geoinformation, 34, 235–248. https://doi.org/10.1016/j.jag.2014.08.002
+\tL, J. (2024, November 17). Enhanced Vegetation Index (EVI): A Modern Approach to Vegetation Health Monitoring | GeoAI. Geospatial Artificial Intelligence | GeoAI. https://geoai.au/enhanced-vegetation-index-evi-a-modern-approach-to-vegetation-health-monitoring/
+\tUnderstanding Vegetation Indices. (2024). DroneDeploy. https://help.dronedeploy.com/hc/en-us/articles/1500004860841-Understanding-Vegetation-Indices
 """)
