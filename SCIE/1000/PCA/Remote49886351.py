@@ -76,7 +76,7 @@ print("Vegatation Indexes (VIs) are usually defined between -1 and 1.")
 def learn_about_vis():
     """Prompt the user to choose which VI they would like to learn about"""
 
-    print()
+    nl(1)
     print(
         tabulate(
             [[1, "NDVI"], [2, "gNDVI"], [3, "EVI"], [4, "SAVI"], [5, "NDWI"]],
