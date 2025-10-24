@@ -341,7 +341,8 @@ if enthusiast:
 
     # Identify one or two limitations of the model
     print(
-        "As this is a power function, the behaviour past gNDVI < 0 isn't very accurate to the data. If it is even defined, the LAI balloons positively, such that completely dead vegetation (e.g. gNDVI = -0.5) has a very positive LAI which isn't reasonable."
+        "As this is a power function, the behaviour past gNDVI < 0 isn't very accurate to the data. If it is even defined, the LAI balloons positively, \
+such that completely dead vegetation (e.g. gNDVI = -0.5) has a very positive LAI which isn't reasonable."
     )
     print("Therefore this model is only reasonable for gNDVI > 0.")
 
@@ -371,9 +372,6 @@ def pltb():
     plt.title("gNDVI over Time")
     plt.grid()
     plt.show()
-
-
-# pltb()
 
 
 # trapezoidal rule approximation for AUC
