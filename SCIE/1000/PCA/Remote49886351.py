@@ -94,7 +94,8 @@ def learn_about_vis():
             "NDVI is an industry standard vegetation index (VI) that assesses plant health. Higher NDVI values indicate healthier, denser vegetation (e.g. NDVI = 0.6), while lower values suggest stress, drought or spare plant cover (e.g. NDVI = 0.1)"
         )
         print_enthusiast(
-            "NDVI is an industry standard vegetation index that that assesses plant health by comparing the difference between near-infrared and red bands of the electromagnetic spectrum. NDVI measures the chlorophyll content and photosynthetic activity of plants. Higher NDVI values indicate healthier, denser vegetation, while lower values suggest stress, drought, or sparse plant cover."
+            "NDVI is an industry standard vegetation index that that assesses plant health by comparing the difference between near-infrared and red bands of the electromagnetic spectrum. \
+NDVI measures the chlorophyll content and photosynthetic activity of plants. Higher NDVI values indicate healthier, denser vegetation, while lower values suggest stress, drought, or sparse plant cover."
         )
         print_enthusiast("")
         print_enthusiast(
