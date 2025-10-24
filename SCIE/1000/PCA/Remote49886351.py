@@ -6,13 +6,14 @@ import matplotlib.pyplot as plt
 print("Welcome to the St Lucia science museum interactive display!")
 
 # Print a statement explaining the patron types and prompt the user to enter their patron type
-enthusiast = input("Are you: \n 1) A rookie? \n 2) An enthusiast? \n ").strip()
+enthusiast = input("Are you: \n 1) A rookie? \n 2) An enthusiast? \n ")
 if enthusiast == "1":
     enthusiast = False
 elif enthusiast == "2":
     enthusiast = True
 else:
-    raise ValueError()
+    # raise ValueError()
+    enthusiast = True
 
 
 def print_enthusiast(msg: str = ""):
@@ -186,7 +187,7 @@ def learn_about_vis():
     nl(1)
     user_input = input(
         "Would you like to learn about any other VI? \n Yes) 1 \n  No) 2 \n"
-    ).strip()
+    )
     if user_input == "1":
         learn_about_vis()
 
@@ -292,28 +293,25 @@ m = (p2y - p1y) / (p2x - p1x)
 c = p1y - m * p1x
 
 
-# M: 4.1327 C: 2.4981
-def plta_linear_model():
-    """Run this function to see the linearized data plus model"""
-    plt.plot(np.log(gNDVIa), np.log(LAI), "ko", markersize=5)
-    plt.xlabel("ln gNDVI")
-    plt.ylabel("ln LAI")
-
-    print(f"M: {m}, C: {c}")
-
-    plt.plot(np.log(gNDVIa), m * np.log(gNDVIa) + c)
-
-    plt.grid()
-    plt.show()
-    return
-
-
+# If you want to see the linearized version of plta(), uncomment and run
+# def plta_linear_model():
+#     """Run this function to see the linearized data plus model"""
+#     plt.plot(np.log(gNDVIa), np.log(LAI), "ko", markersize=5)
+#     plt.xlabel("ln gNDVI")
+#     plt.ylabel("ln LAI")
+#     print(f"M: {m}, C: {c}")
+#     plt.plot(np.log(gNDVIa), m * np.log(gNDVIa) + c)
+#     plt.grid()
+#     plt.show()
+#     return
 # plta_linear_model()
 
 
+# m, c = 4.1327, 2.4981
 def gNDVI_LAI_model(gNDVI):
     """This is the model of LAI given gNDVI"""
-    return gNDVI**m * np.e**c
+    e = np.e
+    return gNDVI**m * e**c
 
 
 def plta():
