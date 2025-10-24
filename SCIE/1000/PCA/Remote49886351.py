@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 print("Welcome to the St Lucia science museum interactive display!")
 
 # Print a statement explaining the patron types and prompt the user to enter their patron type
-enthusiast = input("Are you: \n 1) A rookie? \n 2) An enthusiast? \n ")
+enthusiast = input("Are you: \n 1) A rookie? \n 2) An enthusiast? \n ").strip()
 if enthusiast == "1":
     enthusiast = False
 elif enthusiast == "2":
@@ -16,14 +16,23 @@ else:
 
 
 def print_enthusiast(msg: str = ""):
+    """Only prints the message if the user is an enthusiast"""
     if enthusiast:
         print(msg)
 
 
 def print_rookie(msg: str = ""):
+    """Only prints the message if the user is a rookie"""
     if not enthusiast:
         print(msg)
 
+
+def nl(num: int):
+    """Prints a newline to the screen for legibility"""
+    print("\n" * num)
+
+
+nl(2)
 
 # Print an introduction about remote sensing in agriculture
 print_enthusiast(
@@ -34,11 +43,6 @@ print_rookie(
     "Remote sensing in agriculture is the use of satellites or drones to collect information about a farmers crops, \
 informing farmers and saving them time and money."
 )
-# It works by capturing data from reflected or emitted energy - most often light from the sun - across
-# different parts of the electromagnetic spectrum (like visible, infrared, or thermal)
-# most commonly the red and near-infrared (NIR) bands, because
-# Healthy plants absorb red light (for photosynthesis)
-# Healthy plants strongly reflect NIR light (due to leaf structure)
 print_rookie(
     "This is usually achieved by pointing a camera down towards the Earth somewhere you are interested in and \
 recording what you see."
@@ -48,6 +52,9 @@ print_enthusiast(
 different parts of the EM spectrum, usually red and near infrared (NIR) bands, and sometimes \
 blue and green bands."
 )
+
+nl(1)
+
 print_rookie(
     "To interpret the many images taken, scientists have developed Vegetation Indexes (called VIs), \
 which provide a convenient summary of the data and produce useful visual images for people to analyse."
@@ -74,7 +81,9 @@ def learn_about_vis():
             headers=["Reference", "Vegetation Index"],
         )
     )
+    nl(1)
     vi = input("Which VI would you like to learn more about?: ")
+    nl(1)
 
     if vi == "1":
         # NDVI
@@ -173,12 +182,17 @@ def learn_about_vis():
         print_enthusiast("")
         print("(EOS Data Analytics, 2017)")
 
-    user_input = input("Would you like to learn about any other VI? (N/y): ")
-    if user_input.lower() == "y":
+    nl(1)
+    user_input = input(
+        "Would you like to learn about any other VI? \n Yes) 1 \n  No) 2 \n"
+    ).strip()
+    if user_input == "1":
         learn_about_vis()
 
 
 learn_about_vis()
+
+nl(2)
 
 # Introduce LAI and the role that some VIs can play in predicting LAI
 print("Related to VIs is the Leaf Area Index (abbreviated LAI).")
@@ -191,6 +205,8 @@ print_enthusiast(
 LAI measures how much leaf surface is available to intercept light."
 )
 print("For example, LAI=3 means there is three times as much leaf area as ground area.")
+
+nl(2)
 
 
 # gNDVI and LAI data
@@ -312,12 +328,14 @@ if enthusiast:
     # Your graph should display your fitted model and the data. Describe
     # and explain the graph
     print("Here is a graph of gNDVI versus LAI.")
-    print("TODO: Read article and work out how they measured it")
     print(
         "This graph shows the relationship between the VI gNDVI and LAI. It approximately follows a growing power law relationship as gNDVI increases."
     )
     print("A power law model for the data is plotted on top as a solid line.")
     plta()
+
+    nl(2)
+
     # Identify one or two limitations of the model
     print(
         "As this is a power function, the behaviour past gNDVI < 0 isn't very accurate to the data. If it is even defined, the LAI balloons positively, such that completely dead vegetation (e.g. gNDVI = -0.5) has a very positive LAI which isn't reasonable."
@@ -332,6 +350,8 @@ if enthusiast:
         '"Leaf area index (LAI) and biomass are important indicators of crop development and the availability of this information \
 during the growing season can support farmer decision making processes." (Kross et al., 2015)'
     )
+
+    nl(2)
 
 
 # gNDVI over time data
@@ -382,6 +402,8 @@ stakeholders in the agricultural industry can make more informed decisions and o
 ultimately leading to increased productivity and sustainability." (Exploring NDVI as a Predictor of Corn Yield, 2022)'
 )
 
+nl(2)
+
 
 if enthusiast:
     # Display a graph of gNDVI over time. Describe and explain your
@@ -406,6 +428,8 @@ if enthusiast:
     print(
         f"Using the trapezoidal approximation for the AUC, the cumulative gNDVI for the crop season previously shown was {auc} gNDVI days."
     )
+
+    nl(2)
 
 # Print an appropriate farewell message.
 print("Thankyou for using St Lucia's science museum's interactive display!")
