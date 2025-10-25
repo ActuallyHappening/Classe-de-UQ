@@ -24,7 +24,7 @@ interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean Perc
 # With interaction factor
 data.lm_int = lm(Percentage ~ Music * Cups, data=data)
 anova(data.lm_int)
-plot(data.lm_int)
+# plot(data.lm_int)
 
 
 # Without interaction factor
@@ -51,7 +51,7 @@ many = data[data$Cups == "Many",]
 # Only for silent
 data.lm_silent = lm(Percentage~Cups, data=silent)
 anova(data.lm_silent)
-plot(data.lm_silent)
+# plot(data.lm_silent)
 
 # # Only for classical
 # anova(lm(Percentage~Cups, data=classical))
@@ -67,6 +67,8 @@ sd(classical_many$Percentage)
 
 boxplot(silent_many$Percentage, ylim=c(66, 100), ylab="Percentage recall", main="Percentage recall for Music = Silent and Cups = 6 (j=3)")
 boxplot(classical_many$Percentage, ylim=c(66, 100), ylab="Percentage recall", main="Percentage recall for Music = Classical and Cups = 6 (j=3)")
+
+# **Experimenting**
 
 # Create a combined factor for all subregions
 data$Subregion <- interaction(data$Music, data$Cups, sep = " & ")
