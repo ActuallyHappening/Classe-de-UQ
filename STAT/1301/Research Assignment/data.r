@@ -2,6 +2,10 @@ data = read.csv("Data.csv")
 data$Music = factor(data$Music, levels = c("Silent", "Classical"))
 data$Cups = factor(data$Cups, levels = c("None", "Medium", "Many"))
 
+# data2 = read.csv("Data excluding low.csv")
+# data2$Music = factor(data2$Music, levels = c("Silent", "Classical"))
+# data2$Cups = factor(data2$Cups, levels = c("None", "Medium", "Many"))
+
 library(lattice)
 
 # 4 = cross, 1 = circle, 3 = plus
@@ -37,11 +41,11 @@ pairwise.t.test(data$Percentage, data$Cups, p.adjust.method = "bonferroni")
 # pairwise.t.test(null$Percentage, extreme$Percentage, p.adjust.method = "bonferroni")
 
 silent = data[data$Music == "Silent",]
-# classical = data[data$Music == "Classical",]
+classical = data[data$Music == "Classical",]
 # t.test(silent$Percentage, classical$Percentage) # not significant
 
-# none = data[data$Cups == "None",]
-# many = data[data$Cups == "Many",]
+none = data[data$Cups == "None",]
+many = data[data$Cups == "Many",]
 # t.test(none$Percentage, many$Percentage)
 
 # Only for silent
@@ -51,3 +55,26 @@ plot(data.lm_silent)
 
 # # Only for classical
 # anova(lm(Percentage~Cups, data=classical))
+
+boxplot(data$Percentage, ylim=c(66, 100), ylab="Percentage recall", main="Percentage recall over all samples")
+
+silent_many = data[data$Music == "Silent" & data$Cups == "Many",]
+summary(silent_many)
+sd(silent_many$Percentage)
+classical_many = data[data$Music == "Classical" & data$Cups == "Many",]
+summary(classical_many)
+sd(classical_many$Percentage)
+
+boxplot(silent_many$Percentage, ylim=c(66, 100), ylab="Percentage recall", main="Percentage recall for Music = Silent and Cups = 6 (j=3)")
+boxplot(classical_many$Percentage, ylim=c(66, 100), ylab="Percentage recall", main="Percentage recall for Music = Classical and Cups = 6 (j=3)")
+
+# Create a combined factor for all subregions
+data$Subregion <- interaction(data$Music, data$Cups, sep = " & ")
+
+# Create boxplot
+boxplot(Percentage ~ Subregion, data = data,
+        main = "Percentage by Music and Cups",
+        ylab = "Percentage",
+        xlab = "Condition",
+        col = rainbow(6),
+        las = 2)
