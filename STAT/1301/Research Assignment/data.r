@@ -80,14 +80,3 @@ boxplot(Percentage ~ Subregion, data = data,
         xlab = "Music & Cups",
         las = 2, names = c("S-None", "S-Med", "S-High",
                           "C-None", "C-Med", "C-High"))
-
-# install.packages("tidyverse")
-library(ggplot2)
-
-ggplot(data, aes(x = interaction(Music, Cups), y = Percentage, fill = Music)) +
-  geom_boxplot() +
-  labs(title = "Percentage by Music and Cups",
-       x = "Condition",
-       y = "Percentage") +
-  theme_minimal() +
-  theme(axis.text.x = element_text(angle = 45, hjust = 1))
