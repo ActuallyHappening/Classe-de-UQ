@@ -19,7 +19,7 @@ stripplot(Percentage~Cups, pch=music_choices, cex=1.5, data=data, xlab="Cups", m
 
 Music = data$Music
 interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean Percentage", main="Interactions",)
-# interaction.plot(data$Music, data$Cups, data$Percentage) # converse
+interaction.plot(data$Music, data$Cups, data$Percentage) # converse
 
 # With interaction factor
 data.lm_int = lm(Percentage ~ Music * Cups, data=data)
@@ -57,6 +57,9 @@ anova(data.lm_silent)
 # anova(lm(Percentage~Cups, data=classical))
 
 boxplot(data$Percentage, ylim=c(66, 100), ylab="Percentage recall", main="Percentage recall over all samples")
+
+sds = tapply(data$Percentage, data$Subregion, sd)
+sd(sds)
 
 silent_many = data[data$Music == "Silent" & data$Cups == "Many",]
 summary(silent_many)
