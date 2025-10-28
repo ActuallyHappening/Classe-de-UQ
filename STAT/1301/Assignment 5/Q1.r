@@ -1,0 +1,5 @@
+library(lattice)
+fitness_data <- read.csv("FitnessData.csv")
+fitness_data$Program <- factor(fitness_data$Program)
+bwplot(VO2_Change ~ Program, data = fitness_data)
+summary(aov(VO2_Change ~ Program, data = fitness_data))
