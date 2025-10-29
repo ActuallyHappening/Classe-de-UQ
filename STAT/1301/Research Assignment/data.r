@@ -18,7 +18,7 @@ stripplot(Percentage~Cups, pch=music_choices, cex=1.5, data=data, xlab="Cups", m
 # stripplot(Percentage~Music, pch=cups_choices, cex=1.5, data=data, xlab="Music")
 
 Music = data$Music
-interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean Percentage", main="Interactions",)
+interaction.plot(data$Cups, Music, data$Percentage, xlab="Cups", ylab="Mean test score", main="Interactions",)
 interaction.plot(data$Music, data$Cups, data$Percentage) # converse
 
 # With interaction factor
